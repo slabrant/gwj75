@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1v2let5i7lf1"]
+
+[ext_resource type="Texture2D" uid="uid://dkxwrmivmwdsk" path="res://sprites/cannon.png" id="1_4k16b"]
+[ext_resource type="Script" path="res://scenes/cannon.gd" id="1_p6ic0"]
+
+[node name="Cannon" type="Node2D"]
+script = ExtResource("1_p6ic0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4k16b")
