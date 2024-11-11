@@ -9,7 +9,6 @@ extends Area2D
 
 @export var mirror_rotation : float = 0:
 	set(value):
-		print(value)
 		sprite_2d.rotation = value
 		collision_shape_2d.rotation = value
 		mirror_rotation = value
@@ -56,6 +55,10 @@ func _on_rotate_button_pressed() -> void:
 	mirror_rotation += mirror_rotation_amount
 
 
-func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_touch_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if world.is_build_mode and not locked and event.has_method("is_action_pressed") and event.is_action_pressed("input_action"):
 		is_moving = true
+
+
+func _on_minus_button_pressed() -> void:
+	queue_free()

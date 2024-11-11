@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dvr43yu4gyusd"]
+[gd_scene load_steps=9 format=3 uid="uid://dvr43yu4gyusd"]
 
 [ext_resource type="Script" path="res://scenes/mirror.gd" id="1_5xwsu"]
 [ext_resource type="Texture2D" uid="uid://dk6txlym2j6rp" path="res://sprites/mirror.png" id="1_7x2k3"]
@@ -9,6 +9,8 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tev4a"]
 size = Vector2(16, 2)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1uv0u"]
 
 [node name="Mirror" type="Area2D"]
 collision_mask = 2
@@ -21,20 +23,28 @@ texture = ExtResource("1_7x2k3")
 shape = SubResource("RectangleShape2D_tev4a")
 
 [node name="RotateButton" type="TextureButton" parent="."]
-offset_left = 9.0
-offset_top = -5.0
-offset_right = 13.0
-offset_bottom = -1.0
+offset_left = 10.0
+offset_top = -8.0
+offset_right = 18.0
 texture_normal = ExtResource("3_k064b")
 texture_pressed = ExtResource("4_l17x6")
+stretch_mode = 3
 
 [node name="MinusButton" type="TextureButton" parent="."]
-offset_left = 9.0
-offset_right = 13.0
-offset_bottom = 4.0
+offset_left = 10.0
+offset_right = 18.0
+offset_bottom = 8.0
 texture_normal = ExtResource("4_1ka4y")
 texture_pressed = ExtResource("6_gmei1")
+stretch_mode = 3
+
+[node name="TouchArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TouchArea"]
+shape = SubResource("CircleShape2D_1uv0u")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="pressed" from="RotateButton" to="." method="_on_rotate_button_pressed"]
+[connection signal="pressed" from="MinusButton" to="." method="_on_minus_button_pressed"]
+[connection signal="input_event" from="TouchArea" to="." method="_on_touch_area_input_event"]
