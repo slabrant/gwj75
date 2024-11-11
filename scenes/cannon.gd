@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var world: Node = %"World"
+
 const BEAM = preload("res://scenes/beam.tscn")
 @export var SPEED = 100
 
@@ -10,7 +12,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	rotation = (get_global_mouse_position() - position).angle()
-	if Input.is_action_just_released("input_action"):
+	if Input.is_action_just_released("input_action") and not world.is_build_mode:
 		var beam : CharacterBody2D = BEAM.instantiate()
 		beam.position = position
 		var angle_vector = (get_global_mouse_position() - position).normalized()
