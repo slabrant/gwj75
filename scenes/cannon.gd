@@ -3,7 +3,7 @@ extends Node2D
 @onready var world: Node = get_tree().root.get_child(0).find_child("World")
 
 const BEAM = preload("res://scenes/beam.tscn")
-@export var SPEED = 100
+@export var SPEED = 10000
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,6 +16,6 @@ func _process(delta: float) -> void:
 		var beam : CharacterBody2D = BEAM.instantiate()
 		beam.position = position
 		var angle_vector = (get_global_mouse_position() - position).normalized()
-		beam.velocity = angle_vector * SPEED
+		beam.velocity = angle_vector * SPEED * delta
 		beam.rotation = angle_vector.angle()
 		add_sibling(beam)

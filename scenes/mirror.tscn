@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dvr43yu4gyusd"]
+[gd_scene load_steps=10 format=3 uid="uid://dvr43yu4gyusd"]
 
 [ext_resource type="Script" path="res://scenes/mirror.gd" id="1_5xwsu"]
 [ext_resource type="Texture2D" uid="uid://oi3p166iqo4t" path="res://sprites/mirror.png" id="1_7x2k3"]
@@ -9,9 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://dm1l1lsprtbgh" path="res://sprites/lock.png" id="7_h0g1v"]
 [ext_resource type="Texture2D" uid="uid://g4tlx6fjex1r" path="res://sprites/lock_pressed.png" id="8_g8kev"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tev4a"]
-size = Vector2(16, 2)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_1uv0u"]
 
 [node name="Mirror" type="Area2D"]
@@ -21,8 +18,8 @@ script = ExtResource("1_5xwsu")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_7x2k3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_tev4a")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-8, -2, -8, 2, -7, 4, 7, 4, 8, 2, 8, -2, 7, -4, -7, -4)
 
 [node name="RotateButton" type="TextureButton" parent="."]
 visible = false
@@ -58,6 +55,6 @@ shape = SubResource("CircleShape2D_1uv0u")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="input_event" from="." to="." method="_on_input_event"]
-[connection signal="pressed" from="RotateButton" to="." method="_on_rotate_button_pressed"]
+[connection signal="button_down" from="RotateButton" to="." method="_on_rotate_button_button_down"]
 [connection signal="pressed" from="MinusButton" to="." method="_on_minus_button_pressed"]
 [connection signal="input_event" from="TouchArea" to="." method="_on_touch_area_input_event"]

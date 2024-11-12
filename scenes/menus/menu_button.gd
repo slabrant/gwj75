@@ -17,6 +17,10 @@ func _input(event: InputEvent) -> void:
 
 
 func _on_pressed() -> void:
+	if Engine.time_scale == 0.1:
+		Engine.time_scale = 1
+	else:
+		Engine.time_scale = 0.1
 	var pause_menu = PAUSE_MENU.instantiate()
 	#var window_size = get_viewport().size
 	#pause_menu.position = Vector2(window_size.x/2, window_size.y/2)

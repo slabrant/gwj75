@@ -82,7 +82,7 @@ position = Vector2(113, -64)
 
 [node name="Mirrors" type="Node" parent="World"]
 
-[node name="Mirror6" parent="World/Mirrors" instance=ExtResource("3_78q8a")]
+[node name="Mirror" parent="World/Mirrors" instance=ExtResource("3_78q8a")]
 position = Vector2(8, -8)
 rotation = -2.3562
 
