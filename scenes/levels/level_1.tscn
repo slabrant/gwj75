@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://cvl7xjpixaqq1"]
+[gd_scene load_steps=9 format=4 uid="uid://cvl7xjpixaqq1"]
 
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_jamue"]
 [ext_resource type="Texture2D" uid="uid://cdt8g6relnjpp" path="res://sprites/tilemap.png" id="2_xdilk"]
 [ext_resource type="PackedScene" uid="uid://dvr43yu4gyusd" path="res://scenes/mirror.tscn" id="3_78q8a"]
 [ext_resource type="PackedScene" uid="uid://d1v2let5i7lf1" path="res://scenes/cannon.tscn" id="4_ybpnd"]
 [ext_resource type="PackedScene" uid="uid://jjym2c7dwqvs" path="res://scenes/goal.tscn" id="5_twyyb"]
+[ext_resource type="PackedScene" uid="uid://cbev4thk0ftt" path="res://scenes/mirror_generator.tscn" id="6_fhgnx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_81n73"]
 texture = ExtResource("2_xdilk")
@@ -88,5 +89,8 @@ offset_right = 128.0
 offset_bottom = 64.0
 theme_override_font_sizes/font_size = 6
 text = "Build Mode"
+
+[node name="MirrorGenerator" parent="World" instance=ExtResource("6_fhgnx")]
+position = Vector2(113, -64)
 
 [connection signal="pressed" from="World/BuildModeButton" to="World" method="_on_build_mode_button_pressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cte7878glb6pl"
-path="res://.godot/imported/rotate_8x8.png-6b8e8e07225da3ee504b9319ffaeed61.ctex"
+uid="uid://bihc2gwqphs4r"
+path="res://.godot/imported/rotate_4x4.png-1be6c3256ab424ecc36837d3897c3f49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/rotate_8x8.png"
-dest_files=["res://.godot/imported/rotate_8x8.png-6b8e8e07225da3ee504b9319ffaeed61.ctex"]
+source_file="res://sprites/rotate_4x4.png"
+dest_files=["res://.godot/imported/rotate_4x4.png-1be6c3256ab424ecc36837d3897c3f49.ctex"]
 
 [params]
 

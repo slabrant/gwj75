@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://scenes/mirror.gd" id="1_5xwsu"]
 [ext_resource type="Texture2D" uid="uid://dk6txlym2j6rp" path="res://sprites/mirror.png" id="1_7x2k3"]
-[ext_resource type="Texture2D" uid="uid://i7n8vpfwadvh" path="res://sprites/rotate.png" id="3_k064b"]
+[ext_resource type="Texture2D" uid="uid://clm1gwrgavpt8" path="res://sprites/rotate.png" id="3_k064b"]
 [ext_resource type="Texture2D" uid="uid://rlybi0qb3eyu" path="res://sprites/minus.png" id="4_1ka4y"]
-[ext_resource type="Texture2D" uid="uid://du7waksbx7pub" path="res://sprites/rotate_pressed.png" id="4_l17x6"]
+[ext_resource type="Texture2D" uid="uid://ruruse7ex7p7" path="res://sprites/rotate_pressed.png" id="4_l17x6"]
 [ext_resource type="Texture2D" uid="uid://d0jlc58fxx0ij" path="res://sprites/minus_pressed.png" id="6_gmei1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tev4a"]
@@ -23,7 +23,6 @@ texture = ExtResource("1_7x2k3")
 shape = SubResource("RectangleShape2D_tev4a")
 
 [node name="RotateButton" type="TextureButton" parent="."]
-visible = false
 offset_left = 10.0
 offset_top = -8.0
 offset_right = 18.0
@@ -32,7 +31,6 @@ texture_pressed = ExtResource("4_l17x6")
 stretch_mode = 3
 
 [node name="MinusButton" type="TextureButton" parent="."]
-visible = false
 offset_left = 10.0
 offset_right = 18.0
 offset_bottom = 8.0

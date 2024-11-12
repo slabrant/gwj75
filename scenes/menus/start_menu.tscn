@@ -13,15 +13,20 @@ script = ExtResource("1_1otxa")
 
 [node name="PlayButton" type="Button" parent="."]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 256.0
+offset_bottom = 136.0
+theme_override_font_sizes/font_size = 60
 text = "Play"
 
 [node name="LevelSelectButton" type="Button" parent="."]
 layout_mode = 0
-offset_top = 24.0
-offset_right = 78.0
-offset_bottom = 48.0
+offset_left = 64.0
+offset_top = 152.0
+offset_right = 320.0
+offset_bottom = 216.0
+theme_override_font_sizes/font_size = 50
 text = "Level Select"
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
