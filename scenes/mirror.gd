@@ -41,7 +41,7 @@ func build_mode_checks() -> void:
 		lock_button.hide()
 	elif world.is_build_mode and locked:
 		lock_button.show()
-	elif not world.is_build_mode and not locked:
+	else:
 		rotate_button.hide()
 		minus_button.hide()
 		lock_button.hide()

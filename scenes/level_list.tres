@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="LevelListResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/level_list_resource.gd" id="1_lgm2d"]
+
+[resource]
+script = ExtResource("1_lgm2d")
+level_paths = ["res://scenes/levels/level_1.tscn", "res://scenes/levels/level_3.tscn"]
