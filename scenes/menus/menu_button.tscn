@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6nj7cjeaoex6"]
+
+[ext_resource type="Texture2D" uid="uid://cu3vlegt7cqxe" path="res://sprites/menu.png" id="1_xwe3q"]
+[ext_resource type="Texture2D" uid="uid://lr1xeftyls61" path="res://sprites/menu_pressed.png" id="2_3lx1y"]
+[ext_resource type="Script" path="res://scenes/menus/menu_button.gd" id="3_m5xje"]
+
+[node name="MenuButton" type="TextureButton"]
+anchors_preset = -1
+anchor_right = 0.012
+anchor_bottom = 0.022
+offset_right = -0.68
+offset_bottom = -0.920001
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_xwe3q")
+texture_pressed = ExtResource("2_3lx1y")
+script = ExtResource("3_m5xje")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
