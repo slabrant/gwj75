@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cbev4thk0ftt"]
 
 [ext_resource type="Script" path="res://scenes/mirror_generator.gd" id="1_agt3v"]
-[ext_resource type="Texture2D" uid="uid://dk6txlym2j6rp" path="res://sprites/mirror.png" id="1_ain20"]
+[ext_resource type="Texture2D" uid="uid://oi3p166iqo4t" path="res://sprites/mirror.png" id="1_ain20"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8rxyl"]
 size = Vector2(16, 2)
@@ -21,3 +21,5 @@ shape = SubResource("RectangleShape2D_8rxyl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TouchArea"]
 shape = SubResource("CircleShape2D_5shyq")
+
+[connection signal="input_event" from="TouchArea" to="." method="_on_touch_area_input_event"]

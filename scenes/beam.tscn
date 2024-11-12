@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://5p05sivgsauk"]
 
 [ext_resource type="Script" path="res://scenes/beam.gd" id="1_3lbs8"]
-[ext_resource type="Texture2D" uid="uid://cdvgkuqqi1ilx" path="res://sprites/beam.png" id="1_jnbsv"]
-[ext_resource type="Texture2D" uid="uid://bygwuiny5x6tv" path="res://sprites/beam-sheet.png" id="3_bhnfr"]
+[ext_resource type="Texture2D" uid="uid://blxh78y1jd7om" path="res://sprites/beam.png" id="1_jnbsv"]
+[ext_resource type="Texture2D" uid="uid://c1amdc00vhn14" path="res://sprites/beam-sheet.png" id="3_bhnfr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yi37i"]
 atlas = ExtResource("3_bhnfr")

@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var world: Node = %"World"
+@onready var world: Node = get_tree().root.get_child(0).find_child("World")
 
 const BEAM = preload("res://scenes/beam.tscn")
 @export var SPEED = 100

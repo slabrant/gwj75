@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://cvl7xjpixaqq1"]
+[gd_scene load_steps=9 format=4 uid="uid://c4bmyfyrfllw8"]
 
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_jamue"]
-[ext_resource type="Texture2D" uid="uid://cdt8g6relnjpp" path="res://sprites/tilemap.png" id="2_xdilk"]
+[ext_resource type="Texture2D" uid="uid://bld1jj4bmrwit" path="res://sprites/tilemap.png" id="2_xdilk"]
 [ext_resource type="PackedScene" uid="uid://dvr43yu4gyusd" path="res://scenes/mirror.tscn" id="3_78q8a"]
 [ext_resource type="PackedScene" uid="uid://d1v2let5i7lf1" path="res://scenes/cannon.tscn" id="4_ybpnd"]
 [ext_resource type="PackedScene" uid="uid://jjym2c7dwqvs" path="res://scenes/goal.tscn" id="5_twyyb"]
@@ -33,6 +33,13 @@ texture = ExtResource("2_xdilk")
 4:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-8, -6, -8, -8, 8, -8, 8, -6)
 5:0/0 = 0
 5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8, -8, 6, 6, 6, 6, -6, -8, -6)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, 6, 8, 6, -6, -6, -6, -6, 8, -8, 8)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -6, -8, -6, 8, -8, 8)
+6:1/0/physics_layer_0/polygon_1/points = PackedVector2Array(6, -8, 6, 8, 8, 8, 8, -8)
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -6, -8, -6, 6, 6, 6, 6, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_c4e58"]
 physics_layer_0/collision_layer = 4
@@ -42,34 +49,11 @@ sources/0 = SubResource("TileSetAtlasSource_81n73")
 [node name="Level1" type="Node2D"]
 
 [node name="World" type="Node" parent="."]
-unique_name_in_owner = true
 script = ExtResource("1_jamue")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="World"]
-tile_map_data = PackedByteArray("AAD4/wMAAAAAAAIAAAAHAAMAAAACAAIAAAAHAPv/AAACAAAAAAD4//v/AAAAAAAAAAD4//z/AAAAAAEAAAD4//3/AAAAAAEAAAD4//7/AAAAAAEAAAD4////AAAAAAEAAAD4/wIAAAAAAAEAAAD5/wMAAAABAAIAAAD6/wMAAAABAAIAAAD7/wMAAAABAAIAAAD8/wMAAAABAAIAAAD9/wMAAAABAAIAAAD+/wMAAAABAAIAAAD//wMAAAABAAIAAAAAAAMAAAABAAIAAAABAAMAAAABAAIAAAACAAMAAAABAAIAAAADAAMAAAABAAIAAAAEAAMAAAABAAIAAAAFAAMAAAABAAIAAAAGAAMAAAABAAIAAAAHAAIAAAACAAEAAAAHAAEAAAACAAEAAAAHAAAAAAACAAEAAAAHAP//AAACAAEAAAAHAP7/AAACAAEAAAAHAP3/AAACAAEAAAAHAPz/AAACAAEAAAAGAPv/AAABAAAAAAAFAPv/AAABAAAAAAAEAPv/AAABAAAAAAADAPv/AAABAAAAAAACAPv/AAABAAAAAAABAPv/AAABAAAAAAAAAPv/AAABAAAAAAD///v/AAABAAAAAAD+//v/AAABAAAAAAD9//v/AAABAAAAAAD8//v/AAABAAAAAAD7//v/AAABAAAAAAD6//v/AAABAAAAAAD5//v/AAABAAAAAAD4/wEAAAAEAAAAAAD5/wEAAAAEAAAAAAD6/wEAAAAEAAAAAAD7/wEAAAAEAAAAAAD8/wEAAAAEAAAAAAD9/wEAAAAEAAAAAAD+/wEAAAAEAAAAAAD//wEAAAAFAAAAAAD4/wAAAAAAAAEAAAA=")
+tile_map_data = PackedByteArray("AAD4/wMAAAAAAAIAAAAHAAMAAAACAAIAAAAHAPv/AAACAAAAAAD4//v/AAAAAAAAAAD4//z/AAAAAAEAAAD4//3/AAAAAAEAAAD4//7/AAAAAAEAAAD4////AAAAAAEAAAD4/wIAAAAAAAEAAAD5/wMAAAABAAIAAAD6/wMAAAABAAIAAAD7/wMAAAABAAIAAAD8/wMAAAABAAIAAAD9/wMAAAABAAIAAAD+/wMAAAABAAIAAAD//wMAAAABAAIAAAAAAAMAAAABAAIAAAABAAMAAAABAAIAAAACAAMAAAABAAIAAAADAAMAAAABAAIAAAAEAAMAAAABAAIAAAAFAAMAAAAAAAIAAAAGAAMAAAABAAIAAAAHAAIAAAACAAEAAAAHAAEAAAACAAEAAAAHAAAAAAACAAEAAAAHAP//AAACAAEAAAAHAP7/AAACAAEAAAAHAP3/AAACAAEAAAAHAPz/AAACAAEAAAAGAPv/AAABAAAAAAAFAPv/AAAAAAAAAAAEAPv/AAABAAAAAAADAPv/AAABAAAAAAACAPv/AAABAAAAAAABAPv/AAABAAAAAAAAAPv/AAABAAAAAAD///v/AAABAAAAAAD+//v/AAABAAAAAAD9//v/AAABAAAAAAD8//v/AAABAAAAAAD7//v/AAABAAAAAAD6//v/AAABAAAAAAD5//v/AAABAAAAAAD4/wEAAAAEAAAAAAD5/wEAAAAEAAAAAAD6/wEAAAAEAAAAAAD7/wEAAAAEAAAAAAD8/wEAAAAEAAAAAAD9/wEAAAAEAAAAAAD+/wEAAAAFAAAAAAD4/wAAAAAAAAEAAAAFAPz/AAAAAAEAAAAFAP3/AAAAAAEAAAAFAP7/AAAAAAEAAAAFAP//AAAAAAEAAAAFAAAAAAAAAAEAAAAFAAEAAAAAAAEAAAAFAAIAAAAAAAEAAAA=")
 tile_set = SubResource("TileSet_c4e58")
-
-[node name="Mirror" parent="World" instance=ExtResource("3_78q8a")]
-position = Vector2(-8, -40)
-
-[node name="Mirror5" parent="World" instance=ExtResource("3_78q8a")]
-position = Vector2(-48, -56)
-
-[node name="Mirror4" parent="World" instance=ExtResource("3_78q8a")]
-position = Vector2(-88, -40)
-
-[node name="Mirror2" parent="World" instance=ExtResource("3_78q8a")]
-position = Vector2(-108, -17)
-
-[node name="Mirror6" parent="World" instance=ExtResource("3_78q8a")]
-position = Vector2(72, -8)
-rotation = 3.92699
-locked = true
-
-[node name="Mirror3" parent="World" instance=ExtResource("3_78q8a")]
-position = Vector2(16, -8)
-rotation = 1.5708
-locked = true
 
 [node name="Cannon" parent="World" instance=ExtResource("4_ybpnd")]
 z_index = 2
@@ -83,14 +67,22 @@ zoom = Vector2(2.5, 2.5)
 position = Vector2(-104, 48)
 
 [node name="BuildModeButton" type="CheckButton" parent="World"]
-offset_left = 40.0
-offset_top = 40.0
-offset_right = 128.0
-offset_bottom = 64.0
+offset_left = 128.0
+offset_top = -16.0
+offset_right = 208.0
+offset_bottom = 8.0
+rotation = 1.57079
 theme_override_font_sizes/font_size = 6
 text = "Build Mode"
+alignment = 2
 
 [node name="MirrorGenerator" parent="World" instance=ExtResource("6_fhgnx")]
 position = Vector2(113, -64)
+
+[node name="Mirrors" type="Node" parent="World"]
+
+[node name="Mirror6" parent="World/Mirrors" instance=ExtResource("3_78q8a")]
+position = Vector2(8, -8)
+rotation = -2.3562
 
 [connection signal="pressed" from="World/BuildModeButton" to="World" method="_on_build_mode_button_pressed"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=4 uid="uid://b3lbk4ev3dked"]
 
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_rhs10"]
-[ext_resource type="Texture2D" uid="uid://cdt8g6relnjpp" path="res://sprites/tilemap.png" id="2_ukugv"]
+[ext_resource type="Texture2D" uid="uid://bld1jj4bmrwit" path="res://sprites/tilemap.png" id="2_ukugv"]
 [ext_resource type="PackedScene" uid="uid://dvr43yu4gyusd" path="res://scenes/mirror.tscn" id="2_y0fwj"]
 [ext_resource type="PackedScene" uid="uid://jjym2c7dwqvs" path="res://scenes/goal.tscn" id="5_o0nb1"]
 [ext_resource type="PackedScene" uid="uid://d1v2let5i7lf1" path="res://scenes/cannon.tscn" id="5_yxkbt"]
@@ -63,12 +63,10 @@ position = Vector2(-108, -17)
 [node name="Mirror6" parent="World" instance=ExtResource("2_y0fwj")]
 position = Vector2(-8, -8)
 rotation = 3.92699
-locked = true
 
 [node name="Mirror3" parent="World" instance=ExtResource("2_y0fwj")]
 position = Vector2(9, -8)
 rotation = 1.5708
-locked = true
 
 [node name="Cannon" parent="World" instance=ExtResource("5_yxkbt")]
 z_index = 2

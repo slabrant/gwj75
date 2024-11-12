@@ -4,7 +4,8 @@ extends Area2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var rotate_button: TextureButton = $RotateButton
 @onready var minus_button: TextureButton = $MinusButton
-@onready var world: Node = %"World"
+@onready var lock_button: TextureButton = $LockButton
+@onready var world: Node = get_tree().root.get_child(0).find_child("World")
 
 
 @export var mirror_rotation : float = 0:
@@ -12,30 +13,38 @@ extends Area2D
 		sprite_2d.rotation = value
 		collision_shape_2d.rotation = value
 		mirror_rotation = value
-@export var locked : bool = false
+@export var locked : bool = true
 @export var mirror_rotation_amount : float = PI/8
 @export var is_moving : bool = false
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	lock_button.rotation -= rotation
+	rotate_button.hide()
+	minus_button.hide()
+	lock_button.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	# Ideally this logic would be signalled, not in the `process`
-	if world.is_build_mode and not locked:
-		rotate_button.show()
-		minus_button.show()
-	else:
-		rotate_button.hide()
-		minus_button.hide()
-	
 	if Input.is_action_just_released("input_action"):
 		is_moving = false
 	if is_moving:
 		position = get_global_mouse_position()
+
+
+func build_mode_checks() -> void:
+	if world.is_build_mode and not locked:
+		rotate_button.show()
+		minus_button.show()
+		lock_button.hide()
+	elif world.is_build_mode and locked:
+		lock_button.show()
+	elif not world.is_build_mode and not locked:
+		rotate_button.hide()
+		minus_button.hide()
+		lock_button.hide()
 
 
 func _on_body_entered(body: Node2D) -> void:
@@ -61,4 +70,6 @@ func _on_touch_area_input_event(viewport: Node, event: InputEvent, shape_idx: in
 
 
 func _on_minus_button_pressed() -> void:
+	var world_mirrors : Array = world.mirrors
+	world_mirrors.erase(self)
 	queue_free()
