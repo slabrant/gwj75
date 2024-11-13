@@ -51,7 +51,7 @@ jobs:
           curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
           unzip butler.zip -d butler
           sudo mv butler/butler /usr/local/bin/butler
-          sudo chmod +x butler/butler
+          sudo chmod +x /usr/local/bin/butler
 
       - name: Push to Itch.io
         run: |
