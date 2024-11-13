@@ -10,16 +10,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Ensure compatibility with the latest Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
       # Checkout the code from the main branch
       - name: Checkout code
-        uses: actions/checkout@v3  # Updated to v3 to avoid Node.js warnings
+        uses: actions/checkout@v3
 
-      # Set up Godot environment variables
+      # Set up Godot executable
       - name: Set up Godot executable
         env:
           GODOT_VERSION: "4.3-stable"
-          GODOT_URL: "https://downloads.tuxfamily.org/godotengine/${{ env.GODOT_VERSION }}/Godot_v${{ env.GODOT_VERSION }}_linux_headless.64.zip"
         run: |
+          GODOT_URL="https://downloads.tuxfamily.org/godotengine/${GODOT_VERSION}/Godot_v${GODOT_VERSION}_linux_headless.64.zip"
           echo "Downloading Godot from $GODOT_URL"
           curl -L $GODOT_URL --output godot.zip
           unzip godot.zip -d godot
