@@ -23,11 +23,10 @@ jobs:
           GODOT_VERSION: "4.3-stable"
         run: |
           GODOT_URL="https://downloads.tuxfamily.org/godotengine/4.3/Godot_v${GODOT_VERSION}_linux.x86_64.zip"
-          curl -L $GODOT_URL --output godot.zip
+          wget -O godot.zip $GODOT_URL
           unzip godot.zip -d godot
           sudo mv godot/Godot_v${GODOT_VERSION}_linux.x86_64 /usr/local/bin/godot
           sudo chmod +x /usr/local/bin/godot
-          godot --version
 
       - name: Setup Export Templates
         run: |
