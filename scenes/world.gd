@@ -25,6 +25,17 @@ func _process(delta: float) -> void:
 	pass
 
 
+func allow_input(enable: bool):
+	return
+	disable_input_recursive(get_tree().root, enable)
+
+
+func disable_input_recursive(node, enable):
+	node.set_process_input(enable)
+	for child in node.get_children():
+		disable_input_recursive(child, enable)
+
+
 func _on_build_mode_button_pressed() -> void:
 	is_build_mode = !is_build_mode
 	for mirror in mirrors:

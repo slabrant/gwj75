@@ -9,12 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://cbev4thk0ftt" path="res://scenes/mirror_generator.tscn" id="6_fhgnx"]
 [ext_resource type="PackedScene" uid="uid://b6nj7cjeaoex6" path="res://scenes/menus/menu_button.tscn" id="7_8dnh5"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y5pxv"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rayjj"]
 texture = ExtResource("2_y3v2k")
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_xbp5a"]
-sources/0 = SubResource("TileSetAtlasSource_y5pxv")
+sources/0 = SubResource("TileSetAtlasSource_rayjj")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_81n73"]
 texture = ExtResource("2_xdilk")
@@ -99,7 +99,7 @@ position = Vector2(113, -64)
 position = Vector2(8, -8)
 rotation = -2.3562
 
-[node name="MenuButton" parent="." instance=ExtResource("7_8dnh5")]
+[node name="MenuButton" parent="World" instance=ExtResource("7_8dnh5")]
 offset_left = 88.0
 offset_top = -64.0
 offset_right = 95.0

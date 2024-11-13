@@ -8,14 +8,10 @@ extends CharacterBody2D
 func _ready() -> void:
 	motion_mode = MOTION_MODE_FLOATING
 	laser_shoot.play()
-	pass
 
 
 func _physics_process(delta: float) -> void:
-	var collision = move_and_collide(velocity * delta, false, 1000, true)
-	#if collision:
-		#velocity = velocity.slide(collision.normal)
-	
+	move_and_slide()
 
 
 func _on_hit_box_body_entered(body: TileMapLayer) -> void:

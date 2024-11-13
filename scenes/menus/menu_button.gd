@@ -1,5 +1,6 @@
 extends TextureButton
 
+@onready var world: Node = get_tree().root.get_child(0).find_child("World")
 const PAUSE_MENU = preload("res://scenes/menus/pause_menu.tscn")
 
 # Called when the node enters the scene tree for the first time.
@@ -11,20 +12,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+
 func _input(event: InputEvent) -> void:
 	return
-	print(event.position)
 
 
 func _on_pressed() -> void:
-	if Engine.time_scale == 0.1:
-		Engine.time_scale = 1
-	else:
-		Engine.time_scale = 0.1
+	world.allow_input(false)
 	var pause_menu = PAUSE_MENU.instantiate()
-	#var window_size = get_viewport().size
-	#pause_menu.position = Vector2(window_size.x/2, window_size.y/2)
-	pause_menu.global_position = Vector2(320, 180)
-	get_tree().root.add_child(pause_menu)
-	print(pause_menu.get_parent())
-	#get_parent().add_sibling(pause_menu)
+	#pause_menu.global_position = Vector2(-pause_menu.size.x/2, pause_menu.size.y/2)
+	add_sibling(pause_menu)

@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://cah2quy5yt64s"]
+[gd_scene load_steps=2 format=3 uid="uid://cah2quy5yt64s"]
+
+[ext_resource type="Script" path="res://scenes/menus/pause_menu.gd" id="1_066qn"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_bottom = 0.156
 offset_bottom = -0.16
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_066qn")
 
 [node name="MainMenuButton" type="Button" parent="."]
 layout_mode = 0
@@ -21,3 +24,6 @@ offset_top = 32.0
 offset_right = 63.0
 offset_bottom = 56.0
 text = "Close"
+
+[connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
