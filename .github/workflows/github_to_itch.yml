@@ -29,6 +29,8 @@ jobs:
           sudo chmod +x /usr/local/bin/godot
 
       - name: Setup Export Templates
+        env:
+          GODOT_VERSION: "4.3-stable"
         run: |
           mkdir -p ~/.local/share/godot/export_templates/${GODOT_VERSION}
           cp -r .godot/export_templates/${GODOT_VERSION}/* ~/.local/share/godot/export_templates/${GODOT_VERSION}/
