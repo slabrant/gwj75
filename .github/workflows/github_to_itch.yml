@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Ensure compatibility with the latest Node.js
+      # Setup Node.js for compatibility
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -20,33 +20,32 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Set up Godot executable
-      - name: Set up Godot executable
+      # Download and set up Godot
+      - name: Download and set up Godot
         env:
           GODOT_VERSION: "4.3-stable"
         run: |
-          GODOT_URL="https://downloads.tuxfamily.org/godotengine/${GODOT_VERSION}/Godot_v${GODOT_VERSION}_linux_headless.64.zip"
+          GODOT_URL="https://downloads.tuxfamily.org/godotengine/4.3/godot-${GODOT_VERSION}.tar.xz"
           echo "Downloading Godot from $GODOT_URL"
-          curl -L $GODOT_URL --output godot.zip
-          unzip godot.zip -d godot
-          sudo mv godot/Godot_* /usr/local/bin/godot
-          godot --version  # Check if Godot installed correctly
+          curl -L $GODOT_URL --output godot.tar.xz
+          mkdir -p godot
+          tar -xf godot.tar.xz -C godot --strip-components=1
+          sudo mv godot/godot* /usr/local/bin/godot
+          godot --version  # Verify installation
 
       # Export the project for HTML5
       - name: Export HTML5
         run: |
           echo "Exporting project for Web..."
           godot --headless --export-release "Web" build/web
-          ls -R build/web  # List contents to verify export succeeded
-        env:
-          GODOT_PROJECT_DIR: ${{ github.workspace }}
+          ls -R build/web  # Verify export success
 
       # Compress the exported files
       - name: Zip exported files
         run: |
           echo "Zipping exported files..."
           zip -r build/web.zip build/web
-          ls -lh build/web.zip  # List details to verify zip succeeded
+          ls -lh build/web.zip  # Verify zip success
 
       # Install Butler
       - name: Install Butler
@@ -55,7 +54,7 @@ jobs:
           curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/head/butler.zip
           unzip butler.zip -d butler
           sudo mv butler/butler /usr/local/bin/butler
-          butler -V  # Check if Butler installed correctly
+          butler -V  # Verify installation
 
       # Push to Itch.io using Butler
       - name: Push to Itch.io
