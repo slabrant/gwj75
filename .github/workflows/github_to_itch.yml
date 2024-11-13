@@ -28,10 +28,18 @@ jobs:
           GODOT_URL="https://downloads.tuxfamily.org/godotengine/4.3/godot-${GODOT_VERSION}.tar.xz"
           echo "Downloading Godot from $GODOT_URL"
           curl -L $GODOT_URL --output godot.tar.xz
+          
+          # Extract the tar file
           mkdir -p godot
           tar -xf godot.tar.xz -C godot --strip-components=1
-          sudo mv godot/godot* /usr/local/bin/godot
-          sudo chmod +x /usr/local/bin/godot
+          
+          # Check the contents of the extracted directory
+          echo "Godot directory contents:"
+          ls godot
+
+          # Move the correct binary to /usr/local/bin
+          sudo mv godot/godot.linuxbsd.editor.x86_64 /usr/local/bin/godot
+          sudo chmod +x /usr/local/bin/godot  # Make Godot executable
           godot --version  # Verify installation
 
       # Export the project for HTML5
@@ -55,6 +63,7 @@ jobs:
           curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/head/butler.zip
           unzip butler.zip -d butler
           sudo mv butler/butler /usr/local/bin/butler
+          sudo chmod +x /usr/local/bin/butler  # Make Butler executable
           butler -V  # Verify installation
 
       # Push to Itch.io using Butler
