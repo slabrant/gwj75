@@ -33,7 +33,7 @@ jobs:
 
       - name: Setup Export Templates
         run: |
-          mkdir -p ~/.local/share/godot/export_templates/${GODOT_VERSION_DASH}
+          mkdir -p ~/.local/share/godot/export_templates/${GODOT_VERSION_DOT}
           cp -r .godot/export_templates/${GODOT_VERSION_DASH}/* ~/.local/share/godot/export_templates/${GODOT_VERSION_DOT}/
 
       - name: Export HTML5
