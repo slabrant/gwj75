@@ -12,6 +12,12 @@ extends Node
 			tile_map_bg.show()
 		is_build_mode = value
 @export var mirrors : Array = []
+@export var open_menu : Control:
+	set(value):
+		toggle_input(!value)
+		open_menu = value
+@export var shot_count : int = 0
+@export var mirror_count : int = 0
 
 
 # Called when the node enters the scene tree for the first time.

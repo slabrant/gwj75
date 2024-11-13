@@ -1,11 +1,12 @@
 extends Area2D
 
+@onready var world: Node = get_tree().root.get_child(0).find_child("World")
+
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var collision: CollisionPolygon2D = $CollisionPolygon2D
 @onready var rotate_button: TextureButton = $RotateButton
 @onready var minus_button: TextureButton = $MinusButton
 @onready var lock_button: TextureButton = $LockButton
-@onready var world: Node = get_tree().root.get_child(0).find_child("World")
 @onready var reflect: AudioStreamPlayer = $Reflect
 
 
@@ -26,6 +27,7 @@ func _ready() -> void:
 	rotate_button.hide()
 	minus_button.hide()
 	lock_button.hide()
+	world.mirror_count += 1
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -75,6 +77,7 @@ func _on_touch_area_input_event(viewport: Node, event: InputEvent, shape_idx: in
 func _on_minus_button_pressed() -> void:
 	var world_mirrors : Array = world.mirrors
 	world_mirrors.erase(self)
+	world.mirror_count -= 1
 	queue_free()
 
 

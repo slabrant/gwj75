@@ -1,5 +1,6 @@
 extends Area2D
 
+const WIN_MENU = preload("res://scenes/menus/win_menu.tscn")
 @onready var sprite: Sprite2D = $Sprite2D
 
 
@@ -16,3 +17,5 @@ func setShader(value):
 func _on_body_entered(body: Node2D) -> void:
 	setShader(false)
 	body.queue_free()
+	var menu = WIN_MENU.instantiate()
+	get_tree().root.add_child(menu)
