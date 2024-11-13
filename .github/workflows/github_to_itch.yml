@@ -51,11 +51,10 @@ jobs:
           curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
           unzip butler.zip -d butler
           sudo mv butler/butler /usr/local/bin/butler
-          sudo chmod +x /usr/local/bin/butler
-          butler -V
+          sudo chmod +x butler/butler
 
       - name: Push to Itch.io
         run: |
           butler push build/web.zip glasstacojar/gwj75:"HTML5 / Playable in browser"
         env:
-          BUTLER_CREDENTIALS: ${{ secrets.ITCH_IO_API_KEY }}
+          BUTLER_API_KEY: ${{ secrets.ITCH_IO_API_KEY }}
