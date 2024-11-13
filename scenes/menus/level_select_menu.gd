@@ -36,8 +36,12 @@ func load_level_paths(levels):
 	var file_count: int = 0
 	for level in levels.level_paths:
 		var level_button = LEVEL_BUTTON.instantiate()
-		level_button.position = Vector2((file_count % 4 + 1) * 150 - 125, (floor(file_count/4) + 0.5) * 64)
+		level_button.position = Vector2((file_count % 4 + 1) * 150 - 125, (floor(file_count/4) + 1) * 64)
 		level_button.level_path = level.get_file()
 		file_count += 1
 		level_button.text = "Level " + str(file_count)
 		add_child(level_button)
+
+
+func _on_main_menu_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/menus/start_menu.tscn")

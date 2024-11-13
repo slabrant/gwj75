@@ -20,18 +20,12 @@ func _ready() -> void:
 		mirrors.append(mirror)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-func allow_input(enable: bool):
-	return
+func toggle_input(enable: bool):
 	disable_input_recursive(get_tree().root, enable)
 
 
-func disable_input_recursive(node, enable):
-	node.set_process_input(enable)
+func disable_input_recursive(node: Node, enable):
+	node.set_process(enable)
 	for child in node.get_children():
 		disable_input_recursive(child, enable)
 
