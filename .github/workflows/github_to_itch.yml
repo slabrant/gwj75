@@ -29,14 +29,10 @@ jobs:
           sudo chmod +x /usr/local/bin/godot
           godot --version
 
-      - name: Download Godot Export Templates
-        env:
-          GODOT_VERSION: "4.3-stable"
+      - name: Setup Export Templates
         run: |
-          GODOT_TEMPLATES_URL="https://downloads.tuxfamily.org/godotengine/4.3/Godot_v${GODOT_VERSION}_export_templates.tpz"
-          curl -L $GODOT_TEMPLATES_URL --output godot_templates.tpz
           mkdir -p ~/.local/share/godot/export_templates/${GODOT_VERSION}
-          tar -xvf godot_templates.tpz -C ~/.local/share/godot/export_templates/${GODOT_VERSION}
+          cp -r .godot/export_templates/${GODOT_VERSION}/* ~/.local/share/godot/export_templates/${GODOT_VERSION}/
 
       - name: Export HTML5
         run: |
