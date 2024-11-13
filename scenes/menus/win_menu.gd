@@ -10,6 +10,11 @@ func _ready() -> void:
 	position = Vector2(-size.x/2, -size.y/2)
 
 
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
 func close() -> void:
 	world.toggle_input(true)
 	menu_button.open_pause_menu = null

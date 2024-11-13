@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://dot7kfcnwtv41"]
+
+[ext_resource type="Script" path="res://scenes/menus/win_menu.gd" id="1_hwblf"]
+
+[node name="WinMenu" type="Control"]
+layout_mode = 3
+anchor_right = 0.125
+anchor_bottom = 0.156
+offset_bottom = -0.16
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hwblf")
+
+[node name="MainMenuButton" type="Button" parent="."]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 24.0
+text = "Main Menu"
+
+[node name="CloseButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 32.0
+offset_right = 63.0
+offset_bottom = 56.0
+text = "Close"
+
+[connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

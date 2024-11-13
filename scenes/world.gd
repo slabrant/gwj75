@@ -26,6 +26,7 @@ func toggle_input(enable: bool):
 
 func disable_input_recursive(node: Node, enable):
 	node.set_process(enable)
+	node.set_physics_process(enable)
 	for child in node.get_children():
 		disable_input_recursive(child, enable)
 
