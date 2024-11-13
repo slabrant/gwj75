@@ -31,7 +31,7 @@ jobs:
           mkdir -p godot
           tar -xf godot.tar.xz -C godot --strip-components=1
           sudo mv godot/godot* /usr/local/bin/godot
-          sudo chmod +x /usr/local/bin/godot  # Make Godot executable
+          sudo chmod +x /usr/local/bin/godot
           godot --version  # Verify installation
 
       # Export the project for HTML5
