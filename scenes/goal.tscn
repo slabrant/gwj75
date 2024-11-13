@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://jjym2c7dwqvs"]
 
-[ext_resource type="Texture2D" uid="uid://daasdj5e3k348" path="res://sprites/goal.png" id="1_jekoq"]
+[ext_resource type="Texture2D" uid="uid://bvwfwaab0tnfs" path="res://sprites/goal.png" id="1_jekoq"]
 [ext_resource type="Script" path="res://scenes/goal.gd" id="1_knsng"]
 [ext_resource type="Shader" path="res://scenes/goal.gdshader" id="2_yya2x"]
 

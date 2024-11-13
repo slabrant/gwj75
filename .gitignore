@@ -8,3 +8,4 @@
 # !.godot/export_templates/4.3-stable/web_nothreads_debug.zip
 !.godot/export_templates/4.3-stable/web_nothreads_release.zip
 /android/
+build/
