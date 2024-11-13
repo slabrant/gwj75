@@ -25,20 +25,17 @@ jobs:
         env:
           GODOT_VERSION: "4.3-stable"
         run: |
-          GODOT_URL="https://downloads.tuxfamily.org/godotengine/4.3/godot-${GODOT_VERSION}.tar.xz"
+          GODOT_URL="https://downloads.tuxfamily.org/godotengine/4.3/Godot_v${GODOT_VERSION}_linux.x86_64.zip"
           echo "Downloading Godot from $GODOT_URL"
-          curl -L $GODOT_URL --output godot.tar.xz
+          curl -L $GODOT_URL --output godot.zip
           
-          # Extract the tar file
-          mkdir -p godot
-          tar -xf godot.tar.xz -C godot --strip-components=1
-          
-          # Check the contents of the extracted directory
+          # Extract the zip file and verify contents
+          unzip godot.zip -d godot
           echo "Godot directory contents:"
           ls godot
 
           # Move the correct binary to /usr/local/bin
-          sudo mv godot/godot.linuxbsd.editor.x86_64 /usr/local/bin/godot
+          sudo mv godot/Godot_v${GODOT_VERSION}_linux.x86_64 /usr/local/bin/godot
           sudo chmod +x /usr/local/bin/godot  # Make Godot executable
           godot --version  # Verify installation
 
