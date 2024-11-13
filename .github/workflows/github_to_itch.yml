@@ -14,27 +14,29 @@ env:
  IS_MAIN: ${{ contains(github.ref, 'main') }}
  PROJECT_NAME: "gwj75"
 
+permissions:
+  contents: write
+  packages: write
+
 jobs:
  CleanArtifacts:
   runs-on: ubuntu-latest
   steps:
-  - uses: kolpav/purge-artifacts-action@v1
+  - uses: geekyeggo/delete-artifact@v1
     with:
-     token: ${{ secrets.GITHUB_TOKEN }}
-     expire-in: 1hr
+     name: VERSION
 
  Export:
   needs: CleanArtifacts
   runs-on: ubuntu-latest
   steps:
-  - uses: actions/checkout@v2
+  - uses: actions/checkout@v3
   
   - name: Download + Authorize Godot
     run: |
        curl -L -o godot.zip https://downloads.tuxfamily.org/godotengine/4.3/Godot_v4.3-stable_linux.x86_64.zip
        unzip godot.zip
        mv Godot_v4.3-stable_linux.x86_64 godot
-       ls
        chmod +x godot
  
   - name: Download Export Templates
@@ -57,11 +59,11 @@ jobs:
   if: ${{ contains(github.ref, 'main') }}
   runs-on: ubuntu-latest
   steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
    
     - name: Version
       id: tag_version
-      uses: mathieudutour/github-tag-action@v5.6
+      uses: mathieudutour/github-tag-action@v6
       with:
        github_token: ${{ secrets.GITHUB_TOKEN }}
     
@@ -125,7 +127,6 @@ jobs:
     
     - name: Login To Butler
       run: ./butler login
-    
 
  Cleanup:
   needs: [Export, Release, Publish]
