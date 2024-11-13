@@ -8,15 +8,14 @@ on:
   branches:
   - main
 env:
- BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }} # Needs to be added through github
- DISCORD_WEBHOOK: ${{secrets.DISCORD_WEBHOOK}} # Needs to be added through github
+ BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+ DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
  IS_MAIN: ${{ contains(github.ref, 'main') }}
  PROJECT_NAME: "gwj75"
 
 jobs:
  CleanArtifacts:
-  # This job clears out the previous artifacts made so you don't run out of space in your github account
   runs-on: ubuntu-latest
   steps:
   - uses: kolpav/purge-artifacts-action@v1
@@ -25,7 +24,7 @@ jobs:
      expire-in: 1hr
 
  Export:
-  needs: CleanArtifacts # wait for artifacts to clean before making a new one
+  needs: CleanArtifacts
   runs-on: ubuntu-latest
   steps:
   - uses: actions/checkout@v2
@@ -48,8 +47,7 @@ jobs:
      mkdir -p ~/.local/share/godot/export_templates/4.3.stable
      mv ./templates/* ~/.local/share/godot/export_templates/4.3.stable
   
-
-  - uses: actions/upload-artifact@v2
+  - uses: actions/upload-artifact@v3
     with:
      name: exports
      path: exports
@@ -72,7 +70,7 @@ jobs:
       run: exit 1
     
     - name: Download Exports
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v3
       with:
        name: exports
        path: exports
@@ -106,7 +104,7 @@ jobs:
        content: ${{ steps.tag_version.outputs.new_version }}
        mode: 0655
     
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       with:
        name: VERSION
        path: ./VERSION.txt
@@ -116,7 +114,7 @@ jobs:
   if: ${{ contains(github.ref, 'main') }}
   runs-on: ubuntu-latest
   steps:
-    - uses: actions/download-artifact@v2
+    - uses: actions/download-artifact@v3
     
     - name: Download + Authorize Butler
       run: |
