@@ -22,8 +22,8 @@ jobs:
         env:
           GODOT_VERSION: "4.3-stable"
         run: |
-          GODOT_URL="https://downloads.tuxfamily.org/godotengine/4.3/Godot_v${GODOT_VERSION}_linux.x86_64.zip"
-          wget -O godot.zip $GODOT_URL
+          GODOT_URL="https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}/Godot_v${GODOT_VERSION}_linux.x86_64.zip"
+          curl -L --retry 5 --retry-delay 10 --max-time 300 -o godot.zip $GODOT_URL
           unzip godot.zip -d godot
           sudo mv godot/Godot_v${GODOT_VERSION}_linux.x86_64 /usr/local/bin/godot
           sudo chmod +x /usr/local/bin/godot
