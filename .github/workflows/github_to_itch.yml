@@ -12,7 +12,7 @@ jobs:
     steps:
       # Checkout the code from the main branch
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3  # Updated to v3 to avoid Node.js warnings
 
       # Set up Godot environment variables
       - name: Set up Godot executable
@@ -20,30 +20,41 @@ jobs:
           GODOT_VERSION: "4.3-stable"
           GODOT_URL: "https://downloads.tuxfamily.org/godotengine/${{ env.GODOT_VERSION }}/Godot_v${{ env.GODOT_VERSION }}_linux_headless.64.zip"
         run: |
+          echo "Downloading Godot from $GODOT_URL"
           curl -L $GODOT_URL --output godot.zip
           unzip godot.zip -d godot
           sudo mv godot/Godot_* /usr/local/bin/godot
+          godot --version  # Check if Godot installed correctly
 
       # Export the project for HTML5
       - name: Export HTML5
         run: |
+          echo "Exporting project for Web..."
           godot --headless --export-release "Web" build/web
+          ls -R build/web  # List contents to verify export succeeded
         env:
           GODOT_PROJECT_DIR: ${{ github.workspace }}
 
       # Compress the exported files
       - name: Zip exported files
-        run: zip -r build/web.zip build/web
+        run: |
+          echo "Zipping exported files..."
+          zip -r build/web.zip build/web
+          ls -lh build/web.zip  # List details to verify zip succeeded
 
       # Install Butler
       - name: Install Butler
         run: |
+          echo "Installing Butler..."
           curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/head/butler.zip
           unzip butler.zip -d butler
           sudo mv butler/butler /usr/local/bin/butler
+          butler -V  # Check if Butler installed correctly
 
       # Push to Itch.io using Butler
       - name: Push to Itch.io
-        run: butler push build/web.zip glasstacojar/gwj75:"HTML5 / Playable in browser"
+        run: |
+          echo "Pushing to Itch.io..."
+          butler push build/web.zip glasstacojar/gwj75:"HTML5 / Playable in browser"
         env:
           BUTLER_CREDENTIALS: ${{ secrets.ITCH_IO_API_KEY }}
