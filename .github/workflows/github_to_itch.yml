@@ -10,63 +10,54 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Setup Node.js for compatibility
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20'
 
-      # Checkout the code from the main branch
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Download and set up Godot
       - name: Download and set up Godot
         env:
           GODOT_VERSION: "4.3-stable"
         run: |
           GODOT_URL="https://downloads.tuxfamily.org/godotengine/4.3/Godot_v${GODOT_VERSION}_linux.x86_64.zip"
-          echo "Downloading Godot from $GODOT_URL"
           curl -L $GODOT_URL --output godot.zip
-          
-          # Extract the zip file and verify contents
           unzip godot.zip -d godot
-          echo "Godot directory contents:"
-          ls godot
-
-          # Move the correct binary to /usr/local/bin
           sudo mv godot/Godot_v${GODOT_VERSION}_linux.x86_64 /usr/local/bin/godot
-          sudo chmod +x /usr/local/bin/godot  # Make Godot executable
-          godot --version  # Verify installation
+          sudo chmod +x /usr/local/bin/godot
+          godot --version
 
-      # Export the project for HTML5
+      - name: Download Godot Export Templates
+        env:
+          GODOT_VERSION: "4.3-stable"
+        run: |
+          GODOT_TEMPLATES_URL="https://downloads.tuxfamily.org/godotengine/4.3/Godot_v${GODOT_VERSION}_export_templates.tpz"
+          curl -L $GODOT_TEMPLATES_URL --output godot_templates.tpz
+          mkdir -p ~/.local/share/godot/export_templates/${GODOT_VERSION}
+          tar -xvf godot_templates.tpz -C ~/.local/share/godot/export_templates/${GODOT_VERSION}
+
       - name: Export HTML5
         run: |
-          echo "Exporting project for Web..."
           godot --headless --export-release "Web" build/web
-          ls -R build/web  # Verify export success
+          ls -R build/web
 
-      # Compress the exported files
       - name: Zip exported files
         run: |
-          echo "Zipping exported files..."
           zip -r build/web.zip build/web
-          ls -lh build/web.zip  # Verify zip success
+          ls -lh build/web.zip
 
-      # Install Butler
       - name: Install Butler
         run: |
-          echo "Installing Butler..."
           curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/head/butler.zip
           unzip butler.zip -d butler
           sudo mv butler/butler /usr/local/bin/butler
-          sudo chmod +x /usr/local/bin/butler  # Make Butler executable
-          butler -V  # Verify installation
+          sudo chmod +x /usr/local/bin/butler
+          butler -V
 
-      # Push to Itch.io using Butler
       - name: Push to Itch.io
         run: |
-          echo "Pushing to Itch.io..."
           butler push build/web.zip glasstacojar/gwj75:"HTML5 / Playable in browser"
         env:
           BUTLER_CREDENTIALS: ${{ secrets.ITCH_IO_API_KEY }}
