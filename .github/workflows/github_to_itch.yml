@@ -48,7 +48,10 @@ jobs:
     run: |
      mkdir -p ~/.local/share/godot/export_templates/4.3.stable
      mv ./templates/* ~/.local/share/godot/export_templates/4.3.stable
-  
+
+  - name: List Export Directory Contents (Debugging Step)
+    run: ls -R exports
+
   - uses: actions/upload-artifact@v3
     with:
      name: exports
@@ -63,7 +66,7 @@ jobs:
    
     - name: Version
       id: tag_version
-      uses: mathieudutour/github-tag-action@v6
+      uses: mathieudutour/github-tag-action@v5.6
       with:
        github_token: ${{ secrets.GITHUB_TOKEN }}
     
