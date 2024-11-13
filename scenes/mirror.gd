@@ -6,6 +6,7 @@ extends Area2D
 @onready var minus_button: TextureButton = $MinusButton
 @onready var lock_button: TextureButton = $LockButton
 @onready var world: Node = get_tree().root.get_child(0).find_child("World")
+@onready var reflect: AudioStreamPlayer = $Reflect
 
 
 @export var mirror_rotation : float = 0:
@@ -63,6 +64,7 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	body.velocity = new_velocity
 	body.rotation = new_velocity.angle()
+	reflect.play()
 
 
 func _on_touch_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:

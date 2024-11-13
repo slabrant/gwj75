@@ -3,9 +3,11 @@ extends CharacterBody2D
 @onready var hit_box: Area2D = $HitBox
 @onready var bounce_box: CollisionShape2D = $BounceBox
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var laser_shoot: AudioStreamPlayer = $LaserShoot
 
 func _ready() -> void:
 	motion_mode = MOTION_MODE_FLOATING
+	laser_shoot.play()
 	pass
 
 
