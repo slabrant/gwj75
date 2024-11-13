@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dsmt7yot2ajpm"
-path="res://.godot/imported/Alkhemikal.ttf-6b87fd58177b4e12d1c0ae4e4099f444.fontdata"
+uid="uid://blkbjsl77sh7c"
+path="res://.godot/imported/Comicoro.ttf-a50441dd6583b12cd70e08ddeb1684dc.fontdata"
 
 [deps]
 
-source_file="res://Alkhemikal.ttf"
-dest_files=["res://.godot/imported/Alkhemikal.ttf-6b87fd58177b4e12d1c0ae4e4099f444.fontdata"]
+source_file="res://Comicoro.ttf"
+dest_files=["res://.godot/imported/Comicoro.ttf-a50441dd6583b12cd70e08ddeb1684dc.fontdata"]
 
 [params]
 
