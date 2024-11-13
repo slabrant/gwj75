@@ -42,7 +42,7 @@ sprite_frames = SubResource("SpriteFrames_u2afw")
 
 [node name="LaserShoot" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_sogmm")
-volume_db = -20.0
+volume_db = -25.0
 
 [node name="BounceBox" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_vvuuy")

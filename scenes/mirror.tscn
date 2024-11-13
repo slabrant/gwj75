@@ -21,7 +21,7 @@ texture = ExtResource("1_7x2k3")
 
 [node name="Reflect" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_q582x")
-volume_db = -20.0
+volume_db = -30.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-8, -2, -8, 2, -7, 4, 7, 4, 8, 2, 8, -2, 7, -4, -7, -4)
