@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bp23a3x1ayyfm" path="res://scenes/collision_blocks.tscn" id="5_b0wkr"]
 [ext_resource type="PackedScene" uid="uid://jjym2c7dwqvs" path="res://scenes/goal.tscn" id="5_twyyb"]
 
-[node name="Level3" type="Node2D"]
+[node name="Level3" type="Node"]
 
 [node name="Level" parent="." instance=ExtResource("1_86nyl")]
 

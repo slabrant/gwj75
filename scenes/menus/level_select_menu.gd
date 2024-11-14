@@ -1,5 +1,7 @@
 extends Control
 
+@onready var world: Node = get_tree().root.get_child(0)
+
 const LevelListResource = preload("res://scenes/level_list_resource.gd")
 var dir = DirAccess.open("res://scenes/levels")
 var level_resources = load("res://scenes/level_list.tres")
@@ -44,4 +46,4 @@ func load_level_paths(levels):
 
 
 func _on_main_menu_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/menus/start_menu.tscn")
+	world.scene_path = "res://scenes/menus/start_menu.tscn"

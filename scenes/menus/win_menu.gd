@@ -1,6 +1,7 @@
 extends Control
 
-@onready var level: Node = get_tree().root.get_child(0).find_child("Level")
+@onready var world: Node = get_tree().root.get_child(0)
+@onready var level: Node = world.scene.find_child("Level")
 @onready var win_label: Label = $WinLabel
 
 # Called when the node enters the scene tree for the first time.
@@ -22,9 +23,9 @@ func close() -> void:
 
 func _on_next_level_button_pressed() -> void:
 	close()
-	get_tree().change_scene_to_file("res://scenes/menus/start_menu.tscn")
+	world.scene_path = "res://scenes/menus/start_menu.tscn"
 
 
 func _on_main_menu_button_pressed() -> void:
 	close()
-	get_tree().change_scene_to_file("res://scenes/menus/start_menu.tscn")
+	world.scene_path = "res://scenes/menus/start_menu.tscn"

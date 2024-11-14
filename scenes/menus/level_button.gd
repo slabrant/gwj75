@@ -1,7 +1,9 @@
 extends Button
 
+@onready var world: Node = get_tree().root.get_child(0)
+
 @export var level_path : String = ""
 
 
 func _on_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/levels/" + level_path)
+	world.scene_path = "res://scenes/levels/" + level_path

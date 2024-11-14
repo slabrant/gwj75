@@ -20,7 +20,7 @@ texture = ExtResource("3_gm4pc")
 [sub_resource type="TileSet" id="TileSet_a1whd"]
 sources/0 = SubResource("TileSetAtlasSource_8n2wi")
 
-[node name="Level" type="Node"]
+[node name="Level" type="Node2D"]
 script = ExtResource("1_epoi7")
 
 [node name="BuildModeBG" type="TileMapLayer" parent="."]
@@ -41,9 +41,8 @@ zoom = Vector2(2.5, 2.5)
 [node name="BuildModeButton" type="CheckButton" parent="."]
 z_index = 10
 offset_left = 120.0
-offset_top = -32.0
+offset_top = -24.0
 offset_right = 200.0
-offset_bottom = -8.0
 rotation = 1.57079
 theme_override_font_sizes/font_size = 8
 text = "Build Mode"
@@ -51,10 +50,10 @@ alignment = 2
 
 [node name="MenuButton" parent="." instance=ExtResource("5_45tfh")]
 z_index = 10
-offset_left = 112.0
+offset_left = 96.0
 offset_top = -72.0
-offset_right = 112.32
-offset_bottom = -71.92
+offset_right = 103.0
+offset_bottom = -65.0
 
 [node name="MirrorGenerator" parent="." instance=ExtResource("6_fda2l")]
 z_index = 10

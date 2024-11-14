@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-@onready var level: Node = get_tree().root.get_child(0).find_child("Level")
+@onready var world: Node = get_tree().root.get_child(0)
+@onready var level: Node = world.scene.find_child("Level")
 
 @onready var hit_box: Area2D = $HitBox
 @onready var bounce_box: CollisionShape2D = $BounceBox
