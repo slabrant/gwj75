@@ -9,14 +9,13 @@ var level_paths = []
 
 const LEVEL_BUTTON = preload("res://scenes/menus/level_button.tscn")
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	if dir:
 		populate_level_paths(level_paths)
-	load_level_paths(level_resources)
+	load_level_buttons(level_resources.level_paths)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
@@ -34,14 +33,15 @@ func save_level_paths(save_levels: Array):
 	ResourceSaver.save(level_list_resource, "res://scenes/level_list.tres")
 
 
-func load_level_paths(levels):
-	var file_count: int = 0
-	for level in levels.level_paths:
+func load_level_buttons(levels):
+	var level_id: int = 0
+	for level in levels:
 		var level_button = LEVEL_BUTTON.instantiate()
-		level_button.position = Vector2((file_count % 4 + 1) * 150 - 125, (floor(file_count/4) + 1) * 64)
+		level_button.position = Vector2((level_id % 4 + 1) * 150 - 125, (floor(level_id/4) + 1) * 64)
 		level_button.level_path = level.get_file()
-		file_count += 1
-		level_button.text = "Level " + str(file_count)
+		level_button.level_id = level_id
+		level_id += 1
+		level_button.text = "Level " + str(level_id)
 		add_child(level_button)
 
 

@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scenes/menus/pause_menu.gd" id="1_066qn"]
 
 [node name="PauseMenu" type="Control"]
+z_index = 10
 layout_mode = 3
 anchor_right = 0.125
 anchor_bottom = 0.156

@@ -13,20 +13,20 @@ grow_vertical = 2
 script = ExtResource("1_hwblf")
 
 [node name="NextLevelButton" type="Button" parent="."]
-visible = false
 z_index = 15
 layout_mode = 0
-offset_right = 80.0
+offset_left = 80.0
+offset_right = 160.0
 offset_bottom = 24.0
 text = "Next Level"
 
 [node name="MainMenuButton" type="Button" parent="."]
 z_index = 15
 layout_mode = 0
-offset_left = 80.0
-offset_top = 24.0
-offset_right = 144.0
-offset_bottom = 48.0
+offset_left = 88.0
+offset_top = 32.0
+offset_right = 152.0
+offset_bottom = 56.0
 text = "Main Menu"
 
 [node name="WinLabel" type="Label" parent="."]
