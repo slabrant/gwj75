@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scenes/menus/win_menu.gd" id="1_hwblf"]
 
 [node name="WinMenu" type="Control"]
+z_index = 15
 layout_mode = 3
 anchor_right = 0.125
 anchor_bottom = 0.156
@@ -13,12 +14,14 @@ script = ExtResource("1_hwblf")
 
 [node name="NextLevelButton" type="Button" parent="."]
 visible = false
+z_index = 15
 layout_mode = 0
 offset_right = 80.0
 offset_bottom = 24.0
 text = "Next Level"
 
 [node name="MainMenuButton" type="Button" parent="."]
+z_index = 15
 layout_mode = 0
 offset_left = 80.0
 offset_top = 24.0
@@ -27,6 +30,7 @@ offset_bottom = 48.0
 text = "Main Menu"
 
 [node name="WinLabel" type="Label" parent="."]
+z_index = 15
 layout_mode = 0
 offset_right = 80.0
 offset_bottom = 33.0
