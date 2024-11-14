@@ -1,8 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://5p05sivgsauk"]
+[gd_scene load_steps=11 format=3 uid="uid://5p05sivgsauk"]
 
 [ext_resource type="Script" path="res://scenes/beam.gd" id="1_3lbs8"]
+[ext_resource type="Shader" path="res://scenes/colorify.gdshader" id="2_1lcdn"]
 [ext_resource type="Texture2D" uid="uid://dcg7r2a0r8uym" path="res://sprites/beam-sheet.png" id="3_bhnfr"]
 [ext_resource type="AudioStream" uid="uid://bgxwniwhfnlwt" path="res://sounds/laserShoot.wav" id="3_sogmm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ibsi3"]
+shader = ExtResource("2_1lcdn")
+shader_parameter/active = false
+shader_parameter/red = 0.0
+shader_parameter/green = 0.0
+shader_parameter/blue = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yi37i"]
 atlas = ExtResource("3_bhnfr")
@@ -37,6 +45,7 @@ collision_layer = 2
 script = ExtResource("1_3lbs8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_ibsi3")
 position = Vector2(-4, 0)
 sprite_frames = SubResource("SpriteFrames_u2afw")
 

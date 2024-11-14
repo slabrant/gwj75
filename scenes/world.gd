@@ -1,15 +1,15 @@
 extends Node
 
 @onready var mirror_scenes: Node = $Mirrors
-@onready var tile_map_bg: TileMapLayer = $TileMapBG
+@onready var build_mode_bg: TileMapLayer = $BuildModeBG
 
 @onready var build_mode_button: CheckButton = $BuildModeButton
 
 @export var is_build_mode : bool = false:
 	set(value):
-		tile_map_bg.hide()
+		build_mode_bg.hide()
 		if value:
-			tile_map_bg.show()
+			build_mode_bg.show()
 		is_build_mode = value
 @export var mirrors : Array = []
 @export var open_menu : Control:

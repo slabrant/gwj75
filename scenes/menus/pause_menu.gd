@@ -2,6 +2,7 @@ extends Control
 
 @onready var world: Node = get_tree().root.get_child(0).find_child("World")
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	world.open_menu = self

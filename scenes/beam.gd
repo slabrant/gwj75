@@ -8,8 +8,14 @@ extends CharacterBody2D
 @onready var laser_shoot: AudioStreamPlayer = $LaserShoot
 
 @export var SPEED = 5000
+@export var color: Array:
+	set(value):
+		set_color(value[0], value[1], value[2])
+		color = value
+
 
 func _ready() -> void:
+	color = [255, 255, 255]
 	motion_mode = MOTION_MODE_FLOATING
 	laser_shoot.play()
 	world.shot_count += 1
@@ -18,6 +24,12 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	velocity = SPEED * delta * Vector2(cos(rotation), sin(rotation))
 	move_and_slide()
+
+
+func set_color(red: int = 0, green: int = 0, blue: int = 0):
+	sprite.material.set("shader_param/red", red / 255)
+	sprite.material.set("shader_param/green", green / 255)
+	sprite.material.set("shader_param/blue", blue / 255)
 
 
 func _on_hit_box_body_entered(body: TileMapLayer) -> void:

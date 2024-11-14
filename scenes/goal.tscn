@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bvwfwaab0tnfs" path="res://sprites/goal.png" id="1_jekoq"]
 [ext_resource type="Script" path="res://scenes/goal.gd" id="1_knsng"]
-[ext_resource type="Shader" path="res://scenes/goal.gdshader" id="2_yya2x"]
+[ext_resource type="Shader" path="res://scenes/colorify.gdshader" id="2_yya2x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wt2fm"]
 radius = 8.0
@@ -10,6 +10,9 @@ radius = 8.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pcu5g"]
 shader = ExtResource("2_yya2x")
 shader_parameter/active = false
+shader_parameter/red = 0.0
+shader_parameter/green = 0.0
+shader_parameter/blue = 0.0
 
 [node name="Goal" type="Area2D"]
 collision_layer = 0
