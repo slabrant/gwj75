@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var world: Node = get_tree().root.get_child(0).find_child("World")
+@onready var level: Node = get_tree().root.get_child(0).find_child("Level")
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var collision: CollisionPolygon2D = $CollisionPolygon2D
@@ -27,7 +27,7 @@ func _ready() -> void:
 	rotate_button.hide()
 	minus_button.hide()
 	lock_button.hide()
-	world.mirror_count += 1
+	level.mirror_count += 1
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -42,11 +42,11 @@ func _process(delta: float) -> void:
 
 
 func build_mode_checks() -> void:
-	if world.is_build_mode and not locked:
+	if level.is_build_mode and not locked:
 		rotate_button.show()
 		minus_button.show()
 		lock_button.hide()
-	elif world.is_build_mode and locked:
+	elif level.is_build_mode and locked:
 		lock_button.show()
 	else:
 		rotate_button.hide()
@@ -70,14 +70,14 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 func _on_touch_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if world.is_build_mode and not locked and event.has_method("is_action_pressed") and event.is_action_pressed("input_action"):
+	if level.is_build_mode and not locked and event.has_method("is_action_pressed") and event.is_action_pressed("input_action"):
 		is_moving = true
 
 
 func _on_minus_button_pressed() -> void:
-	var world_mirrors : Array = world.mirrors
-	world_mirrors.erase(self)
-	world.mirror_count -= 1
+	var level_mirrors : Array = level.mirrors
+	level_mirrors.erase(self)
+	level.mirror_count -= 1
 	queue_free()
 
 
