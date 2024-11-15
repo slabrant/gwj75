@@ -16,10 +16,6 @@ func _ready() -> void:
 	load_level_buttons(level_resources.level_paths)
 
 
-func _process(delta: float) -> void:
-	pass
-
-
 func populate_level_paths(levels):
 	for file in dir.get_files():
 		levels.append("res://scenes/levels/" + file.get_file())

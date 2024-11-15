@@ -12,6 +12,11 @@ extends Node
 		add_child(value)
 #@export var level_path : String
 @export var level_id : int
+@export var scores : Dictionary
+@export var level_score : int = 0:
+	set(value):
+		scores[level_id] = value
+		level_score = value
 
 
 func _ready() -> void:
@@ -27,8 +32,3 @@ func disable_input_recursive(node: Node, enable):
 	node.set_physics_process(enable)
 	for child in node.get_children():
 		disable_input_recursive(child, enable)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

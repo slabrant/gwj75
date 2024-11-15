@@ -23,7 +23,7 @@ window/stretch/mode="canvas_items"
 
 [gui]
 
-theme/custom_font="res://Comicoro.ttf"
+theme/custom_font="res://EnterCommand.ttf"
 
 [input]
 

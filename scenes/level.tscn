@@ -13,12 +13,12 @@ texture = ExtResource("2_0lfdj")
 [sub_resource type="TileSet" id="TileSet_xbp5a"]
 sources/1 = SubResource("TileSetAtlasSource_kq8r4")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8n2wi"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7kojg"]
 texture = ExtResource("3_gm4pc")
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_a1whd"]
-sources/0 = SubResource("TileSetAtlasSource_8n2wi")
+sources/0 = SubResource("TileSetAtlasSource_7kojg")
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_epoi7")

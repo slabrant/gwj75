@@ -5,7 +5,7 @@ extends Control
 @onready var win_label: Label = $WinLabel
 var level_resources = load("res://scenes/level_list.tres")
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	level.open_menu = self
 	position = Vector2(-size.x/2, -size.y/2)
@@ -19,7 +19,8 @@ func close() -> void:
 
 func _on_next_level_button_pressed() -> void:
 	close()
-	world.scene_path = level_resources.level_paths[world.level_id + 1]
+	world.level_id += 1
+	world.scene_path = level_resources.level_paths[world.level_id]
 
 
 func _on_main_menu_button_pressed() -> void:
