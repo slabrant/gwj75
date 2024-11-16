@@ -3,18 +3,20 @@ extends Area2D
 @onready var world: Node = get_tree().root.get_child(0)
 @onready var level: Node = world.scene.find_child("Level")
 
-@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var sprite: Sprite2D = $Sprite2D
 @onready var collision: CollisionPolygon2D = $CollisionPolygon2D
 @onready var rotate_button: TextureButton = $RotateButton
 @onready var minus_button: TextureButton = $MinusButton
 @onready var lock_button: TextureButton = $LockButton
-@onready var reflect: AudioStreamPlayer = $Reflect
+@onready var reflect_sound: AudioStreamPlayer = $Reflect
 const ROTATE_SPRITE = preload("res://sprites/rotate.png")
 const ROTATE_PRESSED_SPRITE = preload("res://sprites/rotate_pressed.png")
 
 @export var mirror_rotation : float = 0:
 	set(value):
-		sprite_2d.rotation = value
+		if !sprite:
+			return
+		sprite.rotation = value
 		collision.rotation = value
 		mirror_rotation = value
 @export var last_mirror_rotation : float = 0
@@ -23,6 +25,8 @@ const ROTATE_PRESSED_SPRITE = preload("res://sprites/rotate_pressed.png")
 @export var is_rotating : bool = false:
 	set(value):
 		is_rotating = value
+		if !rotate_button:
+			return
 		if value:
 			rotate_button.texture_normal = ROTATE_PRESSED_SPRITE
 		else:
@@ -60,7 +64,7 @@ func build_mode_checks() -> void:
 		lock_button.hide()
 
 
-func _on_body_entered(body: Node2D) -> void:
+func reflect(body: Node2D) -> void:
 	var new_velocity = body.velocity
 	body.velocity = Vector2()
 	var velocity_angle = new_velocity.angle()
@@ -72,7 +76,7 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	body.velocity = new_velocity
 	body.rotation = new_velocity.angle()
-	reflect.play()
+	reflect_sound.play()
 
 
 func _on_touch_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:

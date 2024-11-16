@@ -18,7 +18,8 @@ func _ready() -> void:
 
 func populate_level_paths(levels):
 	for file in dir.get_files():
-		levels.append("res://scenes/levels/" + file.get_file())
+		if file.get_extension() == "tscn":
+			levels.append("res://scenes/levels/" + file.get_file())
 	save_level_paths(levels)
 
 

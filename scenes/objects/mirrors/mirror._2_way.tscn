@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbvlg5kh2cf0j"]
-
-[ext_resource type="PackedScene" uid="uid://dvr43yu4gyusd" path="res://scenes/objects/mirrors/mirror.tscn" id="1_hl0kg"]
-
-[node name="Mirror2Way" instance=ExtResource("1_hl0kg")]
