@@ -10,7 +10,6 @@ extends Node
 			scene.queue_free()
 		scene = value
 		add_child(value)
-#@export var level_path : String
 @export var level_id : int
 @export var scores : Dictionary
 @export var level_score : int = 0:
