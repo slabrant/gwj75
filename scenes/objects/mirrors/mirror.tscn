@@ -40,6 +40,7 @@ texture_pressed = ExtResource("6_hjw78")
 stretch_mode = 3
 
 [node name="LockButton" type="TextureButton" parent="."]
+visible = false
 offset_left = 10.0
 offset_top = -6.0
 offset_right = 22.0
