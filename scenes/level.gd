@@ -10,6 +10,8 @@ const HAMMER_PRESSED_SPRITE = preload("res://sprites/hammer_pressed.png")
 
 @export var is_build_mode : bool = false:
 	set(value):
+		if !build_mode_bg or !mirror_block:
+			return
 		if value:
 			build_mode_bg.show()
 			mirror_block.hide()
@@ -26,6 +28,8 @@ const HAMMER_PRESSED_SPRITE = preload("res://sprites/hammer_pressed.png")
 @export var active_mirror : Area2D
 @export var open_menu : Control:
 	set(value):
+		if !world:
+			return
 		world.toggle_input(!value)
 		open_menu = value
 @export var shot_count : int = 0

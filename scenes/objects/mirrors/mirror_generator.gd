@@ -3,7 +3,7 @@ extends Area2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var world: Node = get_tree().root.get_child(0)
-@onready var level: Node = world.scene.find_child("Level")
+@onready var level: Node = world.scene
 
 const MIRROR = preload("res://scenes/objects/mirrors/mirror_normal.tscn")
 

@@ -1,7 +1,7 @@
 extends Control
 
 @onready var world: Node = get_tree().root.get_child(0)
-@onready var level: Node = world.scene.find_child("Level")
+@onready var level: Node = world.scene
 
 
 # Called when the node enters the scene tree for the first time.

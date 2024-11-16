@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var world: Node = get_tree().root.get_child(0)
-@onready var level: Node = world.scene.find_child("Level")
+@onready var level: Node = world.scene
 @onready var sprite: Sprite2D = $Sprite2D
 
 const BEAM = preload("res://scenes/objects/beam.tscn")

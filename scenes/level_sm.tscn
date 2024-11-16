@@ -1,0 +1,95 @@
+[gd_scene load_steps=15 format=4 uid="uid://cvxjd4w2swjqs"]
+
+[ext_resource type="Script" path="res://scenes/level.gd" id="1_rid8s"]
+[ext_resource type="Texture2D" uid="uid://cdwtr7gry2twa" path="res://sprites/bg_16.png" id="2_aa7qc"]
+[ext_resource type="Texture2D" uid="uid://banqxbdmhfaoc" path="res://sprites/bg_build_mode.png" id="3_bt0cm"]
+[ext_resource type="Texture2D" uid="uid://c31bq8jr5mcex" path="res://sprites/bg_8.png" id="4_4sq44"]
+[ext_resource type="PackedScene" uid="uid://b6nj7cjeaoex6" path="res://scenes/menus/menu_button.tscn" id="5_omybm"]
+[ext_resource type="Texture2D" uid="uid://c5nn8675u3k6q" path="res://sprites/menu_pressed.png" id="6_n2pog"]
+[ext_resource type="Texture2D" uid="uid://jm7trfocx68y" path="res://sprites/hammer.png" id="7_tku74"]
+[ext_resource type="Texture2D" uid="uid://d1rljudcdbq8b" path="res://sprites/hammer_pressed.png" id="8_v0i44"]
+[ext_resource type="PackedScene" uid="uid://cbev4thk0ftt" path="res://scenes/objects/mirrors/mirror_generator.tscn" id="9_ubqgb"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kq8r4"]
+texture = ExtResource("3_bt0cm")
+use_texture_padding = false
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_xbp5a"]
+sources/1 = SubResource("TileSetAtlasSource_kq8r4")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7kojg"]
+texture = ExtResource("2_aa7qc")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_03ej3"]
+texture = ExtResource("4_4sq44")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_a1whd"]
+sources/0 = SubResource("TileSetAtlasSource_7kojg")
+sources/2 = SubResource("TileSetAtlasSource_03ej3")
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_rid8s")
+
+[node name="BuildModeBG" type="TileMapLayer" parent="."]
+visible = false
+z_index = -1
+tile_map_data = PackedByteArray("AAD6//3/AQAAAAAAAAD6//7/AQAAAAAAAAD6////AQAAAAAAAAD6/wAAAQAAAAAAAAD6/wEAAQAAAAAAAAD6/wIAAQAAAAAAAAD7//3/AQAAAAAAAAD7//7/AQAAAAAAAAD7////AQAAAAAAAAD7/wAAAQAAAAAAAAD7/wEAAQAAAAAAAAD7/wIAAQAAAAAAAAD8//3/AQAAAAAAAAD8//7/AQAAAAAAAAD8////AQAAAAAAAAD8/wAAAQAAAAAAAAD8/wEAAQAAAAAAAAD8/wIAAQAAAAAAAAD9//3/AQAAAAAAAAD9//7/AQAAAAAAAAD9////AQAAAAAAAAD9/wAAAQAAAAAAAAD9/wEAAQAAAAAAAAD9/wIAAQAAAAAAAAD+//3/AQAAAAAAAAD+//7/AQAAAAAAAAD+////AQAAAAAAAAD+/wAAAQAAAAAAAAD+/wEAAQAAAAAAAAD+/wIAAQAAAAAAAAD///3/AQAAAAAAAAD///7/AQAAAAAAAAD/////AQAAAAAAAAD//wAAAQAAAAAAAAD//wEAAQAAAAAAAAD//wIAAQAAAAAAAAAAAP3/AQAAAAAAAAAAAP7/AQAAAAAAAAAAAP//AQAAAAAAAAAAAAAAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAIAAQAAAAAAAAABAP3/AQAAAAAAAAABAP7/AQAAAAAAAAABAP//AQAAAAAAAAABAAAAAQAAAAAAAAABAAEAAQAAAAAAAAABAAIAAQAAAAAAAAACAP3/AQAAAAAAAAACAP7/AQAAAAAAAAACAP//AQAAAAAAAAACAAAAAQAAAAAAAAACAAEAAQAAAAAAAAACAAIAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_xbp5a")
+
+[node name="BG" type="TileMapLayer" parent="."]
+z_index = -10
+tile_map_data = PackedByteArray("AAD6//3/AAAAAAAAAAD6//7/AAAAAAAAAAD6////AAAAAAAAAAD6/wAAAAAAAAAAAAD6/wEAAAAAAAAAAAD6/wIAAAAAAAAAAAD7//3/AAAAAAAAAAD7//7/AAAAAAAAAAD7////AAAAAAAAAAD7/wAAAAAAAAAAAAD7/wEAAAAAAAAAAAD7/wIAAAAAAAAAAAD8//3/AAAAAAAAAAD8//7/AAAAAAAAAAD8////AAAAAAAAAAD8/wAAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAD9//3/AAAAAAAAAAD9//7/AAAAAAAAAAD9////AAAAAAAAAAD9/wAAAAAAAAAAAAD9/wEAAAAAAAAAAAD9/wIAAAAAAAAAAAD+//3/AAAAAAAAAAD+//7/AAAAAAAAAAD+////AAAAAAAAAAD+/wAAAAAAAAAAAAD+/wEAAAAAAAAAAAD+/wIAAAAAAAAAAAD///3/AAAAAAAAAAD///7/AAAAAAAAAAD/////AAAAAAAAAAD//wAAAAAAAAAAAAD//wEAAAAAAAAAAAD//wIAAAAAAAAAAAAAAP3/AAAAAAAAAAAAAP7/AAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAABAP3/AAAAAAAAAAABAP7/AAAAAAAAAAABAP//AAAAAAAAAAABAAAAAAAAAAAAAAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAACAP3/AAAAAAAAAAACAP7/AAAAAAAAAAACAP//AAAAAAAAAAACAAAAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAAAAAAAAAAEAP3/AAADAAAAAAAEAP7/AAADAAAAAAAEAP//AAADAAAAAAAEAAAAAAADAAAAAAAEAAEAAAADAAAAAAAEAAIAAAADAAAAAAADAAIAAAADAAAAAAADAAEAAAADAAAAAAADAAAAAAADAAAAAAADAP//AAADAAAAAAADAP7/AAADAAAAAAADAP3/AAADAAAAAAA=")
+tile_set = SubResource("TileSet_a1whd")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+z_index = 10
+offset = Vector2(-8, 0)
+zoom = Vector2(3.75, 3.75)
+
+[node name="MenuButton" parent="." instance=ExtResource("5_omybm")]
+z_index = 10
+offset_left = 56.0
+offset_top = -40.0
+offset_right = 72.0
+offset_bottom = -24.0
+texture_hover = ExtResource("6_n2pog")
+stretch_mode = 0
+
+[node name="BuildModeButton" type="TextureButton" parent="."]
+offset_left = 56.0
+offset_top = -16.0
+offset_right = 72.0
+texture_normal = ExtResource("7_tku74")
+texture_pressed = ExtResource("8_v0i44")
+texture_hover = ExtResource("8_v0i44")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MirrorGenerator" parent="." instance=ExtResource("9_ubqgb")]
+z_index = -2
+position = Vector2(64, 16)
+
+[node name="MirrorBlock" type="ColorRect" parent="."]
+offset_left = 48.0
+offset_top = 8.0
+offset_right = 80.0
+offset_bottom = 48.0
+color = Color(0.498039, 0.498039, 0.498039, 1)
+
+[connection signal="pressed" from="BuildModeButton" to="." method="_on_build_mode_button_pressed"]

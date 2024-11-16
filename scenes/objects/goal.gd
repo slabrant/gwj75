@@ -1,7 +1,7 @@
 extends Area2D
 
 @onready var world: Node = get_tree().root.get_child(0)
-@onready var level: Node = world.scene.find_child("Level")
+@onready var level: Node = world.scene
 const WIN_MENU = preload("res://scenes/menus/win_menu.tscn")
 @onready var sprite: Sprite2D = $Sprite2D
 
