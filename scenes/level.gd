@@ -3,6 +3,7 @@ extends Node
 @onready var world: Node = get_tree().root.get_child(0)
 @onready var mirror_scenes: Node = $Mirrors
 @onready var build_mode_bg: TileMapLayer = $BuildModeBG
+@onready var mirror_block: ColorRect = $MirrorBlock
 @onready var build_mode_button: TextureButton = $BuildModeButton
 const HAMMER_SPRITE = preload("res://sprites/hammer.png")
 const HAMMER_PRESSED_SPRITE = preload("res://sprites/hammer_pressed.png")
@@ -11,10 +12,12 @@ const HAMMER_PRESSED_SPRITE = preload("res://sprites/hammer_pressed.png")
 	set(value):
 		if value:
 			build_mode_bg.show()
+			mirror_block.hide()
 			build_mode_button.texture_normal = HAMMER_PRESSED_SPRITE
 			build_mode_button.texture_pressed = HAMMER_SPRITE
 		else:
 			build_mode_bg.hide()
+			mirror_block.show()
 			build_mode_button.texture_normal = HAMMER_SPRITE
 			build_mode_button.texture_pressed = HAMMER_PRESSED_SPRITE
 		
