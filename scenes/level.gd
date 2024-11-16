@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 @onready var world: Node = get_tree().root.get_child(0)
 @onready var mirror_scenes: Node = $Mirrors
@@ -23,12 +23,20 @@ const HAMMER_PRESSED_SPRITE = preload("res://sprites/hammer_pressed.png")
 		
 		is_build_mode = value
 @export var mirrors : Array = []
+@export var active_mirror : Area2D
 @export var open_menu : Control:
 	set(value):
 		world.toggle_input(!value)
 		open_menu = value
 @export var shot_count : int = 0
 @export var mirror_count : int = 0
+
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_released("input_action"):
+		active_mirror = null
+	elif active_mirror:
+		active_mirror.position = get_global_mouse_position()
 
 
 # Called when the node enters the scene tree for the first time.

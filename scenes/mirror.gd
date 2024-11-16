@@ -27,11 +27,9 @@ const ROTATE_PRESSED_SPRITE = preload("res://sprites/rotate_pressed.png")
 		#else:
 			#rotate_button.texture_normal = ROTATE_SPRITE
 			#rotate_button.texture_pressed = ROTATE_PRESSED_SPRITE
-			
 @export var is_rotating : bool = false
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	lock_button.rotation -= rotation
 	rotate_button.hide()
@@ -40,14 +38,13 @@ func _ready() -> void:
 	level.mirror_count += 1
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_released("input_action"):
-		is_moving = false
+		#is_moving = false
 		is_rotating = false
-	if is_moving:
-		position = get_global_mouse_position()
-	elif is_rotating:
+	#if is_moving:
+		#position = get_global_mouse_position()
+	if is_rotating:
 		mirror_rotation = get_local_mouse_position().angle()
 
 
@@ -81,7 +78,8 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_touch_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if level.is_build_mode and not locked and event.has_method("is_action_pressed") and event.is_action_pressed("input_action"):
-		is_moving = true
+		#is_moving = true
+		level.active_mirror = self
 
 
 func _on_minus_button_pressed() -> void:
