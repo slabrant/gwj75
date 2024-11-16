@@ -1,6 +1,7 @@
 extends Control
 
 @onready var world: Node = get_tree().root.get_child(0)
+var level_resources = load("res://scenes/level_list.tres")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -14,10 +15,8 @@ func _process(delta: float) -> void:
 
 
 func _on_play_button_pressed() -> void:
-	world.scene_path = "res://scenes/levels/level_1.tscn"
-	#get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn")
+	world.scene_path = level_resources.level_paths[world.level_id]
 
 
 func _on_level_select_button_pressed() -> void:
 	world.scene_path = "res://scenes/menus/level_select_menu.tscn"
-	#get_tree().change_scene_to_file("res://scenes/menus/level_select_menu.tscn")

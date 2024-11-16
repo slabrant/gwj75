@@ -12,6 +12,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hwblf")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -128.0
+offset_top = -80.0
+offset_right = 232.0
+offset_bottom = 128.0
+color = Color(0, 0, 0, 0.784314)
+
 [node name="NextLevelButton" type="Button" parent="."]
 z_index = 15
 layout_mode = 0

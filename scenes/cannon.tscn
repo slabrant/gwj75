@@ -1,10 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://d1v2let5i7lf1"]
+[gd_scene load_steps=4 format=3 uid="uid://d1v2let5i7lf1"]
 
 [ext_resource type="Texture2D" uid="uid://bi60ajlgkcmcl" path="res://sprites/cannon.png" id="1_4k16b"]
 [ext_resource type="Script" path="res://scenes/cannon.gd" id="1_p6ic0"]
+[ext_resource type="Texture2D" uid="uid://dfhlbl5detttk" path="res://sprites/cannon_base.png" id="2_yjdtv"]
 
 [node name="Cannon" type="Node2D"]
 script = ExtResource("1_p6ic0")
 
+[node name="CannonBase" type="Sprite2D" parent="."]
+z_index = -1
+z_as_relative = false
+texture = ExtResource("2_yjdtv")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 10
 texture = ExtResource("1_4k16b")
+offset = Vector2(1, 0)

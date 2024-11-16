@@ -9,7 +9,8 @@ extends Area2D
 @onready var minus_button: TextureButton = $MinusButton
 @onready var lock_button: TextureButton = $LockButton
 @onready var reflect: AudioStreamPlayer = $Reflect
-
+const ROTATE_SPRITE = preload("res://sprites/rotate.png")
+const ROTATE_PRESSED_SPRITE = preload("res://sprites/rotate_pressed.png")
 
 @export var mirror_rotation : float = 0:
 	set(value):
@@ -18,7 +19,15 @@ extends Area2D
 		mirror_rotation = value
 @export var locked : bool = true
 @export var mirror_rotation_amount : float = PI/8
-@export var is_moving : bool = false
+@export var is_moving : bool = false:
+	set(value):
+		is_moving = value
+		#if value:
+			#rotate_button.texture_normal = ROTATE_PRESSED_SPRITE
+		#else:
+			#rotate_button.texture_normal = ROTATE_SPRITE
+			#rotate_button.texture_pressed = ROTATE_PRESSED_SPRITE
+			
 @export var is_rotating : bool = false
 
 
