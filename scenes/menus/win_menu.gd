@@ -9,7 +9,7 @@ var level_resources = load("res://scenes/level_list.tres")
 func _ready() -> void:
 	level.open_menu = self
 	position = Vector2(-size.x/2, -size.y/2)
-	win_label.text = "Good job! You did it with " + str(level.mirror_count) + " mirrors and " + str(level.shot_count) + " shots."
+	win_label.text = "Good job! You did it with " + str(level.mirror_count) + " mirrors and " + str(level.shot_count) + " shots.\n" + str(world.level_score) + " / 3"
 
 
 func close() -> void:

@@ -4,6 +4,14 @@ extends Button
 
 @export var level_path : String = ""
 @export var level_id : int
+@export var level_score : int = 0
+
+
+func _ready():
+	var x = level_id % 4 * 150 + 16
+	var y = (floor(level_id/4) + 1) * 64
+	position = Vector2(x, y)
+	text = str(level_id) + " - " + str(level_score) + "/3"
 
 
 func _on_pressed() -> void:

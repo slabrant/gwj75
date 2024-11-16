@@ -33,12 +33,13 @@ func load_level_buttons(levels):
 	var level_id: int = 0
 	for level in levels:
 		var level_button = LEVEL_BUTTON.instantiate()
-		level_button.position = Vector2((level_id % 4 + 1) * 150 - 125, (floor(level_id/4) + 1) * 64)
+		if level_id in world.scores:
+			level_button.level_score = world.scores[level_id]
+		
 		level_button.level_path = level.get_file()
 		level_button.level_id = level_id
-		level_id += 1
-		level_button.text = "Level " + str(level_id)
 		add_child(level_button)
+		level_id += 1
 
 
 func _on_main_menu_button_pressed() -> void:

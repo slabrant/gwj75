@@ -1,5 +1,7 @@
 extends Area2D
 
+@onready var world: Node = get_tree().root.get_child(0)
+@onready var level: Node = world.scene.find_child("Level")
 const WIN_MENU = preload("res://scenes/menus/win_menu.tscn")
 @onready var sprite: Sprite2D = $Sprite2D
 
@@ -26,8 +28,16 @@ func set_color(red: int = 0, green: int = 0, blue: int = 0):
 
 
 func _on_body_entered(body: Node2D) -> void:
+	if level.shot_count <= 8 and level.mirror_count <= 2:
+		world.level_score = 3
+	elif level.shot_count <= 15 and level.mirror_count <= 5:
+		world.level_score = 2
+	else:
+		world.level_score = 1
+		
 	set_shader(false)
 	color = body.color
+	
 	body.queue_free()
 	var menu = WIN_MENU.instantiate()
 	get_tree().root.add_child(menu)
