@@ -67,7 +67,6 @@ func build_mode_checks() -> void:
 func reflect(body: Node2D) -> void:
 	var new_velocity = body.velocity
 	body.velocity = Vector2()
-	var velocity_angle = new_velocity.angle()
 	var combined_rotation = rotation + mirror_rotation
 	
 	new_velocity = new_velocity.rotated(-(combined_rotation))
