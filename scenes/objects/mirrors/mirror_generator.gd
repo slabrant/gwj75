@@ -5,7 +5,7 @@ extends Area2D
 @onready var world: Node = get_tree().root.get_child(0)
 @onready var level: Node = world.scene.find_child("Level")
 
-const MIRROR = preload("res://scenes/mirror.tscn")
+const MIRROR = preload("res://scenes/objects/mirrors/mirror_normal.tscn")
 
 @export var is_moving : bool = false
 

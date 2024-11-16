@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b6nj7cjeaoex6" path="res://scenes/menus/menu_button.tscn" id="5_45tfh"]
 [ext_resource type="Texture2D" uid="uid://c5nn8675u3k6q" path="res://sprites/menu_pressed.png" id="6_6jwwp"]
 [ext_resource type="Texture2D" uid="uid://d1rljudcdbq8b" path="res://sprites/hammer_pressed.png" id="6_arb1s"]
-[ext_resource type="PackedScene" uid="uid://cbev4thk0ftt" path="res://scenes/mirror_generator.tscn" id="6_fda2l"]
+[ext_resource type="PackedScene" uid="uid://cbev4thk0ftt" path="res://scenes/objects/mirrors/mirror_generator.tscn" id="6_fda2l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wd52v"]
 texture = ExtResource("3_gm4pc")

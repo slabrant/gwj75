@@ -4,7 +4,7 @@ extends Node2D
 @onready var level: Node = world.scene.find_child("Level")
 @onready var sprite: Sprite2D = $Sprite2D
 
-const BEAM = preload("res://scenes/beam.tscn")
+const BEAM = preload("res://scenes/objects/beam.tscn")
 
 
 func _unhandled_input(event: InputEvent) -> void:

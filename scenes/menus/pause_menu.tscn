@@ -14,6 +14,7 @@ script = ExtResource("1_066qn")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = 15
+layout_mode = 0
 offset_left = -128.0
 offset_top = -80.0
 offset_right = 232.0

@@ -17,17 +17,17 @@ const ROTATE_PRESSED_SPRITE = preload("res://sprites/rotate_pressed.png")
 		sprite_2d.rotation = value
 		collision.rotation = value
 		mirror_rotation = value
+@export var last_mirror_rotation : float = 0
 @export var locked : bool = true
 @export var mirror_rotation_amount : float = PI/8
-@export var is_moving : bool = false:
+@export var is_rotating : bool = false:
 	set(value):
-		is_moving = value
-		#if value:
-			#rotate_button.texture_normal = ROTATE_PRESSED_SPRITE
-		#else:
-			#rotate_button.texture_normal = ROTATE_SPRITE
-			#rotate_button.texture_pressed = ROTATE_PRESSED_SPRITE
-@export var is_rotating : bool = false
+		is_rotating = value
+		if value:
+			rotate_button.texture_normal = ROTATE_PRESSED_SPRITE
+		else:
+			rotate_button.texture_normal = ROTATE_SPRITE
+			rotate_button.texture_pressed = ROTATE_PRESSED_SPRITE
 
 
 func _ready() -> void:
@@ -40,12 +40,11 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_released("input_action"):
-		#is_moving = false
 		is_rotating = false
-	#if is_moving:
-		#position = get_global_mouse_position()
-	if is_rotating:
-		mirror_rotation = get_local_mouse_position().angle()
+		last_mirror_rotation = mirror_rotation
+	elif is_rotating:
+		var relative_mouse_position = get_local_mouse_position()
+		mirror_rotation = relative_mouse_position.angle() + last_mirror_rotation
 
 
 func build_mode_checks() -> void:
@@ -78,7 +77,6 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_touch_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if level.is_build_mode and not locked and event.has_method("is_action_pressed") and event.is_action_pressed("input_action"):
-		#is_moving = true
 		level.active_mirror = self
 
 

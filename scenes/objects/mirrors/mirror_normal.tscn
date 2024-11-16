@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfomgn85np2p2"]
+
+[ext_resource type="PackedScene" uid="uid://dvr43yu4gyusd" path="res://scenes/objects/mirrors/mirror.tscn" id="1_mml7d"]
+[ext_resource type="Texture2D" uid="uid://c3qsh1i51tagc" path="res://sprites/mirror.png" id="2_iv3p5"]
+
+[node name="MirrorNormal" instance=ExtResource("1_mml7d")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_iv3p5")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+polygon = PackedVector2Array(-8, -2, -8, 2, -7, 4, 7, 4, 8, 2, 8, -2, 7, -4, -7, -4)
