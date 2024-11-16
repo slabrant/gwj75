@@ -3,12 +3,12 @@
 [ext_resource type="Script" path="res://scenes/menus/start_menu.gd" id="1_1otxa"]
 [ext_resource type="Texture2D" uid="uid://cdwtr7gry2twa" path="res://sprites/bg_16.png" id="2_itup5"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_adx67"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yoxff"]
 texture = ExtResource("2_itup5")
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_sfgug"]
-sources/0 = SubResource("TileSetAtlasSource_adx67")
+sources/0 = SubResource("TileSetAtlasSource_yoxff")
 
 [sub_resource type="LabelSettings" id="LabelSettings_vcrld"]
 font_size = 112

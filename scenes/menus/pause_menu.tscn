@@ -12,13 +12,23 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_066qn")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 15
+offset_left = -128.0
+offset_top = -80.0
+offset_right = 232.0
+offset_bottom = 128.0
+color = Color(0, 0, 0, 0.784314)
+
 [node name="MainMenuButton" type="Button" parent="."]
+z_index = 15
 layout_mode = 0
 offset_right = 80.0
 offset_bottom = 24.0
 text = "Main Menu"
 
 [node name="CloseButton" type="Button" parent="."]
+z_index = 15
 layout_mode = 0
 offset_left = 16.0
 offset_top = 32.0

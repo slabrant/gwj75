@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://3sxqjs6qf5gq"]
+[gd_scene load_steps=16 format=4 uid="uid://3sxqjs6qf5gq"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_epoi7"]
 [ext_resource type="Texture2D" uid="uid://banqxbdmhfaoc" path="res://sprites/bg_build_mode.png" id="2_0lfdj"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c31bq8jr5mcex" path="res://sprites/bg_8.png" id="3_ne05e"]
 [ext_resource type="Texture2D" uid="uid://jm7trfocx68y" path="res://sprites/hammer.png" id="5_7ai23"]
 [ext_resource type="PackedScene" uid="uid://b6nj7cjeaoex6" path="res://scenes/menus/menu_button.tscn" id="5_45tfh"]
+[ext_resource type="Texture2D" uid="uid://c5nn8675u3k6q" path="res://sprites/menu_pressed.png" id="6_6jwwp"]
 [ext_resource type="Texture2D" uid="uid://d1rljudcdbq8b" path="res://sprites/hammer_pressed.png" id="6_arb1s"]
 [ext_resource type="PackedScene" uid="uid://cbev4thk0ftt" path="res://scenes/mirror_generator.tscn" id="6_fda2l"]
 
@@ -78,6 +79,7 @@ offset_left = 104.0
 offset_top = -72.0
 offset_right = 120.0
 offset_bottom = -56.0
+texture_hover = ExtResource("6_6jwwp")
 stretch_mode = 0
 
 [node name="BuildModeButton" type="TextureButton" parent="."]
@@ -87,6 +89,7 @@ offset_right = 120.0
 offset_bottom = -32.0
 texture_normal = ExtResource("5_7ai23")
 texture_pressed = ExtResource("6_arb1s")
+texture_hover = ExtResource("6_arb1s")
 ignore_texture_size = true
 stretch_mode = 0
 

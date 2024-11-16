@@ -20,7 +20,10 @@ func close() -> void:
 func _on_next_level_button_pressed() -> void:
 	close()
 	world.level_id += 1
-	world.scene_path = level_resources.level_paths[world.level_id]
+	if world.level_id < len(level_resources.level_paths):
+		world.scene_path = level_resources.level_paths[world.level_id]
+	else:
+		world.scene_path = "res://scenes/menus/start_menu.tscn"
 
 
 func _on_main_menu_button_pressed() -> void:

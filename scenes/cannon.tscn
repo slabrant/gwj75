@@ -15,4 +15,4 @@ texture = ExtResource("2_yjdtv")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 10
 texture = ExtResource("1_4k16b")
-offset = Vector2(1, 0)
+offset = Vector2(4, 0)
