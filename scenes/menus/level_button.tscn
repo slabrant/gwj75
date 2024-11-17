@@ -1,11 +1,56 @@
-[gd_scene load_steps=2 format=3 uid="uid://cd4xlyq6jvfpo"]
+[gd_scene load_steps=8 format=3 uid="uid://cd4xlyq6jvfpo"]
 
 [ext_resource type="Script" path="res://scenes/menus/level_button.gd" id="1_8pef3"]
+[ext_resource type="Texture2D" uid="uid://cospdmt0e1gh1" path="res://sprites/score-sheet.png" id="2_58vgb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cuqdk"]
+atlas = ExtResource("2_58vgb")
+region = Rect2(0, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_641ns"]
+atlas = ExtResource("2_58vgb")
+region = Rect2(48, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nuhtn"]
+atlas = ExtResource("2_58vgb")
+region = Rect2(96, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ke7t"]
+atlas = ExtResource("2_58vgb")
+region = Rect2(144, 0, 48, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r4rxa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cuqdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_641ns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nuhtn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ke7t")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="LevelButton" type="Button"]
 offset_right = 8.0
 offset_bottom = 8.0
 theme_override_font_sizes/font_size = 48
+text = "X -      "
+alignment = 0
 script = ExtResource("1_8pef3")
+
+[node name="Score" type="AnimatedSprite2D" parent="."]
+z_index = 15
+position = Vector2(96, 24)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_r4rxa")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

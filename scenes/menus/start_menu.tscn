@@ -11,42 +11,42 @@ texture = ExtResource("2_itup5")
 sources/0 = SubResource("TileSetAtlasSource_yoxff")
 
 [sub_resource type="LabelSettings" id="LabelSettings_vcrld"]
-font_size = 112
+font_size = 176
 shadow_size = 4
 shadow_color = Color(0.329412, 0.329412, 0.329412, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_vxv03"]
-font_size = 112
+font_size = 176
 shadow_size = 4
 shadow_color = Color(1, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_jsrgo"]
-font_size = 112
+font_size = 176
 shadow_size = 4
 shadow_color = Color(1, 0, 1, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ukwpq"]
-font_size = 112
+font_size = 176
 shadow_size = 4
 shadow_color = Color(0, 0, 1, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_fuvj1"]
-font_size = 112
+font_size = 176
 shadow_size = 4
 shadow_color = Color(0, 1, 1, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_4wyc4"]
-font_size = 112
+font_size = 176
 shadow_size = 4
 shadow_color = Color(0, 1, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ogtat"]
-font_size = 112
+font_size = 176
 shadow_size = 4
 shadow_color = Color(1, 1, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_f5b6e"]
-font_size = 112
+font_size = 176
 shadow_size = 4
 shadow_color = Color(0.329412, 0.329412, 0.329412, 1)
 
@@ -92,80 +92,80 @@ position = Vector2(320, 184)
 [node name="Derorrim" type="Node" parent="."]
 
 [node name="D" type="Label" parent="Derorrim"]
-offset_left = -144.0
-offset_top = -192.0
-offset_right = -102.0
-offset_bottom = -48.0
+offset_left = -224.0
+offset_top = -176.0
+offset_right = -158.0
+offset_bottom = -25.0
 text = "D"
 label_settings = SubResource("LabelSettings_vcrld")
 horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="e" type="Label" parent="Derorrim"]
-offset_left = -104.0
-offset_top = -192.0
-offset_right = -62.0
-offset_bottom = -48.0
+offset_left = -160.0
+offset_top = -176.0
+offset_right = -94.0
+offset_bottom = -25.0
 text = "e"
 label_settings = SubResource("LabelSettings_vxv03")
 horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="r" type="Label" parent="Derorrim"]
-offset_left = -64.0
-offset_top = -192.0
-offset_right = -22.0
-offset_bottom = -48.0
+offset_left = -96.0
+offset_top = -176.0
+offset_right = -41.0
+offset_bottom = -25.0
 text = "r"
 label_settings = SubResource("LabelSettings_jsrgo")
 horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="r2" type="Label" parent="Derorrim"]
-offset_left = -32.0
-offset_top = -192.0
-offset_right = 10.0
-offset_bottom = -48.0
+offset_left = -40.0
+offset_top = -176.0
+offset_right = 15.0
+offset_bottom = -25.0
 text = "r"
 label_settings = SubResource("LabelSettings_ukwpq")
 horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="o" type="Label" parent="Derorrim"]
-offset_left = 8.0
-offset_top = -192.0
-offset_right = 50.0
-offset_bottom = -48.0
+offset_left = 16.0
+offset_top = -176.0
+offset_right = 82.0
+offset_bottom = -25.0
 text = "o"
 label_settings = SubResource("LabelSettings_fuvj1")
 horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="r3" type="Label" parent="Derorrim"]
-offset_left = 48.0
-offset_top = -192.0
-offset_right = 90.0
-offset_bottom = -48.0
+offset_left = 80.0
+offset_top = -176.0
+offset_right = 135.0
+offset_bottom = -25.0
 text = "r"
 label_settings = SubResource("LabelSettings_4wyc4")
 horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="i" type="Label" parent="Derorrim"]
-offset_left = 80.0
-offset_top = -192.0
-offset_right = 122.0
-offset_bottom = -48.0
+offset_left = 136.0
+offset_top = -176.0
+offset_right = 169.0
+offset_bottom = -25.0
 text = "i"
 label_settings = SubResource("LabelSettings_ogtat")
 horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="m" type="Label" parent="Derorrim"]
-offset_left = 112.0
-offset_top = -192.0
-offset_right = 154.0
-offset_bottom = -48.0
+offset_left = 168.0
+offset_top = -176.0
+offset_right = 234.0
+offset_bottom = -25.0
 text = "m"
 label_settings = SubResource("LabelSettings_f5b6e")
 horizontal_alignment = 1

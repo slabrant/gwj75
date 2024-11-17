@@ -25,18 +25,18 @@ color = Color(0, 0, 0, 0.784314)
 z_index = 15
 layout_mode = 0
 offset_left = -32.0
-offset_top = 24.0
+offset_top = 32.0
 offset_right = 32.0
-offset_bottom = 48.0
+offset_bottom = 56.0
 text = "Main Menu"
 
 [node name="WinLabel" type="Label" parent="."]
 z_index = 15
 layout_mode = 0
 offset_left = -56.0
-offset_top = -40.0
+offset_top = -48.0
 offset_right = 56.0
-offset_bottom = 25.0
+offset_bottom = 17.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Congratulations and thanks for playing my game!
 - GlassTacoJar"
