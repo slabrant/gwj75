@@ -38,5 +38,5 @@ offset_left = -64.0
 offset_top = -80.0
 offset_right = 72.0
 offset_bottom = -15.0
-text = "I ran out of time implementing a new type of mirrors, so this one will be easy for you!"
+text = "I ran out of time implementing a new type of mirror, so this one will be easy for you!"
 autowrap_mode = 3
