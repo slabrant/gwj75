@@ -13,12 +13,12 @@ tile_map_data = PackedByteArray("AAD6//v/AAABAAAAAAD6/wEAAAAEAAEAAAD6/wMAAAABAAI
 
 [node name="Cannon" parent="." index="1" instance=ExtResource("3_57yke")]
 z_index = 2
-position = Vector2(-48, -8)
+position = Vector2(-72, -8)
 
 [node name="Mirrors" type="Node" parent="." index="2"]
 
 [node name="MirrorRefractive" parent="Mirrors" index="0" instance=ExtResource("5_86pty")]
-position = Vector2(48, -8)
+position = Vector2(64, -8)
 locked = false
 
 [node name="Goal" parent="Goals" index="0" instance=ExtResource("4_88eg0")]
@@ -32,3 +32,11 @@ color = [0, 255, 0]
 [node name="Goal3" parent="Goals" index="2" instance=ExtResource("4_88eg0")]
 position = Vector2(-104, 48)
 color = [0, 0, 255]
+
+[node name="Label" type="Label" parent="." index="12"]
+offset_left = -64.0
+offset_top = -80.0
+offset_right = 72.0
+offset_bottom = -15.0
+text = "I ran out of time implementing a new type of mirrors, so this one will be easy for you!"
+autowrap_mode = 3
