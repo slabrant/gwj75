@@ -60,6 +60,13 @@ func _process(delta: float) -> void:
 
 
 func win() -> void:
+	if shot_count <= 8 and mirror_count <= 2:
+		world.level_score = 3
+	elif shot_count <= 15 and mirror_count <= 5:
+		world.level_score = 2
+	else:
+		world.level_score = 1
+	
 	var menu = WIN_MENU.instantiate()
 	get_tree().root.add_child(menu)
 

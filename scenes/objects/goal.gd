@@ -21,13 +21,6 @@ func set_color(red: float = 0.0, green: float = 0.0, blue: float = 0.0):
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if level.shot_count <= 8 and level.mirror_count <= 2:
-		world.level_score = 3
-	elif level.shot_count <= 15 and level.mirror_count <= 5:
-		world.level_score = 2
-	else:
-		world.level_score = 1
-	
 	body.queue_free()
 	
 	if color == body.color:
