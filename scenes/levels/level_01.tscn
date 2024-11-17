@@ -14,13 +14,9 @@ tile_map_data = PackedByteArray("AAD6/wMAAAABAAUAAAABAPr/AAABAAUAAAABAPv/AAABAAA
 z_index = 10
 position = Vector2(-72, -24)
 
-[node name="Goal" parent="." index="2" instance=ExtResource("4_nyk4k")]
-z_index = 10
-position = Vector2(32, 32)
+[node name="Mirrors" type="Node" parent="." index="2"]
 
-[node name="Mirrors" type="Node" parent="." index="3"]
-
-[node name="Label" type="Label" parent="." index="4"]
+[node name="Label" type="Label" parent="." index="3"]
 offset_left = -88.0
 offset_top = -8.0
 offset_right = 48.0
@@ -28,3 +24,7 @@ offset_bottom = 24.0
 text = "Click anywhere to shoot.
 Shoot the light to win."
 autowrap_mode = 3
+
+[node name="Goal" parent="Goals" index="0" instance=ExtResource("4_nyk4k")]
+z_index = 10
+position = Vector2(32, 32)

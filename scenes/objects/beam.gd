@@ -20,7 +20,6 @@ func _ready() -> void:
 	color = [255, 255, 255]
 	motion_mode = MOTION_MODE_FLOATING
 	laser_shoot.play()
-	level.shot_count += 1
 
 
 func _physics_process(delta: float) -> void:

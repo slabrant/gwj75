@@ -2,14 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://bvwfwaab0tnfs" path="res://sprites/goal.png" id="1_jekoq"]
 [ext_resource type="Script" path="res://scenes/objects/goal.gd" id="1_knsng"]
-[ext_resource type="Shader" path="res://scenes/colorify.gdshader" id="2_yya2x"]
+[ext_resource type="Shader" path="res://scenes/objects/goal_color.gdshader" id="2_aqquy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wt2fm"]
 radius = 8.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_pcu5g"]
-shader = ExtResource("2_yya2x")
-shader_parameter/active = false
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d7h3i"]
+shader = ExtResource("2_aqquy")
 shader_parameter/red = 0.0
 shader_parameter/green = 0.0
 shader_parameter/blue = 0.0
@@ -23,7 +22,7 @@ script = ExtResource("1_knsng")
 shape = SubResource("CircleShape2D_wt2fm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_pcu5g")
+material = SubResource("ShaderMaterial_d7h3i")
 texture = ExtResource("1_jekoq")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

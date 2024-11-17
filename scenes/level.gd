@@ -27,7 +27,11 @@ const WIN_MENU = preload("res://scenes/menus/win_menu.tscn")
 		
 		is_build_mode = value
 @export var mirrors : Array = []
-@export var goals : Array = []
+@export var goals : Array = []:
+	set(value):
+		if 0 < len(goals) and len(value) < 1:
+			win()
+		goals = value
 @export var active_mirror : Area2D
 @export var open_menu : Control:
 	set(value):
@@ -42,8 +46,10 @@ const WIN_MENU = preload("res://scenes/menus/win_menu.tscn")
 func _ready() -> void:
 	for mirror in mirror_container.get_children():
 		mirrors.append(mirror)
-	#for goal in goal_container.get_children():
-		#goals.append(goal)
+	var new_goals = []
+	for goal in goal_container.get_children():
+		new_goals.append(goal)
+	goals = new_goals
 
 
 func _process(delta: float) -> void:

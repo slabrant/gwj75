@@ -15,19 +15,19 @@ tile_map_data = PackedByteArray("AAAEAAMAAAABAAUAAAAFAAIAAAABAAUAAAAFAAMAAAABAAU
 z_index = 10
 position = Vector2(32, 32)
 
-[node name="Goal" parent="." index="2" instance=ExtResource("4_kqdhd")]
-z_index = 10
-position = Vector2(-80, 32)
-
-[node name="Label" type="Label" parent="." index="3"]
+[node name="Label" type="Label" parent="." index="2"]
 offset_left = -88.0
 offset_top = -48.0
 offset_right = 16.0
 text = "Some mirrors are locked and cannot be modified."
 autowrap_mode = 3
 
-[node name="Mirrors" type="Node" parent="." index="4"]
+[node name="Mirrors" type="Node" parent="." index="3"]
 
 [node name="MirrorNormal" parent="Mirrors" index="0" instance=ExtResource("5_mbxp8")]
 position = Vector2(32, -32)
 rotation = -2.35619
+
+[node name="Goal" parent="Goals" index="0" instance=ExtResource("4_kqdhd")]
+z_index = 10
+position = Vector2(-80, 32)

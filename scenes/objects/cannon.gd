@@ -15,6 +15,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		beam.position = position
 		beam.rotation = ((get_global_mouse_position() - position).normalized()).angle()
 		add_sibling(beam)
+		level.shot_count += 1
 
 
 func _process(delta: float) -> void:

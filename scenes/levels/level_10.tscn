@@ -15,11 +15,11 @@ tile_map_data = PackedByteArray("AAD6//v/AAABAAAAAAD6/wMAAAABAAIAAAD4//v/AAAAAAA
 z_index = 2
 position = Vector2(-120, 56)
 
-[node name="Goal" parent="." index="2" instance=ExtResource("4_ubdba")]
-position = Vector2(40, 32)
-
-[node name="Mirrors" type="Node" parent="." index="3"]
+[node name="Mirrors" type="Node" parent="." index="2"]
 
 [node name="MirrorNormal" parent="Mirrors" index="0" instance=ExtResource("5_m0mae")]
 position = Vector2(8, 56)
 rotation = 1.5708
+
+[node name="Goal" parent="Goals" index="0" instance=ExtResource("4_ubdba")]
+position = Vector2(40, 32)

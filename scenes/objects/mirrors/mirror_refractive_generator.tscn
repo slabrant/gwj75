@@ -1,10 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://rom7dbc02qsg"]
+[gd_scene load_steps=4 format=3 uid="uid://rom7dbc02qsg"]
 
 [ext_resource type="Script" path="res://scenes/objects/mirrors/mirror_refractive_generator.gd" id="1_m2btl"]
 [ext_resource type="Texture2D" uid="uid://4clg3jt3q3yn" path="res://sprites/prism_rgb.png" id="2_p21nt"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8rxyl"]
-size = Vector2(16, 2)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5shyq"]
 
@@ -13,9 +10,6 @@ script = ExtResource("1_m2btl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_p21nt")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_8rxyl")
 
 [node name="TouchArea" type="Area2D" parent="."]
 

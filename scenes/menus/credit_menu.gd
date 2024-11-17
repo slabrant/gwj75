@@ -6,6 +6,7 @@ extends Control
 
 func _ready() -> void:
 	position = Vector2(-size.x/2, -size.y/2)
+	world.level_id = 0
 	#win_label.text = "Congratulations and thanks for playing my game!"
 
 

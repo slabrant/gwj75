@@ -26,17 +26,13 @@ tile_map_data = PackedByteArray("AAABAP3/AAABAAAAAAACAP3/AAACAAAAAAACAP7/AAACAAE
 z_index = 10
 position = Vector2(-72, -24)
 
-[node name="Goal" parent="." index="3" instance=ExtResource("5_ienjg")]
-z_index = 10
-position = Vector2(-72, 32)
-
-[node name="Mirrors" type="Node" parent="." index="4"]
+[node name="Mirrors" type="Node" parent="." index="3"]
 
 [node name="MirrorNormal" parent="Mirrors" index="0" instance=ExtResource("5_rg1u4")]
 position = Vector2(-72, 8)
 locked = false
 
-[node name="Label2" type="Label" parent="." index="5"]
+[node name="Label2" type="Label" parent="." index="4"]
 visible = false
 offset_left = -32.0
 offset_top = -32.0
@@ -44,3 +40,7 @@ offset_right = 49.0
 offset_bottom = 33.0
 text = "Now, you can change/delete mirrors but won't shoot."
 autowrap_mode = 3
+
+[node name="Goal" parent="Goals" index="0" instance=ExtResource("5_ienjg")]
+z_index = 10
+position = Vector2(-72, 32)

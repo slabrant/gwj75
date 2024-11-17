@@ -5,7 +5,7 @@ const BEAM = preload("res://scenes/objects/beam.tscn")
 
 func shoot(shoot_rotation) -> CharacterBody2D:
 	var beam : CharacterBody2D = BEAM.instantiate()
-	beam.position = position + 13 * Vector2(cos(shoot_rotation), -sin(shoot_rotation))
+	beam.position = position + 8 * Vector2(cos(shoot_rotation), -sin(shoot_rotation))
 	beam.rotation = Vector2(cos(shoot_rotation), -sin(shoot_rotation)).angle()
 	add_sibling(beam)
 	return beam
