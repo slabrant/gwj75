@@ -16,6 +16,7 @@ extends CharacterBody2D
 
 
 func _ready() -> void:
+	sprite.material = sprite.material.duplicate()
 	color = [255, 255, 255]
 	motion_mode = MOTION_MODE_FLOATING
 	laser_shoot.play()

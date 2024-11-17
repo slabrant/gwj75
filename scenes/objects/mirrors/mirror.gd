@@ -66,14 +66,12 @@ func build_mode_checks() -> void:
 
 func reflect(body: Node2D) -> void:
 	var new_velocity = body.velocity
-	body.velocity = Vector2()
 	var combined_rotation = rotation + mirror_rotation
 	
 	new_velocity = new_velocity.rotated(-(combined_rotation))
 	new_velocity.y *= -1
 	new_velocity = new_velocity.rotated(combined_rotation)
 	
-	body.velocity = new_velocity
 	body.rotation = new_velocity.angle()
 	reflect_sound.play()
 

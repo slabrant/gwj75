@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://3sxqjs6qf5gq"]
+[gd_scene load_steps=14 format=4 uid="uid://3sxqjs6qf5gq"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_epoi7"]
 [ext_resource type="Texture2D" uid="uid://banqxbdmhfaoc" path="res://sprites/bg_build_mode.png" id="2_0lfdj"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c5nn8675u3k6q" path="res://sprites/menu_pressed.png" id="6_6jwwp"]
 [ext_resource type="Texture2D" uid="uid://d1rljudcdbq8b" path="res://sprites/hammer_pressed.png" id="6_arb1s"]
 [ext_resource type="PackedScene" uid="uid://cbev4thk0ftt" path="res://scenes/objects/mirrors/mirror_generator.tscn" id="6_fda2l"]
+[ext_resource type="PackedScene" uid="uid://rom7dbc02qsg" path="res://scenes/objects/mirrors/mirror_refractive_generator.tscn" id="9_3sn8w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kq8r4"]
 texture = ExtResource("2_0lfdj")
@@ -73,11 +74,16 @@ stretch_mode = 0
 z_index = -2
 position = Vector2(112, -16)
 
+[node name="MirrorGenerator2" parent="." instance=ExtResource("9_3sn8w")]
+position = Vector2(112, 8)
+
 [node name="MirrorBlock" type="ColorRect" parent="."]
 offset_left = 96.0
 offset_top = -24.0
 offset_right = 128.0
 offset_bottom = 64.0
 color = Color(0.498039, 0.498039, 0.498039, 1)
+
+[node name="Goals" type="Node" parent="."]
 
 [connection signal="pressed" from="BuildModeButton" to="." method="_on_build_mode_button_pressed"]
