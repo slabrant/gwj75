@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=4 uid="uid://ev0srr83dfny"]
 
 [ext_resource type="PackedScene" uid="uid://cvxjd4w2swjqs" path="res://scenes/level_sm.tscn" id="1_aa2n4"]
-[ext_resource type="Script" path="res://scenes/levels/level_2.gd" id="2_thraj"]
+[ext_resource type="Script" path="res://scenes/levels/level_02.gd" id="2_thraj"]
 [ext_resource type="PackedScene" uid="uid://d1v2let5i7lf1" path="res://scenes/objects/cannon.tscn" id="4_hv0xc"]
 [ext_resource type="PackedScene" uid="uid://jjym2c7dwqvs" path="res://scenes/objects/goal.tscn" id="5_ienjg"]
 [ext_resource type="PackedScene" uid="uid://bp23a3x1ayyfm" path="res://scenes/objects/collision_blocks.tscn" id="5_n86xq"]

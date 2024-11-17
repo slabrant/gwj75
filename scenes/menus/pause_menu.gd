@@ -17,7 +17,6 @@ func close() -> void:
 
 func _on_main_menu_button_pressed() -> void:
 	close()
-	print(get_tree().root.get_children())
 	world.scene_path = "res://scenes/menus/start_menu.tscn"
 
 
