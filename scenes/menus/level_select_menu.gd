@@ -2,32 +2,12 @@ extends Control
 
 @onready var world: Node = get_tree().root.get_child(0)
 
-const LevelListResource = preload("res://scenes/level_list_resource.gd")
-var dir = DirAccess.open("res://scenes/levels")
-var level_resources = load("res://scenes/level_list.tres")
-var level_paths = []
-
 const LEVEL_BUTTON = preload("res://scenes/menus/level_button.tscn")
 
 
 func _ready() -> void:
-	if dir:
-		populate_level_paths(level_paths)
-	load_level_buttons(level_resources.level_paths)
-
-
-func populate_level_paths(levels):
-	for file in dir.get_files():
-		if file.get_extension() == "tscn":
-			levels.append("res://scenes/levels/" + file.get_file())
-	save_level_paths(levels)
-
-
-func save_level_paths(save_levels: Array):
-	var level_list_resource = LevelListResource.new()
-	level_list_resource.level_paths = save_levels
-	
-	ResourceSaver.save(level_list_resource, "res://scenes/level_list.tres")
+	var level_resources = load("res://scenes/level_list.tres")
+	load_level_buttons(world.level_list_resource.level_paths)
 
 
 func load_level_buttons(levels):

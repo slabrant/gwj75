@@ -1,5 +1,9 @@
 extends Node
 
+const LevelListResource = preload("res://scenes/level_list_resource.gd")
+var dir = DirAccess.open("res://scenes/levels")
+var level_paths = []
+
 @export var scene_path : String:
 	set(value):
 		scene = load(value).instantiate()
@@ -16,10 +20,13 @@ extends Node
 	set(value):
 		scores[level_id] = value
 		level_score = value
+@export var level_list_resource = LevelListResource.new()
 
 
 func _ready() -> void:
 	scene_path = "res://scenes/menus/start_menu.tscn"
+	if dir:
+		populate_level_paths(level_paths)
 
 
 func toggle_input(enable: bool):
@@ -31,3 +38,12 @@ func disable_input_recursive(node: Node, enable):
 	node.set_physics_process(enable)
 	for child in node.get_children():
 		disable_input_recursive(child, enable)
+
+
+func populate_level_paths(popultate_level_paths):
+	for file in dir.get_files():
+		if file.get_extension() == "tscn":
+			popultate_level_paths.append("res://scenes/levels/" + file.get_file())
+	
+	level_list_resource.level_paths = popultate_level_paths
+	ResourceSaver.save(level_list_resource, "res://scenes/level_list.tres")

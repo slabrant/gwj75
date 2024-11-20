@@ -55,6 +55,6 @@ jobs:
 
       - name: Push to Itch.io
         run: |
-          butler push build/web.zip glasstacojar/gwj75:"HTML5 / Playable in browser"
+          butler push build/web.zip glasstacojar/1:"HTML5 / Playable in browser"
         env:
           BUTLER_API_KEY: ${{ secrets.ITCH_IO_API_KEY }}
