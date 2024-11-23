@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dot7kfcnwtv41"]
+[gd_scene load_steps=9 format=3 uid="uid://dot7kfcnwtv41"]
 
+[ext_resource type="PackedScene" uid="uid://fpy0fgxfs1wc" path="res://scenes/menus/menu_overlay.tscn" id="1_4siqv"]
 [ext_resource type="Script" path="res://scenes/menus/win_menu.gd" id="1_hwblf"]
 [ext_resource type="Texture2D" uid="uid://cospdmt0e1gh1" path="res://sprites/score-sheet.png" id="2_10fnf"]
 
@@ -19,7 +20,7 @@ region = Rect2(96, 0, 48, 16)
 atlas = ExtResource("2_10fnf")
 region = Rect2(144, 0, 48, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_jwne8"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_llvfs"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -39,60 +40,45 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="WinMenu" type="Control"]
-z_index = 15
-layout_mode = 3
-anchor_right = 0.125
-anchor_bottom = 0.156
-offset_bottom = -0.16
-grow_horizontal = 2
-grow_vertical = 2
+[node name="WinMenu" instance=ExtResource("1_4siqv")]
+offset_right = -512.0
+offset_bottom = -296.0
 script = ExtResource("1_hwblf")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="NextLevelButton" type="Button" parent="." index="1"]
 z_index = 15
 layout_mode = 0
-offset_left = -168.0
-offset_top = -96.0
-offset_right = 192.0
-offset_bottom = 112.0
-color = Color(0, 0, 0, 0.784314)
-
-[node name="NextLevelButton" type="Button" parent="."]
-z_index = 15
-layout_mode = 0
-offset_left = 8.0
-offset_top = 16.0
-offset_right = 72.0
-offset_bottom = 40.0
+offset_left = 136.0
+offset_top = 96.0
+offset_right = 200.0
+offset_bottom = 120.0
 text = "Next Level"
 
-[node name="MainMenuButton" type="Button" parent="."]
+[node name="MainMenuButton" type="Button" parent="." index="2"]
 z_index = 15
 layout_mode = 0
-offset_left = -72.0
-offset_top = 16.0
-offset_right = -8.0
-offset_bottom = 40.0
+offset_left = 56.0
+offset_top = 96.0
+offset_right = 120.0
+offset_bottom = 120.0
 text = "Main Menu"
 
-[node name="WinLabel" type="Label" parent="."]
+[node name="WinLabel" type="Label" parent="." index="3"]
 z_index = 15
 layout_mode = 0
-offset_left = -72.0
-offset_top = -40.0
-offset_right = 72.0
-offset_bottom = 8.0
+offset_left = 48.0
+offset_top = 40.0
+offset_right = 208.0
+offset_bottom = 88.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Good Job! You did it with X shots and Y mirrors!"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="Score" type="AnimatedSprite2D" parent="."]
+[node name="Score" type="AnimatedSprite2D" parent="." index="4"]
 z_index = 15
-sprite_frames = SubResource("SpriteFrames_jwne8")
-frame = 1
-frame_progress = 0.364333
+position = Vector2(128, 80)
+sprite_frames = SubResource("SpriteFrames_llvfs")
 
 [connection signal="pressed" from="NextLevelButton" to="." method="_on_next_level_button_pressed"]
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]

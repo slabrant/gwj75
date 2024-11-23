@@ -1,40 +1,33 @@
-[gd_scene load_steps=2 format=3 uid="uid://cah2quy5yt64s"]
+[gd_scene load_steps=3 format=3 uid="uid://cah2quy5yt64s"]
 
 [ext_resource type="Script" path="res://scenes/menus/pause_menu.gd" id="1_066qn"]
+[ext_resource type="PackedScene" uid="uid://fpy0fgxfs1wc" path="res://scenes/menus/menu_overlay.tscn" id="1_kngf5"]
 
-[node name="PauseMenu" type="Control"]
-z_index = 10
-layout_mode = 3
-anchor_right = 0.125
-anchor_bottom = 0.156
-offset_bottom = -0.16
-grow_horizontal = 2
-grow_vertical = 2
+[node name="PauseMenu" instance=ExtResource("1_kngf5")]
 script = ExtResource("1_066qn")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-z_index = 15
-layout_mode = 0
-offset_left = -128.0
-offset_top = -80.0
-offset_right = 232.0
-offset_bottom = 128.0
-color = Color(0, 0, 0, 0.784314)
+[node name="ColorRect" parent="." index="0"]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 360.0
+offset_bottom = 208.0
 
-[node name="MainMenuButton" type="Button" parent="."]
+[node name="MainMenuButton" type="Button" parent="." index="1"]
 z_index = 15
 layout_mode = 0
-offset_right = 80.0
-offset_bottom = 24.0
+offset_left = 144.0
+offset_top = 80.0
+offset_right = 224.0
+offset_bottom = 104.0
 text = "Main Menu"
 
-[node name="CloseButton" type="Button" parent="."]
+[node name="CloseButton" type="Button" parent="." index="2"]
 z_index = 15
 layout_mode = 0
-offset_left = 16.0
-offset_top = 32.0
-offset_right = 63.0
-offset_bottom = 56.0
+offset_left = 160.0
+offset_top = 120.0
+offset_right = 207.0
+offset_bottom = 144.0
 text = "Close"
 
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]

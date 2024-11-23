@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://5yd87obchntd" path="res://sprites/menu.png" id="1_xwe3q"]
 [ext_resource type="Texture2D" uid="uid://c5nn8675u3k6q" path="res://sprites/menu_pressed.png" id="2_3lx1y"]
-[ext_resource type="Script" path="res://scenes/menus/menu_button.gd" id="3_m5xje"]
+[ext_resource type="Script" path="res://scenes/menus/pause_menu_button.gd" id="3_m5xje"]
 
-[node name="MenuButton" type="TextureButton"]
+[node name="PauseMenuButton" type="TextureButton"]
 anchors_preset = -1
 anchor_right = 0.012
 anchor_bottom = 0.022

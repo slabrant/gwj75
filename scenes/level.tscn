@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://banqxbdmhfaoc" path="res://sprites/bg_build_mode.png" id="2_0lfdj"]
 [ext_resource type="Texture2D" uid="uid://cdwtr7gry2twa" path="res://sprites/bg_16.png" id="3_gm4pc"]
 [ext_resource type="Texture2D" uid="uid://jm7trfocx68y" path="res://sprites/hammer.png" id="5_7ai23"]
-[ext_resource type="PackedScene" uid="uid://b6nj7cjeaoex6" path="res://scenes/menus/menu_button.tscn" id="5_45tfh"]
+[ext_resource type="PackedScene" uid="uid://b6nj7cjeaoex6" path="res://scenes/menus/pause_menu_button.tscn" id="5_45tfh"]
 [ext_resource type="Texture2D" uid="uid://c5nn8675u3k6q" path="res://sprites/menu_pressed.png" id="6_6jwwp"]
 [ext_resource type="Texture2D" uid="uid://d1rljudcdbq8b" path="res://sprites/hammer_pressed.png" id="6_arb1s"]
 [ext_resource type="PackedScene" uid="uid://cbev4thk0ftt" path="res://scenes/objects/mirrors/mirror_generator.tscn" id="6_fda2l"]
@@ -57,6 +57,7 @@ offset_right = 120.0
 offset_bottom = -56.0
 texture_hover = ExtResource("6_6jwwp")
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="BuildModeButton" type="TextureButton" parent="."]
 offset_left = 104.0
@@ -68,6 +69,7 @@ texture_pressed = ExtResource("6_arb1s")
 texture_hover = ExtResource("6_arb1s")
 ignore_texture_size = true
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="MirrorGenerator" parent="." instance=ExtResource("6_fda2l")]
 z_index = -2
@@ -79,6 +81,7 @@ offset_top = -24.0
 offset_right = 128.0
 offset_bottom = 64.0
 color = Color(0.498039, 0.498039, 0.498039, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Goals" type="Node" parent="."]
 

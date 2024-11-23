@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://fpy0fgxfs1wc"]
+
+[node name="MenuOverlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -80.0
+offset_right = -512.0
+offset_bottom = -296.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 15
+z_as_relative = false
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 144.0
+color = Color(0, 0, 0, 0.784314)
