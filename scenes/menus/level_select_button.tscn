@@ -1,22 +1,22 @@
 [gd_scene load_steps=8 format=3 uid="uid://cd4xlyq6jvfpo"]
 
-[ext_resource type="Script" path="res://scenes/menus/level_button.gd" id="1_8pef3"]
-[ext_resource type="Texture2D" uid="uid://cospdmt0e1gh1" path="res://sprites/score-sheet.png" id="2_58vgb"]
+[ext_resource type="Script" path="res://scenes/menus/level_select_button.gd" id="1_et5ub"]
+[ext_resource type="Texture2D" uid="uid://cospdmt0e1gh1" path="res://sprites/score-sheet.png" id="2_urrwb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cuqdk"]
-atlas = ExtResource("2_58vgb")
+atlas = ExtResource("2_urrwb")
 region = Rect2(0, 0, 48, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_641ns"]
-atlas = ExtResource("2_58vgb")
+atlas = ExtResource("2_urrwb")
 region = Rect2(48, 0, 48, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nuhtn"]
-atlas = ExtResource("2_58vgb")
+atlas = ExtResource("2_urrwb")
 region = Rect2(96, 0, 48, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ke7t"]
-atlas = ExtResource("2_58vgb")
+atlas = ExtResource("2_urrwb")
 region = Rect2(144, 0, 48, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r4rxa"]
@@ -45,7 +45,7 @@ offset_bottom = 8.0
 theme_override_font_sizes/font_size = 48
 text = "X -      "
 alignment = 0
-script = ExtResource("1_8pef3")
+script = ExtResource("1_et5ub")
 
 [node name="Score" type="AnimatedSprite2D" parent="."]
 z_index = 15
