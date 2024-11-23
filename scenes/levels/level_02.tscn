@@ -11,11 +11,12 @@
 script = ExtResource("2_thraj")
 
 [node name="Label" type="Label" parent="." index="0"]
+visible = false
 z_index = 5
+z_as_relative = false
 offset_left = -8.0
 offset_top = -16.0
-offset_right = 63.0
-offset_bottom = -2.0
+offset_right = 64.0
 text = "Build Mode ->"
 autowrap_mode = 3
 
@@ -34,6 +35,8 @@ locked = false
 
 [node name="Label2" type="Label" parent="." index="4"]
 visible = false
+z_index = 2
+z_as_relative = false
 offset_left = -16.0
 offset_top = -32.0
 offset_right = 65.0

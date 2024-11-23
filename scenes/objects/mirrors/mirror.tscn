@@ -22,6 +22,7 @@ stream = ExtResource("3_q582x")
 volume_db = -30.0
 
 [node name="RotateButton" type="TextureButton" parent="."]
+visible = false
 offset_left = 8.0
 offset_top = -8.0
 offset_right = 24.0
@@ -31,6 +32,7 @@ texture_pressed = ExtResource("4_l17x6")
 stretch_mode = 5
 
 [node name="MinusButton" type="TextureButton" parent="."]
+visible = false
 offset_left = 24.0
 offset_top = -8.0
 offset_right = 40.0
