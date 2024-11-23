@@ -19,7 +19,6 @@ const ROTATE_PRESSED_SPRITE = preload("res://sprites/rotate_pressed.png")
 		sprite.rotation = value
 		collision.rotation = value
 		mirror_rotation = value
-@export var last_mirror_rotation : float = 0
 @export var locked : bool = true
 @export var mirror_rotation_amount : float = PI/8
 @export var is_rotating : bool = false:
@@ -32,6 +31,8 @@ const ROTATE_PRESSED_SPRITE = preload("res://sprites/rotate_pressed.png")
 		else:
 			rotate_button.texture_normal = ROTATE_SPRITE
 			rotate_button.texture_pressed = ROTATE_PRESSED_SPRITE
+var last_mirror_rotation : float = 0
+var relative_mouse_position : Vector2
 
 
 func _ready() -> void:
@@ -47,7 +48,7 @@ func _process(delta: float) -> void:
 		is_rotating = false
 		last_mirror_rotation = mirror_rotation
 	elif is_rotating:
-		var relative_mouse_position = get_local_mouse_position()
+		var relative_mouse_position = get_local_mouse_position() - relative_mouse_position
 		mirror_rotation = relative_mouse_position.angle() + last_mirror_rotation
 
 
@@ -89,4 +90,6 @@ func _on_minus_button_pressed() -> void:
 
 
 func _on_rotate_button_button_down() -> void:
+	var center = Vector2(rotate_button.size.x/2, rotate_button.size.y/2)
+	relative_mouse_position = rotate_button.get_local_mouse_position() - center
 	is_rotating = true

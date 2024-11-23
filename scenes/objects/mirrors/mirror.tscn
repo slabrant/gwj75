@@ -22,34 +22,31 @@ stream = ExtResource("3_q582x")
 volume_db = -30.0
 
 [node name="RotateButton" type="TextureButton" parent="."]
-visible = false
-offset_left = 9.0
-offset_top = -6.0
-offset_right = 21.0
-offset_bottom = 6.0
+offset_left = 8.0
+offset_top = -8.0
+offset_right = 24.0
+offset_bottom = 8.0
 texture_normal = ExtResource("3_k064b")
 texture_pressed = ExtResource("4_l17x6")
-stretch_mode = 3
+stretch_mode = 5
 
 [node name="MinusButton" type="TextureButton" parent="."]
-visible = false
-offset_left = 19.0
-offset_top = -6.0
-offset_right = 31.0
-offset_bottom = 6.0
+offset_left = 24.0
+offset_top = -8.0
+offset_right = 40.0
+offset_bottom = 8.0
 texture_normal = ExtResource("5_2ej6g")
 texture_pressed = ExtResource("6_hjw78")
-stretch_mode = 3
+stretch_mode = 5
 
 [node name="LockButton" type="TextureButton" parent="."]
-visible = false
-offset_left = 10.0
-offset_top = -6.0
-offset_right = 22.0
-offset_bottom = 6.0
+offset_left = 8.0
+offset_top = -8.0
+offset_right = 24.0
+offset_bottom = 8.0
 texture_normal = ExtResource("7_h0g1v")
 texture_pressed = ExtResource("8_g8kev")
-stretch_mode = 3
+stretch_mode = 5
 
 [node name="TouchArea" type="Area2D" parent="."]
 

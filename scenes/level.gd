@@ -67,8 +67,11 @@ func win() -> void:
 	else:
 		world.level_score = 1
 	
-	var menu = WIN_MENU.instantiate()
-	get_tree().root.add_child(menu)
+	if open_menu:
+		open_menu.close()
+	else:
+		var menu = WIN_MENU.instantiate()
+		get_tree().root.add_child(menu)
 
 
 func _on_build_mode_button_pressed() -> void:

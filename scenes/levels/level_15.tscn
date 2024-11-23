@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://bvvrc1lxsgt3p"]
+[gd_scene load_steps=7 format=4 uid="uid://nifrl1t5q6mb"]
 
 [ext_resource type="PackedScene" uid="uid://3sxqjs6qf5gq" path="res://scenes/level.tscn" id="1_oqvtl"]
 [ext_resource type="PackedScene" uid="uid://bp23a3x1ayyfm" path="res://scenes/objects/collision_blocks.tscn" id="2_cw2q2"]
