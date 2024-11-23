@@ -12,6 +12,9 @@ func shoot(shoot_rotation) -> CharacterBody2D:
 
 
 func _on_body_entered(body: Node2D) -> void:
+	body.queue_free()
+	if body.color != [255, 255, 255]:
+		return
 	var combined_rotation = mirror_rotation + rotation
 	var green_beam = shoot(deg_to_rad(30) - combined_rotation)
 	green_beam.color = [0, 255, 0]
@@ -19,4 +22,3 @@ func _on_body_entered(body: Node2D) -> void:
 	red_beam.color = [255, 0, 0]
 	var blue_beam = shoot(deg_to_rad(270) - combined_rotation)
 	blue_beam.color = [0, 0, 255]
-	body.queue_free()
