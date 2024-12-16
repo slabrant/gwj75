@@ -8,7 +8,7 @@ extends CharacterBody2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var laser_shoot: AudioStreamPlayer = $LaserShoot
 
-@export var SPEED = 5000
+@export var SPEED = 7500
 @export var color: Array:
 	set(value):
 		set_color(value[0], value[1], value[2])

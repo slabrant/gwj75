@@ -1,14 +1,17 @@
-[gd_scene load_steps=15 format=4 uid="uid://cvxjd4w2swjqs"]
+[gd_scene load_steps=18 format=4 uid="uid://cvxjd4w2swjqs"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_rid8s"]
 [ext_resource type="Texture2D" uid="uid://cdwtr7gry2twa" path="res://sprites/bg_16.png" id="2_aa7qc"]
+[ext_resource type="PackedScene" uid="uid://bp23a3x1ayyfm" path="res://scenes/objects/collision_blocks.tscn" id="2_ppuw4"]
 [ext_resource type="Texture2D" uid="uid://banqxbdmhfaoc" path="res://sprites/bg_build_mode.png" id="3_bt0cm"]
 [ext_resource type="Texture2D" uid="uid://c31bq8jr5mcex" path="res://sprites/bg_8.png" id="4_4sq44"]
-[ext_resource type="PackedScene" uid="uid://b6nj7cjeaoex6" path="res://scenes/menus/pause_menu_button.tscn" id="5_omybm"]
+[ext_resource type="Texture2D" uid="uid://5yd87obchntd" path="res://sprites/menu.png" id="6_e0la5"]
 [ext_resource type="Texture2D" uid="uid://c5nn8675u3k6q" path="res://sprites/menu_pressed.png" id="6_n2pog"]
 [ext_resource type="Texture2D" uid="uid://jm7trfocx68y" path="res://sprites/hammer.png" id="7_tku74"]
 [ext_resource type="Texture2D" uid="uid://d1rljudcdbq8b" path="res://sprites/hammer_pressed.png" id="8_v0i44"]
 [ext_resource type="PackedScene" uid="uid://cbev4thk0ftt" path="res://scenes/objects/mirrors/mirror_generator.tscn" id="9_ubqgb"]
+[ext_resource type="Texture2D" uid="uid://ht1yc3b64tya" path="res://sprites/gear.png" id="11_0r0og"]
+[ext_resource type="Texture2D" uid="uid://cghh60ieitpu" path="res://sprites/gear_pressed.png" id="12_fyuj4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kq8r4"]
 texture = ExtResource("3_bt0cm")
@@ -45,6 +48,10 @@ sources/2 = SubResource("TileSetAtlasSource_03ej3")
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_rid8s")
+level_small = true
+
+[node name="CollisionBlocks" parent="." instance=ExtResource("2_ppuw4")]
+tile_map_data = PackedByteArray("AAD6/wMAAAABAAUAAAACAAMAAAABAAUAAAADAAMAAAABAAUAAAAEAAMAAAABAAUAAAAFAAIAAAABAAUAAAD6/wIAAAABAAUAAAD6//z/AAABAAUAAAD6//3/AAABAAUAAAD6//7/AAABAAUAAAD6////AAABAAUAAAD6/wAAAAABAAUAAAD6/wEAAAABAAUAAAD7//z/AAABAAUAAAD7//3/AAAAAAAAAAD8//z/AAABAAUAAAD8//3/AAABAAAAAAD9//z/AAABAAUAAAD9//3/AAABAAAAAAD+//z/AAABAAUAAAD+//3/AAABAAAAAAD///z/AAABAAUAAAD///3/AAABAAAAAAAAAPz/AAABAAUAAAAAAP3/AAABAAAAAAABAPz/AAABAAUAAAABAP3/AAABAAAAAAACAPz/AAABAAUAAAACAP3/AAACAAAAAAAFAAMAAAABAAUAAAACAAIAAAACAAIAAAADAAIAAAABAAIAAAAEAAIAAAACAAIAAAADAPz/AAABAAUAAAADAP3/AAABAAAAAAAEAPz/AAABAAUAAAAFAPz/AAABAAUAAAAFAP3/AAABAAUAAAD7/wIAAAAAAAIAAAD8/wIAAAABAAIAAAD9/wIAAAABAAIAAAD+/wIAAAABAAIAAAD//wIAAAABAAIAAAAAAAIAAAABAAIAAAABAAIAAAABAAIAAAD7/wMAAAABAAUAAAD8/wMAAAABAAUAAAD9/wMAAAABAAUAAAD+/wMAAAABAAUAAAD//wMAAAABAAUAAAAAAAMAAAABAAUAAAABAAMAAAABAAUAAAAFAAEAAAABAAUAAAAFAAAAAAABAAUAAAAFAP//AAABAAUAAAAFAP7/AAABAAUAAAACAP7/AAACAAEAAAACAP//AAACAAEAAAACAAAAAAACAAEAAAACAAEAAAACAAEAAAAEAP3/AAACAAAAAAD7/wEAAAAAAAEAAAD7/wAAAAAAAAEAAAD7////AAAAAAEAAAD7//7/AAAAAAEAAAAEAAEAAAACAAEAAAAEAAAAAAACAAEAAAAEAP//AAACAAEAAAAEAP7/AAACAAEAAAA=")
 
 [node name="BuildModeBG" type="TileMapLayer" parent="."]
 visible = false
@@ -61,36 +68,55 @@ tile_set = SubResource("TileSet_a1whd")
 z_index = 10
 zoom = Vector2(3.75, 3.75)
 
-[node name="MenuButton" parent="." instance=ExtResource("5_omybm")]
+[node name="MenuButton" type="TextureButton" parent="."]
 z_index = 10
-offset_left = 64.0
+anchors_preset = -1
+anchor_right = 0.012
+anchor_bottom = 0.022
+offset_left = 55.0
 offset_top = -40.0
-offset_right = 80.0
+offset_right = 71.0
 offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("6_e0la5")
+texture_pressed = ExtResource("6_n2pog")
 texture_hover = ExtResource("6_n2pog")
 stretch_mode = 0
 
 [node name="BuildModeButton" type="TextureButton" parent="."]
-offset_left = 64.0
+offset_left = 55.0
 offset_top = -16.0
-offset_right = 80.0
+offset_right = 71.0
 texture_normal = ExtResource("7_tku74")
 texture_pressed = ExtResource("8_v0i44")
 texture_hover = ExtResource("8_v0i44")
 ignore_texture_size = true
 stretch_mode = 0
 
+[node name="SettingsButton" type="TextureButton" parent="."]
+offset_left = 32.0
+offset_top = -44.0
+offset_right = 44.0
+offset_bottom = -32.0
+texture_normal = ExtResource("11_0r0og")
+texture_pressed = ExtResource("12_fyuj4")
+ignore_texture_size = true
+stretch_mode = 4
+
 [node name="MirrorGenerator" parent="." instance=ExtResource("9_ubqgb")]
 z_index = -2
-position = Vector2(72, 16)
+position = Vector2(64, 20)
 
 [node name="MirrorBlock" type="ColorRect" parent="."]
 offset_left = 48.0
-offset_top = 8.0
-offset_right = 96.0
+offset_top = 6.0
+offset_right = 80.0
 offset_bottom = 48.0
 color = Color(0.498039, 0.498039, 0.498039, 1)
 
 [node name="Goals" type="Node" parent="."]
 
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="BuildModeButton" to="." method="_on_build_mode_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]

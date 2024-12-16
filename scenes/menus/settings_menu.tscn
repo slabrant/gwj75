@@ -1,0 +1,79 @@
+[gd_scene load_steps=2 format=3 uid="uid://2x5ubrltcprm"]
+
+[ext_resource type="PackedScene" uid="uid://fpy0fgxfs1wc" path="res://scenes/menus/menu_overlay.tscn" id="1_4siqv"]
+
+[node name="SettingsMenu" instance=ExtResource("1_4siqv")]
+
+[node name="SpeedValue" type="TextEdit" parent="." index="1"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 24.0
+offset_right = 232.0
+offset_bottom = 48.0
+placeholder_text = "0 - 200"
+
+[node name="SpeedLabel" type="Label" parent="." index="2"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 24.0
+offset_right = 104.0
+offset_bottom = 48.0
+text = "Bullet Speed"
+vertical_alignment = 1
+
+[node name="PositionSnappingValue" type="CheckButton" parent="." index="3"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 48.0
+offset_right = 188.0
+offset_bottom = 72.0
+
+[node name="PositionSnappingLabel" type="Label" parent="." index="4"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 48.0
+offset_right = 128.0
+offset_bottom = 72.0
+text = "Position Snapping"
+vertical_alignment = 1
+
+[node name="RotationSnapValue" type="TextEdit" parent="." index="5"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 72.0
+offset_right = 232.0
+offset_bottom = 96.0
+placeholder_text = "0, 22.5, 45, 90"
+
+[node name="RotationSnapLabel" type="Label" parent="." index="6"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 72.0
+offset_right = 136.0
+offset_bottom = 96.0
+text = "Rotation Snap Angle"
+vertical_alignment = 1
+
+[node name="SlowRotationValue" type="CheckButton" parent="." index="7"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 96.0
+offset_right = 188.0
+offset_bottom = 120.0
+
+[node name="SlowRotationLabel" type="Label" parent="." index="8"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 96.0
+offset_right = 128.0
+offset_bottom = 120.0
+text = "Slow Rotation"
+vertical_alignment = 1
+
+[node name="CloseButton" type="Button" parent="." index="9"]
+z_index = 15
+layout_mode = 0
+offset_left = 208.0
+offset_right = 232.0
+offset_bottom = 22.0
+text = "X"

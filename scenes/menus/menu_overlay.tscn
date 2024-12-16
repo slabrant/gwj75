@@ -1,22 +1,23 @@
-[gd_scene format=3 uid="uid://fpy0fgxfs1wc"]
+[gd_scene load_steps=2 format=3 uid="uid://fpy0fgxfs1wc"]
+
+[ext_resource type="Script" path="res://scenes/menus/menu.gd" id="1_pia6b"]
 
 [node name="MenuOverlay" type="Control"]
+z_index = 15
+z_as_relative = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -128.0
 offset_top = -80.0
-offset_right = -512.0
-offset_bottom = -296.0
+offset_right = -128.0
+offset_bottom = -80.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_pia6b")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-z_index = 15
-z_as_relative = false
+custom_minimum_size = Vector2(640, 360)
 layout_mode = 0
-offset_top = -16.0
-offset_right = 256.0
-offset_bottom = 144.0
 color = Color(0, 0, 0, 0.784314)

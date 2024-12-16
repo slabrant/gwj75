@@ -8,7 +8,6 @@ var level_resources = load("res://scenes/level_list.tres")
 
 
 func _ready() -> void:
-	level.open_menu = self
 	win_label.text = "Good job! You did it with " + str(level.mirror_count) + " mirrors and " + str(level.shot_count) + " shots."
 	score.frame = world.level_score
 
