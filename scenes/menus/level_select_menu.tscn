@@ -6,9 +6,6 @@
 [node name="LevelSelectMenu" instance=ExtResource("1_or0we")]
 script = ExtResource("1_tdlw3")
 
-[node name="ColorRect" parent="." index="0"]
-layout_mode = 0
-
 [node name="MainMenuButton" type="Button" parent="." index="2"]
 layout_mode = 0
 offset_left = 16.0

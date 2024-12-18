@@ -1,4 +1,4 @@
-extends "res://scenes/menus/menu.gd"
+extends "res://scenes/menus/menu_overlay.gd"
 
 @onready var speed_value: TextEdit = $SpeedValue
 @onready var position_snapping_value: CheckButton = $PositionSnappingValue
@@ -20,8 +20,6 @@ func _on_speed_value_text_changed() -> void:
 
 
 func _on_position_snapping_value_pressed() -> void:
-	print(world.position_snapping_setting)
-	print(position_snapping_value.toggle_mode)
 	world.position_snapping_setting = position_snapping_value.button_pressed
 
 
@@ -31,3 +29,7 @@ func _on_rotation_snap_value_text_changed() -> void:
 
 func _on_slow_rotation_value_pressed() -> void:
 	world.slow_rotation_setting = slow_rotation_value.button_pressed
+
+
+func _on_close_button_pressed() -> void:
+	close()

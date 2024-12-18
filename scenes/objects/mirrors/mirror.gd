@@ -32,7 +32,7 @@ const ROTATE_PRESSED_SPRITE = preload("res://sprites/rotate_pressed.png")
 			rotate_button.texture_normal = ROTATE_SPRITE
 			rotate_button.texture_pressed = ROTATE_PRESSED_SPRITE
 var last_mirror_rotation : float = 0
-var relative_mouse_position : Vector2
+var last_mouse_position : Vector2
 
 
 func _ready() -> void:
@@ -48,9 +48,13 @@ func _process(delta: float) -> void:
 		is_rotating = false
 		last_mirror_rotation = mirror_rotation
 	elif is_rotating:
-		var relative_mouse_position = get_local_mouse_position() - relative_mouse_position
+		var mouse_position = get_local_mouse_position() - last_mouse_position
 		var rotation_snap_angle_setting = deg_to_rad(world.rotation_snap_angle_setting) if world.rotation_snap_angle_setting != 0 else deg_to_rad(1)
-		var temp_mirror_rotation = relative_mouse_position.angle() + last_mirror_rotation
+		
+		var mouse_angle = mouse_position.angle()
+		if world.slow_rotation_setting:
+			mouse_angle = mouse_angle / 2
+		var temp_mirror_rotation = last_mirror_rotation + mouse_angle
 		mirror_rotation = round(temp_mirror_rotation / rotation_snap_angle_setting) * rotation_snap_angle_setting
 
 
@@ -93,5 +97,5 @@ func _on_minus_button_pressed() -> void:
 
 func _on_rotate_button_button_down() -> void:
 	var center = Vector2(rotate_button.size.x/2, rotate_button.size.y/2)
-	relative_mouse_position = rotate_button.get_local_mouse_position() - center
+	last_mouse_position = rotate_button.get_local_mouse_position() - center
 	is_rotating = true

@@ -1,6 +1,5 @@
-extends Control
+extends "res://scenes/menus/menu_page.gd"
 
-@onready var world: Node = get_tree().root.get_child(0)
 var level_resources = load("res://scenes/level_list.tres")
 
 
@@ -10,3 +9,7 @@ func _on_play_button_pressed() -> void:
 
 func _on_level_select_button_pressed() -> void:
 	world.scene_path = "res://scenes/menus/level_select_menu.tscn"
+
+
+func _on_controls_button_pressed() -> void:
+	world.scene_path = "res://scenes/menus/controls_menu.tscn"

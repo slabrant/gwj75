@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dpcsxylaa6fom"]
 
-[ext_resource type="Script" path="res://scenes/menus/menu.gd" id="1_huesv"]
+[ext_resource type="Script" path="res://scenes/menus/menu_page.gd" id="1_srrum"]
 
 [node name="MenuPage" type="Control"]
 layout_mode = 3
@@ -13,13 +13,17 @@ offset_right = -320.0
 offset_bottom = -180.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_huesv")
+script = ExtResource("1_srrum")
+metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(640, 360)
+layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
 color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(320, 180)
+metadata/_edit_lock_ = true

@@ -10,25 +10,17 @@
 
 [node name="Cannon" parent="." index="0" instance=ExtResource("3_5g20j")]
 z_index = 10
-position = Vector2(32, 32)
+position = Vector2(24, 32)
 
-[node name="Label" type="Label" parent="." index="1"]
-offset_left = -76.0
-offset_top = -42.0
-offset_right = 29.0
-offset_bottom = 6.0
-text = "Some mirrors cannot be modified."
-autowrap_mode = 3
-
-[node name="Mirrors" type="Node" parent="." index="2"]
+[node name="Mirrors" type="Node" parent="." index="1"]
 
 [node name="MirrorNormal" parent="Mirrors" index="0" instance=ExtResource("5_mbxp8")]
-position = Vector2(32, -24)
+position = Vector2(24, -24)
 rotation = -2.35619
 
 [node name="Goal" parent="Goals" index="0" instance=ExtResource("4_kqdhd")]
 z_index = 10
-position = Vector2(-72, 32)
+position = Vector2(-64, 32)
 
-[node name="CollisionBlocks2" parent="." index="13" instance=ExtResource("2_1oago")]
+[node name="CollisionBlocks2" parent="." index="12" instance=ExtResource("2_1oago")]
 tile_map_data = PackedByteArray(0, 0, 253, 255, 2, 0, 0, 0, 7, 0, 1, 0, 0, 0, 253, 255, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 253, 255, 1, 0, 0, 0, 7, 0, 1, 0, 0, 0)

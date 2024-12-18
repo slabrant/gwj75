@@ -19,7 +19,3 @@ func _ready() -> void:
 func close() -> void:
 	level.open_menu = null
 	queue_free()
-
-
-func _on_close_button_pressed() -> void:
-	close()

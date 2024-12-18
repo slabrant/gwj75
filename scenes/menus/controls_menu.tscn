@@ -1,0 +1,90 @@
+[gd_scene load_steps=8 format=3 uid="uid://cl525cbhn2ait"]
+
+[ext_resource type="PackedScene" uid="uid://dpcsxylaa6fom" path="res://scenes/menus/menu_page.tscn" id="1_3axgq"]
+[ext_resource type="Texture2D" uid="uid://dfhlbl5detttk" path="res://sprites/cannon_base.png" id="2_dhlj1"]
+[ext_resource type="Script" path="res://scenes/menus/controls_menu.gd" id="2_x0i6o"]
+[ext_resource type="Texture2D" uid="uid://bi60ajlgkcmcl" path="res://sprites/cannon.png" id="3_1wjdw"]
+[ext_resource type="Texture2D" uid="uid://bvwfwaab0tnfs" path="res://sprites/goal.png" id="4_1y6s0"]
+[ext_resource type="Texture2D" uid="uid://d2dtu38sbp2xr" path="res://sprites/lock.png" id="5_2wwjr"]
+[ext_resource type="Texture2D" uid="uid://jm7trfocx68y" path="res://sprites/hammer.png" id="6_0g0u4"]
+
+[node name="MenuPage" instance=ExtResource("1_3axgq")]
+script = ExtResource("2_x0i6o")
+
+[node name="Label" type="Label" parent="." index="2"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 24.0
+offset_right = 450.0
+offset_bottom = 52.0
+theme_override_font_sizes/font_size = 32
+text = "Click anywhere to shoot."
+autowrap_mode = 3
+
+[node name="CannonBase" type="Sprite2D" parent="Label" index="0"]
+position = Vector2(274, 16)
+scale = Vector2(2, 2)
+texture = ExtResource("2_dhlj1")
+
+[node name="Cannon" type="Sprite2D" parent="Label" index="1"]
+position = Vector2(284, 16)
+scale = Vector2(2, 2)
+texture = ExtResource("3_1wjdw")
+
+[node name="Label4" type="Label" parent="." index="3"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 83.0
+offset_right = 468.0
+offset_bottom = 111.0
+theme_override_font_sizes/font_size = 32
+text = "Shoot the light (    ) to win."
+
+[node name="Goal" type="Sprite2D" parent="Label4" index="0"]
+position = Vector2(196, 16)
+scale = Vector2(2, 2)
+texture = ExtResource("4_1y6s0")
+
+[node name="Label2" type="Label" parent="." index="4"]
+z_index = 2
+z_as_relative = false
+layout_mode = 0
+offset_left = 168.0
+offset_top = 127.0
+offset_right = 516.0
+offset_bottom = 186.0
+theme_override_font_sizes/font_size = 32
+text = "In Build Mode (    ) you can modify mirrors but not shoot."
+autowrap_mode = 3
+
+[node name="Hammer" type="Sprite2D" parent="Label2" index="0"]
+position = Vector2(173, 16)
+scale = Vector2(2, 2)
+texture = ExtResource("6_0g0u4")
+
+[node name="Label3" type="Label" parent="." index="5"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 207.0
+offset_right = 488.0
+offset_bottom = 266.0
+theme_override_font_sizes/font_size = 32
+text = "Locked (    ) mirrors cannot be modified."
+autowrap_mode = 3
+
+[node name="Lock" type="Sprite2D" parent="Label3" index="0"]
+position = Vector2(108, 15)
+scale = Vector2(4.572, 4)
+texture = ExtResource("5_2wwjr")
+
+[node name="CloseButton" type="Button" parent="." index="6"]
+z_index = 15
+layout_mode = 0
+offset_left = 290.0
+offset_top = 292.0
+offset_right = 347.0
+offset_bottom = 348.0
+theme_override_font_sizes/font_size = 48
+text = "OK"
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

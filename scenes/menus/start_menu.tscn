@@ -46,28 +46,33 @@ shadow_color = Color(0.329412, 0.329412, 0.329412, 1)
 [node name="StartMenu" instance=ExtResource("1_1jg08")]
 script = ExtResource("1_1otxa")
 
-[node name="ColorRect" parent="." index="0"]
-layout_mode = 0
-
 [node name="PlayButton" type="Button" parent="." index="2"]
 layout_mode = 0
-offset_left = 224.0
-offset_top = 164.0
-offset_right = 416.0
-offset_bottom = 236.0
+offset_left = 208.0
+offset_top = 155.0
+offset_right = 432.0
+offset_bottom = 220.0
 theme_override_font_sizes/font_size = 64
 text = "Play"
 
 [node name="LevelSelectButton" type="Button" parent="." index="3"]
 layout_mode = 0
-offset_left = 208.0
-offset_top = 252.0
-offset_right = 432.0
-offset_bottom = 316.0
-theme_override_font_sizes/font_size = 48
+offset_left = 232.0
+offset_top = 236.0
+offset_right = 408.0
+offset_bottom = 284.0
+theme_override_font_sizes/font_size = 32
 text = "Level Select"
 
-[node name="Derorrim" type="Node" parent="." index="4"]
+[node name="ControlsButton" type="Button" parent="." index="4"]
+offset_left = 232.0
+offset_top = 292.0
+offset_right = 408.0
+offset_bottom = 340.0
+theme_override_font_sizes/font_size = 32
+text = "Controls"
+
+[node name="Derorrim" type="Node" parent="." index="5"]
 
 [node name="D" type="Label" parent="Derorrim" index="0"]
 offset_left = -224.0
@@ -151,3 +156,4 @@ vertical_alignment = 2
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="LevelSelectButton" to="." method="_on_level_select_button_pressed"]
+[connection signal="pressed" from="ControlsButton" to="." method="_on_controls_button_pressed"]

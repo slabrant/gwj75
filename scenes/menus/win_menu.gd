@@ -1,4 +1,4 @@
-extends "res://scenes/menus/menu.gd"
+extends "res://scenes/menus/menu_overlay.gd"
 
 @onready var win_label: Label = $WinLabel
 @onready var score: AnimatedSprite2D = $Score
