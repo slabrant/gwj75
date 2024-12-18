@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="LevelListResource" load_steps=2 format=3 uid="uid://22ajt01i00b"]
+[gd_resource type="Resource" script_class="LevelListResource" load_steps=2 format=3]
 
 [ext_resource type="Script" path="res://scenes/level_list_resource.gd" id="1_lgm2d"]
 

@@ -1,4 +1,6 @@
-extends "res://scenes/menus/menu_page.gd"
+extends Control
+
+@onready var world: Node = get_tree().root.get_child(0)
 
 const LEVEL_BUTTON = preload("res://scenes/menus/level_select_button.tscn")
 
