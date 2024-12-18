@@ -46,36 +46,40 @@ script = ExtResource("1_hwblf")
 [node name="NextLevelButton" type="Button" parent="." index="1"]
 z_index = 15
 layout_mode = 0
-offset_left = 136.0
-offset_top = 96.0
-offset_right = 200.0
-offset_bottom = 120.0
+offset_left = 336.0
+offset_top = 236.0
+offset_right = 528.0
+offset_bottom = 292.0
+theme_override_font_sizes/font_size = 48
 text = "Next Level"
 
 [node name="MainMenuButton" type="Button" parent="." index="2"]
 z_index = 15
 layout_mode = 0
-offset_left = 56.0
-offset_top = 96.0
-offset_right = 120.0
-offset_bottom = 120.0
+offset_left = 112.0
+offset_top = 236.0
+offset_right = 304.0
+offset_bottom = 292.0
+theme_override_font_sizes/font_size = 48
 text = "Main Menu"
 
 [node name="WinLabel" type="Label" parent="." index="3"]
 z_index = 15
 layout_mode = 0
-offset_left = 48.0
-offset_top = 40.0
-offset_right = 208.0
-offset_bottom = 88.0
+offset_left = 64.0
+offset_top = 68.0
+offset_right = 576.0
+offset_bottom = 164.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
 text = "Good Job! You did it with X shots and Y mirrors!"
 horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="Score" type="AnimatedSprite2D" parent="." index="4"]
 z_index = 15
-position = Vector2(128, 80)
+position = Vector2(320, 188)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_llvfs")
 
 [connection signal="pressed" from="NextLevelButton" to="." method="_on_next_level_button_pressed"]

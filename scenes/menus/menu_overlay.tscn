@@ -6,13 +6,10 @@
 z_index = 15
 z_as_relative = false
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -128.0
-offset_top = -80.0
-offset_right = -128.0
-offset_bottom = -80.0
+anchor_left = -0.5
+anchor_top = -0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pia6b")
@@ -20,4 +17,6 @@ script = ExtResource("1_pia6b")
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(640, 360)
 layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
 color = Color(0, 0, 0, 0.784314)

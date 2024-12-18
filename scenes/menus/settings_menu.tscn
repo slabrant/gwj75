@@ -1,79 +1,99 @@
-[gd_scene load_steps=2 format=3 uid="uid://2x5ubrltcprm"]
+[gd_scene load_steps=3 format=3 uid="uid://2x5ubrltcprm"]
 
 [ext_resource type="PackedScene" uid="uid://fpy0fgxfs1wc" path="res://scenes/menus/menu_overlay.tscn" id="1_4siqv"]
+[ext_resource type="Script" path="res://scenes/menus/settings_menu.gd" id="2_j56f5"]
 
 [node name="SettingsMenu" instance=ExtResource("1_4siqv")]
+script = ExtResource("2_j56f5")
 
 [node name="SpeedValue" type="TextEdit" parent="." index="1"]
 layout_mode = 0
-offset_left = 144.0
-offset_top = 24.0
-offset_right = 232.0
-offset_bottom = 48.0
+offset_left = 376.0
+offset_top = 28.0
+offset_right = 504.0
+offset_bottom = 84.0
+theme_override_font_sizes/font_size = 48
 placeholder_text = "0 - 200"
 
 [node name="SpeedLabel" type="Label" parent="." index="2"]
 layout_mode = 0
 offset_left = 32.0
-offset_top = 24.0
-offset_right = 104.0
-offset_bottom = 48.0
+offset_top = 36.0
+offset_right = 224.0
+offset_bottom = 77.0
+theme_override_font_sizes/font_size = 48
 text = "Bullet Speed"
 vertical_alignment = 1
 
 [node name="PositionSnappingValue" type="CheckButton" parent="." index="3"]
 layout_mode = 0
-offset_left = 144.0
-offset_top = 48.0
-offset_right = 188.0
-offset_bottom = 72.0
+offset_left = 376.0
+offset_top = 108.0
+offset_right = 420.0
+offset_bottom = 132.0
+scale = Vector2(2, 2)
+theme_override_font_sizes/font_size = 48
 
 [node name="PositionSnappingLabel" type="Label" parent="." index="4"]
 layout_mode = 0
 offset_left = 32.0
-offset_top = 48.0
-offset_right = 128.0
-offset_bottom = 72.0
+offset_top = 108.0
+offset_right = 305.0
+offset_bottom = 149.0
+theme_override_font_sizes/font_size = 48
 text = "Position Snapping"
 vertical_alignment = 1
 
 [node name="RotationSnapValue" type="TextEdit" parent="." index="5"]
 layout_mode = 0
-offset_left = 144.0
-offset_top = 72.0
-offset_right = 232.0
-offset_bottom = 96.0
+offset_left = 376.0
+offset_top = 180.0
+offset_right = 616.0
+offset_bottom = 236.0
+theme_override_font_sizes/font_size = 48
 placeholder_text = "0, 22.5, 45, 90"
 
 [node name="RotationSnapLabel" type="Label" parent="." index="6"]
 layout_mode = 0
 offset_left = 32.0
-offset_top = 72.0
-offset_right = 136.0
-offset_bottom = 96.0
+offset_top = 180.0
+offset_right = 344.0
+offset_bottom = 221.0
+theme_override_font_sizes/font_size = 48
 text = "Rotation Snap Angle"
 vertical_alignment = 1
 
 [node name="SlowRotationValue" type="CheckButton" parent="." index="7"]
 layout_mode = 0
-offset_left = 144.0
-offset_top = 96.0
-offset_right = 188.0
-offset_bottom = 120.0
+offset_left = 376.0
+offset_top = 252.0
+offset_right = 420.0
+offset_bottom = 276.0
+scale = Vector2(2, 2)
+theme_override_font_sizes/font_size = 48
 
 [node name="SlowRotationLabel" type="Label" parent="." index="8"]
 layout_mode = 0
 offset_left = 32.0
-offset_top = 96.0
-offset_right = 128.0
-offset_bottom = 120.0
+offset_top = 252.0
+offset_right = 239.0
+offset_bottom = 293.0
+theme_override_font_sizes/font_size = 48
 text = "Slow Rotation"
 vertical_alignment = 1
 
 [node name="CloseButton" type="Button" parent="." index="9"]
 z_index = 15
 layout_mode = 0
-offset_left = 208.0
-offset_right = 232.0
-offset_bottom = 22.0
+offset_left = 568.0
+offset_top = 12.0
+offset_right = 625.0
+offset_bottom = 68.0
+theme_override_font_sizes/font_size = 48
 text = "X"
+
+[connection signal="text_changed" from="SpeedValue" to="." method="_on_speed_value_text_changed"]
+[connection signal="pressed" from="PositionSnappingValue" to="." method="_on_position_snapping_value_pressed"]
+[connection signal="text_changed" from="RotationSnapValue" to="." method="_on_rotation_snap_value_text_changed"]
+[connection signal="pressed" from="SlowRotationValue" to="." method="_on_slow_rotation_value_pressed"]
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

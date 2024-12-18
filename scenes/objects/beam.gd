@@ -8,7 +8,7 @@ extends CharacterBody2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var laser_shoot: AudioStreamPlayer = $LaserShoot
 
-@export var SPEED = 7500
+@export var SPEED : int
 @export var color: Array:
 	set(value):
 		set_color(value[0], value[1], value[2])
@@ -20,6 +20,7 @@ func _ready() -> void:
 	color = [255, 255, 255]
 	motion_mode = MOTION_MODE_FLOATING
 	laser_shoot.play()
+	SPEED = 1000 * world.bullet_speed_setting
 
 
 func _physics_process(delta: float) -> void:

@@ -49,7 +49,9 @@ func _process(delta: float) -> void:
 		last_mirror_rotation = mirror_rotation
 	elif is_rotating:
 		var relative_mouse_position = get_local_mouse_position() - relative_mouse_position
-		mirror_rotation = relative_mouse_position.angle() + last_mirror_rotation
+		var rotation_snap_angle_setting = deg_to_rad(world.rotation_snap_angle_setting) if world.rotation_snap_angle_setting != 0 else deg_to_rad(1)
+		var temp_mirror_rotation = relative_mouse_position.angle() + last_mirror_rotation
+		mirror_rotation = round(temp_mirror_rotation / rotation_snap_angle_setting) * rotation_snap_angle_setting
 
 
 func build_mode_checks() -> void:

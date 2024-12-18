@@ -1,13 +1,12 @@
-extends Control
+extends "res://scenes/menus/menu.gd"
 
-@onready var world: Node = get_tree().root.get_child(0)
-@onready var level: Node = world.scene
 @onready var win_label: Label = $WinLabel
 @onready var score: AnimatedSprite2D = $Score
 var level_resources = load("res://scenes/level_list.tres")
 
 
 func _ready() -> void:
+	super()
 	win_label.text = "Good job! You did it with " + str(level.mirror_count) + " mirrors and " + str(level.shot_count) + " shots."
 	score.frame = world.level_score
 

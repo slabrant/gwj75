@@ -21,6 +21,10 @@ var level_paths = []
 		scores[level_id] = value
 		level_score = value
 @export var level_list_resource = LevelListResource.new()
+@export var bullet_speed_setting : int = 7
+@export var position_snapping_setting : bool = true
+@export var rotation_snap_angle_setting : float = 22.5
+@export var slow_rotation_setting : bool = false
 
 
 func _ready() -> void:

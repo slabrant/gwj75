@@ -1,12 +1,4 @@
-extends Control
-
-@onready var world: Node = get_tree().root.get_child(0)
-@onready var level: Node = world.scene
-
-
-func close() -> void:
-	level.open_menu = null
-	queue_free()
+extends "res://scenes/menus/menu.gd"
 
 
 func _on_main_menu_button_pressed() -> void:

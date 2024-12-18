@@ -9,8 +9,8 @@ extends Button
 
 
 func _ready():
-	var x = level_id % 4 * 150 - 300
-	var y = (floor(level_id/4) + 1) * 64 - 190
+	var x = level_id % 4 * 150 + 16
+	var y = (floor(level_id/4) + 1) * 64 + 16
 	position = Vector2(x, y)
 	text = str(level_id) + " - "
 	score.frame = level_score

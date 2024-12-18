@@ -46,21 +46,24 @@ shadow_color = Color(0.329412, 0.329412, 0.329412, 1)
 [node name="StartMenu" instance=ExtResource("1_1jg08")]
 script = ExtResource("1_1otxa")
 
+[node name="ColorRect" parent="." index="0"]
+layout_mode = 0
+
 [node name="PlayButton" type="Button" parent="." index="2"]
 layout_mode = 0
-offset_left = -96.0
-offset_top = -16.0
-offset_right = 96.0
-offset_bottom = 56.0
+offset_left = 224.0
+offset_top = 164.0
+offset_right = 416.0
+offset_bottom = 236.0
 theme_override_font_sizes/font_size = 64
 text = "Play"
 
 [node name="LevelSelectButton" type="Button" parent="." index="3"]
 layout_mode = 0
-offset_left = -112.0
-offset_top = 72.0
-offset_right = 112.0
-offset_bottom = 136.0
+offset_left = 208.0
+offset_top = 252.0
+offset_right = 432.0
+offset_bottom = 316.0
 theme_override_font_sizes/font_size = 48
 text = "Level Select"
 

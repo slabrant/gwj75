@@ -6,6 +6,8 @@ extends Node2D
 @onready var build_mode_bg: TileMapLayer = $BuildModeBG
 @onready var mirror_block: ColorRect = $MirrorBlock
 @onready var build_mode_button: TextureButton = $BuildModeButton
+@onready var camera_2d: Camera2D = $Camera2D
+
 const HAMMER_SPRITE = preload("res://sprites/hammer.png")
 const HAMMER_PRESSED_SPRITE = preload("res://sprites/hammer_pressed.png")
 const WIN_MENU = preload("res://scenes/menus/win_menu.tscn")
@@ -44,6 +46,7 @@ const SETTINGS_MENU = preload("res://scenes/menus/settings_menu.tscn")
 @export var shot_count : int = 0
 @export var mirror_count : int = 0
 @export var level_small : bool = false
+@export var camera : Camera2D
 
 
 func _ready() -> void:
@@ -53,13 +56,17 @@ func _ready() -> void:
 	for goal in goal_container.get_children():
 		new_goals.append(goal)
 	goals = new_goals
+	camera = camera_2d
 
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_released("input_action"):
 		active_mirror = null
 	elif active_mirror:
-		active_mirror.position = get_global_mouse_position()
+		if world.position_snapping_setting:
+			active_mirror.position = round(get_global_mouse_position() / 8) * 8
+		else:
+			active_mirror.position = get_global_mouse_position()
 
 
 func win() -> void:
@@ -74,7 +81,6 @@ func win() -> void:
 		open_menu.close()
 	var menu = WIN_MENU.instantiate()
 	get_tree().root.add_child(menu)
-	print(menu)
 
 
 func _on_menu_button_pressed() -> void:

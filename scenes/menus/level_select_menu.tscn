@@ -6,12 +6,15 @@
 [node name="LevelSelectMenu" instance=ExtResource("1_or0we")]
 script = ExtResource("1_tdlw3")
 
+[node name="ColorRect" parent="." index="0"]
+layout_mode = 0
+
 [node name="MainMenuButton" type="Button" parent="." index="2"]
 layout_mode = 0
-offset_left = -312.0
-offset_top = -176.0
-offset_right = -226.0
-offset_bottom = -140.0
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 102.0
+offset_bottom = 48.0
 theme_override_font_sizes/font_size = 32
 text = "<- Back"
 
