@@ -12,7 +12,6 @@ func _ready() -> void:
 	position_snapping_value.button_pressed = world.position_snapping_setting
 	rotation_snap_value.text = str(world.rotation_snap_angle_setting)
 	slow_rotation_value.button_pressed = world.slow_rotation_setting
-	
 
 
 func _on_speed_value_text_changed() -> void:
