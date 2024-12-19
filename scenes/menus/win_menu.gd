@@ -2,7 +2,6 @@ extends "res://scenes/menus/menu_overlay.gd"
 
 @onready var win_label: Label = $WinLabel
 @onready var score: AnimatedSprite2D = $Score
-var level_resources = load("res://scenes/level_list.tres")
 
 
 func _ready() -> void:
@@ -19,8 +18,8 @@ func close() -> void:
 func _on_next_level_button_pressed() -> void:
 	close()
 	world.level_id += 1
-	if world.level_id < len(level_resources.level_paths):
-		world.scene_path = level_resources.level_paths[world.level_id]
+	if world.level_id < len(world.level_resources.level_paths):
+		world.scene_path = world.level_resources.level_paths[world.level_id]
 	else:
 		world.scene_path = "res://scenes/menus/credit_menu.tscn"
 
