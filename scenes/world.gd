@@ -31,6 +31,8 @@ func _ready() -> void:
 	scene_path = "res://scenes/menus/start_menu.tscn"
 	if dir:
 		populate_level_paths(level_paths)
+	else:
+		level_list_resource = load("res://scenes/level_list.tres")
 
 
 func toggle_input(enable: bool):
