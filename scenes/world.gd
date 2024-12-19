@@ -1,6 +1,5 @@
 extends Node
 
-const LevelListResource = preload("res://scenes/level_list_resource.gd")
 var dir = DirAccess.open("res://scenes/levels")
 var level_paths = []
 @onready var label: Label = $Label
@@ -25,7 +24,7 @@ var level_paths = []
 @export var position_snapping_setting : bool = true
 @export var rotation_snap_angle_setting : float = 22.5
 @export var slow_rotation_setting : bool = false
-@export var level_resources = LevelListResource.new()
+@export var level_resources = preload("res://scenes/level_list_resource.gd").new()
 
 
 
@@ -35,7 +34,6 @@ func _ready() -> void:
 		populate_level_paths(level_paths)
 	else:
 		level_resources = load("res://scenes/level_list.tres")
-
 	
 	label.text += "# of level ths: " + str(level_resources) + "\n"
 	label.text += "# of levels: " + str(len(level_resources.level_paths)) + "\n"

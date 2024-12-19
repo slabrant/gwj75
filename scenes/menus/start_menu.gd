@@ -1,7 +1,5 @@
 extends "res://scenes/menus/menu_page.gd"
 
-@onready var label: Label = $Label
-
 
 func _on_play_button_pressed() -> void:
 	world.scene_path = world.level_resources.level_paths[world.level_id]

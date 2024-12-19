@@ -1,20 +1,26 @@
-[gd_scene load_steps=5 format=4 uid="uid://cvl7xjpixaqq1"]
+[gd_scene load_steps=6 format=4 uid="uid://eonuwdv3goy7"]
 
-[ext_resource type="PackedScene" uid="uid://3sxqjs6qf5gq" path="res://scenes/level.tscn" id="1_86nyl"]
-[ext_resource type="PackedScene" uid="uid://d1v2let5i7lf1" path="res://scenes/objects/cannon.tscn" id="4_ybpnd"]
-[ext_resource type="PackedScene" uid="uid://bp23a3x1ayyfm" path="res://scenes/objects/collision_blocks.tscn" id="5_b0wkr"]
-[ext_resource type="PackedScene" uid="uid://jjym2c7dwqvs" path="res://scenes/objects/goal.tscn" id="5_twyyb"]
+[ext_resource type="PackedScene" uid="uid://3sxqjs6qf5gq" path="res://scenes/level.tscn" id="1_nj114"]
+[ext_resource type="PackedScene" uid="uid://bp23a3x1ayyfm" path="res://scenes/objects/collision_blocks.tscn" id="2_s3rv2"]
+[ext_resource type="PackedScene" uid="uid://d1v2let5i7lf1" path="res://scenes/objects/cannon.tscn" id="3_a1vv4"]
+[ext_resource type="PackedScene" uid="uid://jjym2c7dwqvs" path="res://scenes/objects/goal.tscn" id="4_dy5mc"]
+[ext_resource type="PackedScene" uid="uid://dfomgn85np2p2" path="res://scenes/objects/mirrors/mirror_normal.tscn" id="5_hqnvv"]
 
-[node name="Level5" instance=ExtResource("1_86nyl")]
+[node name="Level4" instance=ExtResource("1_nj114")]
 
-[node name="Cannon" parent="." index="0" instance=ExtResource("4_ybpnd")]
-z_index = 2
-position = Vector2(-120, 56)
+[node name="Cannon" parent="." index="0" instance=ExtResource("3_a1vv4")]
+z_index = 10
+position = Vector2(-96, -48)
 
 [node name="Mirrors" type="Node" parent="." index="1"]
 
-[node name="Goal" parent="Goals" index="0" instance=ExtResource("5_twyyb")]
-position = Vector2(-80, 0)
+[node name="MirrorNormal" parent="Mirrors" index="0" instance=ExtResource("5_hqnvv")]
+position = Vector2(88, -40)
+rotation = -2.35619
 
-[node name="CollisionBlocks2" parent="." index="11" instance=ExtResource("5_b0wkr")]
-tile_map_data = PackedByteArray("AAD6/wEAAAAEAAEAAAACAAEAAAAFAAEAAAABAAEAAAAEAAEAAAAAAAEAAAAEAAEAAAD//wEAAAAEAAEAAAD+/wEAAAAEAAEAAAD9/wEAAAAEAAEAAAD8/wEAAAAEAAEAAAD7/wEAAAAEAAEAAAD5/wEAAAAEAAYAAAD5/wAAAAAHAAEAAAD5////AAAHAAEAAAD5//7/AAAHAAAAAAA=")
+[node name="Goal" parent="Goals" index="0" instance=ExtResource("4_dy5mc")]
+z_index = 10
+position = Vector2(-104, 48)
+
+[node name="CollisionBlocks2" parent="." index="11" instance=ExtResource("2_s3rv2")]
+tile_map_data = PackedByteArray("AAD7/wEAAAAFAAQAAAD4/wEAAAAEAAEAAAD5/wEAAAAEAAEAAAD6/wEAAAAEAAEAAAD8/wEAAAAEAAEAAAD9/wEAAAAEAAEAAAD+/wEAAAAEAAEAAAD7/wIAAAAHAAIAAAD//wEAAAAEAAEAAAAAAAEAAAAEAAEAAAABAAEAAAAEAAEAAAACAAEAAAAFAAEAAAA=")
