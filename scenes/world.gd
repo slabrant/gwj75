@@ -35,7 +35,7 @@ func _ready() -> void:
 	#else:
 	level_resources = load("res://scenes/level_list.tres")
 	
-	label.text += str(dir)
+	label.text += str(dir.get_files())
 
 
 
