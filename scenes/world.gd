@@ -31,6 +31,9 @@ func _ready() -> void:
 	scene_path = "res://scenes/menus/start_menu.tscn"
 	if dir:
 		populate_level_paths(level_paths)
+	else:
+		level_resources = load("res://scenes/level_list.tres")
+
 	
 	label.text += "# of level ths: " + str(level_resources) + "\n"
 	label.text += "# of levels: " + str(len(level_resources.level_paths)) + "\n"
