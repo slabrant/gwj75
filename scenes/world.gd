@@ -35,8 +35,7 @@ func _ready() -> void:
 	#else:
 	level_resources = load("res://scenes/level_list.tres")
 	
-	label.text += "# of level ths: " + str(level_resources) + "\n"
-	label.text += "# of levels: " + str(len(level_resources.level_paths)) + "\n"
+	label.text += str(dir)
 
 
 
