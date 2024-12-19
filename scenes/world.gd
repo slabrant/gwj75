@@ -3,6 +3,7 @@ extends Node
 const LevelListResource = preload("res://scenes/level_list_resource.gd")
 var dir = DirAccess.open("res://scenes/levels")
 var level_paths = []
+@onready var label: Label = $Label
 
 @export var scene_path : String:
 	set(value):
@@ -33,6 +34,10 @@ func _ready() -> void:
 		populate_level_paths(level_paths)
 	else:
 		level_list_resource = load("res://scenes/level_list.tres")
+	
+	label.text += "# of level resource things: " + str(level_list_resource) + "\n"
+	label.text += "# of levels: " + str(len(level_list_resource.level_paths)) + "\n"
+
 
 
 func toggle_input(enable: bool):
