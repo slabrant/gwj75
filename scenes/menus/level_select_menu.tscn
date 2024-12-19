@@ -15,4 +15,9 @@ offset_bottom = 48.0
 theme_override_font_sizes/font_size = 32
 text = "<- Back"
 
+[node name="Label" type="Label" parent="." index="3"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 14.0
+
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]
