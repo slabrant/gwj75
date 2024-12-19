@@ -7,6 +7,7 @@ extends Node2D
 @onready var mirror_block: ColorRect = $MirrorBlock
 @onready var build_mode_button: TextureButton = $BuildModeButton
 @onready var camera_2d: Camera2D = $Camera2D
+@onready var level_number: Label = $LevelNumber
 
 const HAMMER_SPRITE = preload("res://sprites/hammer.png")
 const HAMMER_PRESSED_SPRITE = preload("res://sprites/hammer_pressed.png")
@@ -45,7 +46,8 @@ const SETTINGS_MENU = preload("res://scenes/menus/settings_menu.tscn")
 		open_menu = value
 @export var shot_count : int = 0
 @export var mirror_count : int = 0
-@export var level_small : bool = false
+@export var shot_par : int = 8
+@export var mirror_par : int = 2
 @export var camera : Camera2D
 
 
@@ -57,6 +59,7 @@ func _ready() -> void:
 		new_goals.append(goal)
 	goals = new_goals
 	camera = camera_2d
+	level_number.text = "Lvl: " + str(world.level_id)
 
 
 func _process(delta: float) -> void:
@@ -70,9 +73,9 @@ func _process(delta: float) -> void:
 
 
 func win() -> void:
-	if shot_count <= 8 and mirror_count <= 2:
+	if shot_count <= shot_par and mirror_count <= mirror_par:
 		world.level_score = 3
-	elif shot_count <= 15 and mirror_count <= 5:
+	elif shot_count <= shot_par * 2 + 1 and mirror_count <= mirror_par * 2 + 1:
 		world.level_score = 2
 	else:
 		world.level_score = 1

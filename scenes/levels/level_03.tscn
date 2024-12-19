@@ -1,26 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4bmyfyrfllw8"]
+[gd_scene load_steps=5 format=4 uid="uid://sic3s65oqe8d"]
 
-[ext_resource type="PackedScene" uid="uid://cvxjd4w2swjqs" path="res://scenes/level_sm.tscn" id="1_yhqrs"]
-[ext_resource type="PackedScene" uid="uid://bp23a3x1ayyfm" path="res://scenes/objects/collision_blocks.tscn" id="2_1oago"]
-[ext_resource type="PackedScene" uid="uid://d1v2let5i7lf1" path="res://scenes/objects/cannon.tscn" id="3_5g20j"]
-[ext_resource type="PackedScene" uid="uid://jjym2c7dwqvs" path="res://scenes/objects/goal.tscn" id="4_kqdhd"]
-[ext_resource type="PackedScene" uid="uid://dfomgn85np2p2" path="res://scenes/objects/mirrors/mirror_normal.tscn" id="5_mbxp8"]
+[ext_resource type="PackedScene" uid="uid://cvxjd4w2swjqs" path="res://scenes/level_sm.tscn" id="1_q8ojo"]
+[ext_resource type="PackedScene" uid="uid://d1v2let5i7lf1" path="res://scenes/objects/cannon.tscn" id="4_ybpnd"]
+[ext_resource type="PackedScene" uid="uid://bp23a3x1ayyfm" path="res://scenes/objects/collision_blocks.tscn" id="5_b0wkr"]
+[ext_resource type="PackedScene" uid="uid://jjym2c7dwqvs" path="res://scenes/objects/goal.tscn" id="5_twyyb"]
 
-[node name="Level3" instance=ExtResource("1_yhqrs")]
+[node name="Level" instance=ExtResource("1_q8ojo")]
+shot_par = 4
 
-[node name="Cannon" parent="." index="0" instance=ExtResource("3_5g20j")]
-z_index = 10
-position = Vector2(24, 32)
+[node name="Goal" parent="Goals" index="0" instance=ExtResource("5_twyyb")]
+position = Vector2(-32, 0)
 
-[node name="Mirrors" type="Node" parent="." index="1"]
+[node name="CollisionBlocks2" parent="." index="10" instance=ExtResource("5_b0wkr")]
+position = Vector2(8, -8)
+tile_map_data = PackedByteArray("AAD+/wEAAAAEAAEAAAD9/wEAAAAEAAEAAAD8/wEAAAAEAAYAAAD//wEAAAAEAAEAAAAAAAEAAAAFAAEAAAD8////AAAHAAAAAAD8/wAAAAAHAAEAAAA=")
 
-[node name="MirrorNormal" parent="Mirrors" index="0" instance=ExtResource("5_mbxp8")]
-position = Vector2(24, -24)
-rotation = -2.35619
-
-[node name="Goal" parent="Goals" index="0" instance=ExtResource("4_kqdhd")]
-z_index = 10
-position = Vector2(-64, 32)
-
-[node name="CollisionBlocks2" parent="." index="12" instance=ExtResource("2_1oago")]
-tile_map_data = PackedByteArray(0, 0, 253, 255, 2, 0, 0, 0, 7, 0, 1, 0, 0, 0, 253, 255, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 253, 255, 1, 0, 0, 0, 7, 0, 1, 0, 0, 0)
+[node name="Cannon" parent="." index="11" instance=ExtResource("4_ybpnd")]
+z_index = 2
+position = Vector2(-67, 35)

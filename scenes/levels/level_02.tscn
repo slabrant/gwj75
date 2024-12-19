@@ -1,24 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://ev0srr83dfny"]
+[gd_scene load_steps=5 format=3 uid="uid://c4bmyfyrfllw8"]
 
-[ext_resource type="PackedScene" uid="uid://cvxjd4w2swjqs" path="res://scenes/level_sm.tscn" id="1_aa2n4"]
-[ext_resource type="PackedScene" uid="uid://d1v2let5i7lf1" path="res://scenes/objects/cannon.tscn" id="4_hv0xc"]
-[ext_resource type="PackedScene" uid="uid://jjym2c7dwqvs" path="res://scenes/objects/goal.tscn" id="5_ienjg"]
-[ext_resource type="PackedScene" uid="uid://dfomgn85np2p2" path="res://scenes/objects/mirrors/mirror_normal.tscn" id="5_rg1u4"]
+[ext_resource type="PackedScene" uid="uid://cvxjd4w2swjqs" path="res://scenes/level_sm.tscn" id="1_yhqrs"]
+[ext_resource type="PackedScene" uid="uid://bp23a3x1ayyfm" path="res://scenes/objects/collision_blocks.tscn" id="2_1oago"]
+[ext_resource type="PackedScene" uid="uid://d1v2let5i7lf1" path="res://scenes/objects/cannon.tscn" id="3_5g20j"]
+[ext_resource type="PackedScene" uid="uid://jjym2c7dwqvs" path="res://scenes/objects/goal.tscn" id="4_kqdhd"]
 
-[node name="Level2" instance=ExtResource("1_aa2n4")]
-level_small = false
+[node name="Level3" instance=ExtResource("1_yhqrs")]
+shot_par = 4
+mirror_par = 1
 
-[node name="Cannon" parent="." index="0" instance=ExtResource("4_hv0xc")]
+[node name="Cannon" parent="." index="0" instance=ExtResource("3_5g20j")]
 z_index = 10
-position = Vector2(-56, -24)
+position = Vector2(16, 32)
 
-[node name="Mirrors" type="Node" parent="." index="1"]
-
-[node name="MirrorNormal" parent="Mirrors" index="0" instance=ExtResource("5_rg1u4")]
-position = Vector2(-24, 0)
-rotation = -0.785397
-locked = false
-
-[node name="Goal" parent="Goals" index="0" instance=ExtResource("5_ienjg")]
+[node name="Goal" parent="Goals" index="0" instance=ExtResource("4_kqdhd")]
 z_index = 10
-position = Vector2(8, 24)
+position = Vector2(-64, 32)
+
+[node name="CollisionBlocks2" parent="." index="11" instance=ExtResource("2_1oago")]
+tile_map_data = PackedByteArray(0, 0, 253, 255, 2, 0, 0, 0, 7, 0, 1, 0, 0, 0, 253, 255, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 253, 255, 1, 0, 0, 0, 7, 0, 1, 0, 0, 0)
