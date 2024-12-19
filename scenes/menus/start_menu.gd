@@ -1,4 +1,7 @@
-extends "res://scenes/menus/menu_page.gd"
+extends Control
+
+@onready var world: Node = get_tree().root.get_child(0)
+@onready var level: Node = world.scene
 
 var level_resources = load("res://scenes/level_list.tres")
 
