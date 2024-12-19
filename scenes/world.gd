@@ -1,5 +1,6 @@
 extends Node
 
+const LevelListResource = preload("res://scenes/level_list_resource.gd")
 var dir = DirAccess.open("res://scenes/levels")
 var level_paths = []
 @onready var label: Label = $Label
@@ -24,18 +25,17 @@ var level_paths = []
 @export var position_snapping_setting : bool = true
 @export var rotation_snap_angle_setting : float = 22.5
 @export var slow_rotation_setting : bool = false
-@export var level_resources = preload("res://scenes/level_list_resource.gd").new()
+@export var level_resources = LevelListResource.new()
 
 
 
 func _ready() -> void:
 	scene_path = "res://scenes/menus/start_menu.tscn"
-	#if dir:
-		#populate_level_paths(level_paths)
-	#else:
+	if dir:
+		populate_level_paths(level_paths)
 	level_resources = load("res://scenes/level_list.tres")
 	
-	label.text += str(dir.get_files())
+	label.text += str(level_resources.level_paths)
 
 
 
@@ -52,8 +52,11 @@ func disable_input_recursive(node: Node, enable):
 
 func populate_level_paths(popultate_level_paths):
 	for file in dir.get_files():
-		if file.get_extension() == "tscn":
-			popultate_level_paths.append("res://scenes/levels/" + file.get_file())
+		if file.get_extension() != "tscn" and file.get_extension() != "gd":
+			return false
+		
+		popultate_level_paths.append("res://scenes/levels/" + file.get_file())
 	
-	level_resources.level_paths = popultate_level_paths
-	ResourceSaver.save(level_resources, "res://scenes/level_list.tres")
+	var new_level_resources = LevelListResource.new()
+	new_level_resources.level_paths = popultate_level_paths
+	ResourceSaver.save(new_level_resources, "res://scenes/level_list.tres")
