@@ -34,8 +34,6 @@ func _ready() -> void:
 	if dir:
 		populate_level_paths(level_paths)
 	level_resources = load("res://scenes/level_list.tres")
-	
-	label.text += str(level_resources.level_paths)
 
 
 
