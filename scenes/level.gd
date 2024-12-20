@@ -59,7 +59,9 @@ func _ready() -> void:
 		new_goals.append(goal)
 	goals = new_goals
 	camera = camera_2d
-	level_number.text = "Lvl: " + str(world.level_id)
+	
+	var level_id_string = str(world.level_id)
+	level_number.text = "00".left(2 - len(level_id_string)) + level_id_string
 
 
 func _process(delta: float) -> void:

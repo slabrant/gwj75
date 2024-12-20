@@ -28,13 +28,11 @@ var level_paths = []
 @export var level_resources = LevelListResource.new()
 
 
-
 func _ready() -> void:
 	scene_path = "res://scenes/menus/start_menu.tscn"
 	if dir:
 		populate_level_paths(level_paths)
 	level_resources = load("res://scenes/level_list.tres")
-
 
 
 func toggle_input(enable: bool):
