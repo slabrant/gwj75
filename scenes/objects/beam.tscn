@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://5p05sivgsauk"]
+[gd_scene load_steps=10 format=3 uid="uid://5p05sivgsauk"]
 
 [ext_resource type="Script" path="res://scenes/objects/beam.gd" id="1_3lbs8"]
 [ext_resource type="Shader" path="res://scenes/objects/beam_color.gdshader" id="2_1lcdn"]
@@ -33,9 +33,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vvuuy"]
-radius = 1.0
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_u5sx4"]
 radius = 1.0
 
@@ -53,8 +50,8 @@ sprite_frames = SubResource("SpriteFrames_u2afw")
 stream = ExtResource("3_sogmm")
 volume_db = -25.0
 
-[node name="BounceBox" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_vvuuy")
+[node name="BounceBox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-6, -1, -6, 1, 0, 1, 1, 0, 0, -1)
 
 [node name="HitBox" type="Area2D" parent="."]
 collision_layer = 0

@@ -21,11 +21,16 @@ var level_paths = []
 	set(value):
 		scores[level_id] = value
 		level_score = value
-@export var bullet_speed_setting : int = 7
-@export var position_snapping_setting : bool = true
-@export var rotation_snap_angle_setting : float = 22.5
+@export var bullet_speed_setting : int = 50:
+	set(value):
+		if 100 < value:
+			value = 100
+		bullet_speed_setting = value 
+@export var position_snapping_setting : bool = false
+@export var rotation_snap_angle_setting : float = 15
 @export var slow_rotation_setting : bool = false
 @export var level_resources = LevelListResource.new()
+@export var beams : Array = []
 
 
 func _ready() -> void:

@@ -13,7 +13,7 @@ offset_top = 28.0
 offset_right = 504.0
 offset_bottom = 84.0
 theme_override_font_sizes/font_size = 48
-placeholder_text = "0 - 200"
+placeholder_text = "0 - 100"
 
 [node name="SpeedLabel" type="Label" parent="." index="2"]
 layout_mode = 0

@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var level: Node = world.scene
 
 @onready var hit_box: Area2D = $HitBox
-@onready var bounce_box: CollisionShape2D = $BounceBox
+@onready var bounce_box: CollisionPolygon2D = $BounceBox
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var laser_shoot: AudioStreamPlayer = $LaserShoot
 
@@ -20,7 +20,7 @@ func _ready() -> void:
 	color = [255, 255, 255]
 	motion_mode = MOTION_MODE_FLOATING
 	laser_shoot.play()
-	SPEED = 1000 * world.bullet_speed_setting
+	SPEED = 150 * world.bullet_speed_setting
 
 
 func _physics_process(delta: float) -> void:

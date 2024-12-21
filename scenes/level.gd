@@ -13,7 +13,6 @@ const HAMMER_SPRITE = preload("res://sprites/hammer.png")
 const HAMMER_PRESSED_SPRITE = preload("res://sprites/hammer_pressed.png")
 const WIN_MENU = preload("res://scenes/menus/win_menu.tscn")
 const PAUSE_MENU = preload("res://scenes/menus/pause_menu.tscn")
-const SETTINGS_MENU = preload("res://scenes/menus/settings_menu.tscn")
 
 @export var is_build_mode : bool = false:
 	set(value):
@@ -100,11 +99,3 @@ func _on_build_mode_button_pressed() -> void:
 	is_build_mode = !is_build_mode
 	for mirror in mirrors:
 		mirror.build_mode_checks()
-
-
-func _on_settings_button_pressed() -> void:
-	if open_menu:
-		open_menu.close()
-	else:
-		var menu = SETTINGS_MENU.instantiate()
-		get_tree().root.add_child(menu)

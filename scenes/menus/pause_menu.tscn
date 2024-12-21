@@ -9,22 +9,33 @@ script = ExtResource("1_066qn")
 [node name="MainMenuButton" type="Button" parent="." index="1"]
 z_index = 15
 layout_mode = 0
-offset_left = 192.0
-offset_top = 92.0
-offset_right = 448.0
-offset_bottom = 164.0
-theme_override_font_sizes/font_size = 64
-text = "Main Menu"
+offset_left = 224.0
+offset_top = 244.0
+offset_right = 416.0
+offset_bottom = 293.0
+theme_override_font_sizes/font_size = 48
+text = "Menu"
 
 [node name="CloseButton" type="Button" parent="." index="2"]
 z_index = 15
 layout_mode = 0
 offset_left = 224.0
-offset_top = 196.0
+offset_top = 100.0
 offset_right = 416.0
-offset_bottom = 260.0
+offset_bottom = 164.0
 theme_override_font_sizes/font_size = 64
-text = "Close"
+text = "Resume"
+
+[node name="SettingsButton" type="Button" parent="." index="3"]
+z_index = 15
+layout_mode = 0
+offset_left = 224.0
+offset_top = 180.0
+offset_right = 416.0
+offset_bottom = 229.0
+theme_override_font_sizes/font_size = 48
+text = "Settings"
 
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]
 [connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
