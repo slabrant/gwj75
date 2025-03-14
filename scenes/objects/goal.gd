@@ -1,4 +1,4 @@
-extends Area2D
+extends StaticBody2D
 
 @onready var world: Node = get_tree().root.get_child(0)
 @onready var level: Node = world.scene
@@ -20,7 +20,7 @@ func set_color(red: float = 0.0, green: float = 0.0, blue: float = 0.0):
 	sprite.material.set("shader_param/blue", blue / 255)
 
 
-func _on_body_entered(body: Node2D) -> void:
+func reflect(body: Node2D) -> void:
 	body.queue_free()
 	
 	if color == body.color:

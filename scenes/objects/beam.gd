@@ -7,6 +7,7 @@ extends CharacterBody2D
 @onready var bounce_box: CollisionPolygon2D = $BounceBox
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var laser_shoot: AudioStreamPlayer = $LaserShoot
+@onready var ray_cast: RayCast2D = $RayCast2D
 
 @export var SPEED : int
 @export var color: Array:
@@ -25,7 +26,10 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	velocity = SPEED * delta * Vector2(cos(rotation), sin(rotation))
-	move_and_slide()
+	if (!!ray_cast and ray_cast.is_colliding()):
+		ray_cast.get_collider().reflect(self)
+	else:
+		move_and_slide()
 
 
 func set_color(red: int = 0, green: int = 0, blue: int = 0):
@@ -39,4 +43,4 @@ func _on_hit_box_body_entered(body: TileMapLayer) -> void:
 	sprite.frame = 1
 	z_index = 1
 	hit_box.queue_free()
-	bounce_box.queue_free()
+	ray_cast.queue_free()

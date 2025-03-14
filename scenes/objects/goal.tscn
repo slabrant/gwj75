@@ -13,8 +13,7 @@ shader_parameter/red = 0.0
 shader_parameter/green = 0.0
 shader_parameter/blue = 0.0
 
-[node name="Goal" type="Area2D"]
-collision_layer = 0
+[node name="Goal" type="StaticBody2D"]
 collision_mask = 2
 script = ExtResource("1_knsng")
 
@@ -24,5 +23,3 @@ shape = SubResource("CircleShape2D_wt2fm")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_d7h3i")
 texture = ExtResource("1_jekoq")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -11,7 +11,7 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1uv0u"]
 
-[node name="Mirror" type="Area2D"]
+[node name="Mirror" type="StaticBody2D"]
 z_index = 5
 z_as_relative = false
 collision_mask = 2
@@ -55,8 +55,6 @@ stretch_mode = 5
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TouchArea"]
 shape = SubResource("CircleShape2D_1uv0u")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="button_down" from="RotateButton" to="." method="_on_rotate_button_button_down"]
 [connection signal="pressed" from="MinusButton" to="." method="_on_minus_button_pressed"]
 [connection signal="input_event" from="TouchArea" to="." method="_on_touch_area_input_event"]

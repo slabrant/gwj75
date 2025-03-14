@@ -1,4 +1,4 @@
-extends Area2D
+extends StaticBody2D
 
 @onready var world: Node = get_tree().root.get_child(0)
 @onready var level: Node = world.scene

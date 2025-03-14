@@ -11,7 +11,7 @@ func shoot(shoot_rotation) -> CharacterBody2D:
 	return beam
 
 
-func _on_body_entered(body: Node2D) -> void:
+func reflect(body: Node2D) -> void:
 	body.queue_free()
 	if body.color != [255, 255, 255]:
 		return

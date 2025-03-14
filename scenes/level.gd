@@ -36,7 +36,7 @@ const PAUSE_MENU = preload("res://scenes/menus/pause_menu.tscn")
 		if 0 < len(goals) and len(value) < 1:
 			win()
 		goals = value
-@export var active_mirror : Area2D
+@export var active_mirror : StaticBody2D
 @export var open_menu : Control:
 	set(value):
 		if !world:

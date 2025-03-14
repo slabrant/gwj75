@@ -12,7 +12,7 @@ const MIRROR = preload("res://scenes/objects/mirrors/mirror_normal.tscn")
 
 func _on_touch_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if level.is_build_mode and event.has_method("is_action_pressed") and event.is_action_pressed("input_action") and not level.active_mirror:
-		var mirror : Area2D = MIRROR.instantiate()
+		var mirror : StaticBody2D = MIRROR.instantiate()
 		mirror.position = get_global_mouse_position()
 		level.active_mirror = mirror
 		mirror.locked = false

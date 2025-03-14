@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://jjym2c7dwqvs" path="res://scenes/objects/goal.tscn" id="4_8kman"]
 
 [node name="Level9" instance=ExtResource("1_g3al7")]
+position = Vector2(-1, 0)
 mirror_par = 4
 
 [node name="Cannon" parent="." index="0" instance=ExtResource("2_why2e")]

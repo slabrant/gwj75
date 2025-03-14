@@ -43,15 +43,11 @@ script = ExtResource("1_3lbs8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_ibsi3")
-position = Vector2(-4, 0)
 sprite_frames = SubResource("SpriteFrames_u2afw")
 
 [node name="LaserShoot" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_sogmm")
 volume_db = -25.0
-
-[node name="BounceBox" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-6, -1, -6, 1, 0, 1, 1, 0, 0, -1)
 
 [node name="HitBox" type="Area2D" parent="."]
 collision_layer = 0
@@ -59,5 +55,8 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 shape = SubResource("CircleShape2D_u5sx4")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(3, 0)
 
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
