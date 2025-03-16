@@ -32,3 +32,7 @@ func _on_slow_rotation_value_pressed() -> void:
 
 func _on_close_button_pressed() -> void:
 	close()
+
+
+func _on_speed_value_caret_changed() -> void:
+	$RotationSnapValue.text = $SpeedValue.text

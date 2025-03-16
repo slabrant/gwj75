@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="LevelListResource" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://scenes/level_list_resource.gd" id="1_i6x7h"]
+[ext_resource type="Script" path="res://scenes/level_list_resource.gd" id="1_38f7r"]
 
 [resource]
-script = ExtResource("1_i6x7h")
+script = ExtResource("1_38f7r")
 level_paths = ["res://scenes/levels/level_01.tscn", "res://scenes/levels/level_02.tscn", "res://scenes/levels/level_03.tscn", "res://scenes/levels/level_06.tscn", "res://scenes/levels/level_06a.tscn", "res://scenes/levels/level_06b.tscn", "res://scenes/levels/level_06c.tscn", "res://scenes/levels/level_07.tscn", "res://scenes/levels/level_07a.tscn", "res://scenes/levels/level_07b.tscn", "res://scenes/levels/level_08.tscn", "res://scenes/levels/level_14.tscn"]

@@ -9,7 +9,7 @@
 texture = ExtResource("2_iv3p5")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
-polygon = PackedVector2Array(-7, 0, -8, 0, -8, 1, 7, 1, 7, 0, 8, 0, 8, -1, -7, -1)
+polygon = PackedVector2Array(-8, 1, 7, 1, 8, -1, -7, -1)
 
 [node name="CollisionShape2D" parent="TouchArea" index="0"]
 position = Vector2(0, 1)

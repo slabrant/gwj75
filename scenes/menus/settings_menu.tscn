@@ -13,7 +13,7 @@ offset_top = 28.0
 offset_right = 504.0
 offset_bottom = 84.0
 theme_override_font_sizes/font_size = 48
-placeholder_text = "0 - 100"
+placeholder_text = "10 - 100"
 
 [node name="SpeedLabel" type="Label" parent="." index="2"]
 layout_mode = 0
@@ -92,7 +92,9 @@ offset_bottom = 68.0
 theme_override_font_sizes/font_size = 48
 text = "X"
 
+[connection signal="caret_changed" from="SpeedValue" to="." method="_on_speed_value_caret_changed"]
 [connection signal="text_changed" from="SpeedValue" to="." method="_on_speed_value_text_changed"]
+[connection signal="text_set" from="SpeedValue" to="." method="_on_speed_value_text_set"]
 [connection signal="pressed" from="PositionSnappingValue" to="." method="_on_position_snapping_value_pressed"]
 [connection signal="text_changed" from="RotationSnapValue" to="." method="_on_rotation_snap_value_text_changed"]
 [connection signal="pressed" from="SlowRotationValue" to="." method="_on_slow_rotation_value_pressed"]

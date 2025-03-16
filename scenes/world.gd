@@ -25,6 +25,8 @@ var level_paths = []
 	set(value):
 		if 100 < value:
 			value = 100
+		elif value < 10:
+			value = 10
 		bullet_speed_setting = value 
 @export var position_snapping_setting : bool = false
 @export var rotation_snap_angle_setting : float = 15
