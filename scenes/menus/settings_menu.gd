@@ -35,4 +35,4 @@ func _on_close_button_pressed() -> void:
 
 
 func _on_speed_value_caret_changed() -> void:
-	$RotationSnapValue.text = $SpeedValue.text
+	$SpeedValue.grab_focus()
