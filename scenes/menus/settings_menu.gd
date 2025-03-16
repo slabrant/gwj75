@@ -14,8 +14,8 @@ func _ready() -> void:
 	slow_rotation_value.button_pressed = world.slow_rotation_setting
 
 
-func _on_speed_value_text_changed() -> void:
-	world.bullet_speed_setting = speed_value.text
+#func _on_speed_value_text_changed() -> void:
+	#world.bullet_speed_setting = speed_value.text
 
 
 func _on_position_snapping_value_pressed() -> void:
@@ -34,5 +34,5 @@ func _on_close_button_pressed() -> void:
 	close()
 
 
-func _on_speed_value_caret_changed() -> void:
-	$SpeedValue.grab_focus()
+#func _on_speed_value_caret_changed() -> void:
+	#$SpeedValue.grab_focus()
