@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dpcsxylaa6fom" path="res://scenes/menus/menu_page.tscn" id="1_3axgq"]
 [ext_resource type="Texture2D" uid="uid://dfhlbl5detttk" path="res://sprites/cannon_base.png" id="2_dhlj1"]
-[ext_resource type="Script" path="res://scenes/menus/controls_menu.gd" id="2_x0i6o"]
+[ext_resource type="Script" uid="uid://dwyfcawvlnxpy" path="res://scenes/menus/controls_menu.gd" id="2_x0i6o"]
 [ext_resource type="Texture2D" uid="uid://bi60ajlgkcmcl" path="res://sprites/cannon.png" id="3_1wjdw"]
 [ext_resource type="Texture2D" uid="uid://bvwfwaab0tnfs" path="res://sprites/goal.png" id="4_1y6s0"]
 [ext_resource type="Texture2D" uid="uid://d2dtu38sbp2xr" path="res://sprites/lock.png" id="5_2wwjr"]

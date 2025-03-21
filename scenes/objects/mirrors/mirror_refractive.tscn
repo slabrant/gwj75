@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bp0t4m2sbj41v"]
 
 [ext_resource type="PackedScene" uid="uid://dvr43yu4gyusd" path="res://scenes/objects/mirrors/mirror.tscn" id="1_51238"]
-[ext_resource type="Script" path="res://scenes/objects/mirrors/mirror_refractive.gd" id="2_dvod2"]
+[ext_resource type="Script" uid="uid://d0e108lus47vb" path="res://scenes/objects/mirrors/mirror_refractive.gd" id="2_dvod2"]
 [ext_resource type="Texture2D" uid="uid://4clg3jt3q3yn" path="res://sprites/prism_rgb.png" id="2_tx4sg"]
 
 [node name="MirrorRefractive" instance=ExtResource("1_51238")]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://rom7dbc02qsg"]
 
-[ext_resource type="Script" path="res://scenes/objects/mirrors/mirror_refractive_generator.gd" id="1_m2btl"]
+[ext_resource type="Script" uid="uid://3cmnuneiha1g" path="res://scenes/objects/mirrors/mirror_refractive_generator.gd" id="1_m2btl"]
 [ext_resource type="Texture2D" uid="uid://4clg3jt3q3yn" path="res://sprites/prism_rgb.png" id="2_p21nt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5shyq"]

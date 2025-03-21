@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://2x5ubrltcprm"]
 
 [ext_resource type="PackedScene" uid="uid://fpy0fgxfs1wc" path="res://scenes/menus/menu_overlay.tscn" id="1_4siqv"]
-[ext_resource type="Script" path="res://scenes/menus/settings_menu.gd" id="2_j56f5"]
+[ext_resource type="Script" uid="uid://ctbqa2sqkkqo8" path="res://scenes/menus/settings_menu.gd" id="2_j56f5"]
 
 [node name="SettingsMenu" instance=ExtResource("1_4siqv")]
 script = ExtResource("2_j56f5")
@@ -95,6 +95,7 @@ theme_override_font_sizes/font_size = 48
 text = "X"
 
 [node name="SpeedValue2" type="TextEdit" parent="." index="10"]
+layout_mode = 0
 offset_left = 496.0
 offset_top = 92.0
 offset_right = 624.0

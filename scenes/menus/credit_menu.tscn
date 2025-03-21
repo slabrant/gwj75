@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cri3urlmq2u2c"]
 
-[ext_resource type="Script" path="res://scenes/menus/credit_menu.gd" id="1_fspxg"]
+[ext_resource type="Script" uid="uid://dne4wwpilvx4s" path="res://scenes/menus/credit_menu.gd" id="1_fspxg"]
 [ext_resource type="PackedScene" uid="uid://dpcsxylaa6fom" path="res://scenes/menus/menu_page.tscn" id="1_hp2ja"]
 
 [node name="CreditMenu" instance=ExtResource("1_hp2ja")]

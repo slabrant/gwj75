@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=4 uid="uid://cvxjd4w2swjqs"]
 
-[ext_resource type="Script" path="res://scenes/level.gd" id="1_rid8s"]
+[ext_resource type="Script" uid="uid://qxgbuq88jayy" path="res://scenes/level.gd" id="1_rid8s"]
 [ext_resource type="Texture2D" uid="uid://cdwtr7gry2twa" path="res://sprites/bg_16.png" id="2_aa7qc"]
 [ext_resource type="PackedScene" uid="uid://bp23a3x1ayyfm" path="res://scenes/objects/collision_blocks.tscn" id="2_ppuw4"]
 [ext_resource type="Texture2D" uid="uid://banqxbdmhfaoc" path="res://sprites/bg_build_mode.png" id="3_bt0cm"]

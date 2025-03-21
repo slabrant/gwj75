@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://5p05sivgsauk"]
 
-[ext_resource type="Script" path="res://scenes/objects/beam.gd" id="1_3lbs8"]
-[ext_resource type="Shader" path="res://scenes/objects/beam_color.gdshader" id="2_1lcdn"]
+[ext_resource type="Script" uid="uid://6ckxvatxawd" path="res://scenes/objects/beam.gd" id="1_3lbs8"]
+[ext_resource type="Shader" uid="uid://c15t4tee30062" path="res://scenes/objects/beam_color.gdshader" id="2_1lcdn"]
 [ext_resource type="Texture2D" uid="uid://dcg7r2a0r8uym" path="res://sprites/beam-sheet.png" id="3_bhnfr"]
 [ext_resource type="AudioStream" uid="uid://bgxwniwhfnlwt" path="res://sounds/laserShoot.wav" id="3_sogmm"]
 

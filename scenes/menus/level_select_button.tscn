@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cd4xlyq6jvfpo"]
 
-[ext_resource type="Script" path="res://scenes/menus/level_select_button.gd" id="1_et5ub"]
+[ext_resource type="Script" uid="uid://cvh426j1qcb25" path="res://scenes/menus/level_select_button.gd" id="1_et5ub"]
 [ext_resource type="Texture2D" uid="uid://cospdmt0e1gh1" path="res://sprites/score-sheet.png" id="2_urrwb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cuqdk"]

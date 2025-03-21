@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cbev4thk0ftt"]
 
-[ext_resource type="Script" path="res://scenes/objects/mirrors/mirror_generator.gd" id="1_agt3v"]
+[ext_resource type="Script" uid="uid://coinenv60yrta" path="res://scenes/objects/mirrors/mirror_generator.gd" id="1_agt3v"]
 [ext_resource type="Texture2D" uid="uid://c3qsh1i51tagc" path="res://sprites/mirror.png" id="1_ain20"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8rxyl"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dvr43yu4gyusd"]
 
-[ext_resource type="Script" path="res://scenes/objects/mirrors/mirror.gd" id="1_5xwsu"]
+[ext_resource type="Script" uid="uid://m7ii3ro0044q" path="res://scenes/objects/mirrors/mirror.gd" id="1_5xwsu"]
 [ext_resource type="Texture2D" uid="uid://clxuudwgm74gd" path="res://sprites/rotate.png" id="3_k064b"]
 [ext_resource type="AudioStream" uid="uid://ctkn5h0cr6hk2" path="res://sounds/reflect.wav" id="3_q582x"]
 [ext_resource type="Texture2D" uid="uid://ba4ott83bc4q" path="res://sprites/rotate_pressed.png" id="4_l17x6"]

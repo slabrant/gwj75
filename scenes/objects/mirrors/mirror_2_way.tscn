@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dvr43yu4gyusd" path="res://scenes/objects/mirrors/mirror.tscn" id="1_hl0kg"]
 [ext_resource type="Texture2D" uid="uid://cuqwjl7efbcr2" path="res://sprites/mirror_two_way.png" id="2_j01s8"]
-[ext_resource type="Script" path="res://scenes/objects/mirrors/mirror_2_way.gd" id="2_vt52r"]
+[ext_resource type="Script" uid="uid://uy254g02k3k8" path="res://scenes/objects/mirrors/mirror_2_way.gd" id="2_vt52r"]
 
 [node name="Mirror2Way" instance=ExtResource("1_hl0kg")]
 script = ExtResource("2_vt52r")

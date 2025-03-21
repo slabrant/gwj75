@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dot7kfcnwtv41"]
 
 [ext_resource type="PackedScene" uid="uid://fpy0fgxfs1wc" path="res://scenes/menus/menu_overlay.tscn" id="1_4siqv"]
-[ext_resource type="Script" path="res://scenes/menus/win_menu.gd" id="1_hwblf"]
+[ext_resource type="Script" uid="uid://631k20me3gkk" path="res://scenes/menus/win_menu.gd" id="1_hwblf"]
 [ext_resource type="Texture2D" uid="uid://cospdmt0e1gh1" path="res://sprites/score-sheet.png" id="2_10fnf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cuqdk"]
