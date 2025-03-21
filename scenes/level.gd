@@ -68,7 +68,7 @@ func _process(delta: float) -> void:
 		active_mirror = null
 	elif active_mirror:
 		if world.position_snapping_setting:
-			active_mirror.position = round(get_global_mouse_position() / 8) * 8
+			active_mirror.position = round(get_global_mouse_position() / 4) * 4
 		else:
 			active_mirror.position = get_global_mouse_position()
 
