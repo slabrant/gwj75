@@ -58,6 +58,13 @@ func _process(delta: float) -> void:
 		mirror_rotation = round(temp_mirror_rotation / rotation_snap_angle_setting) * rotation_snap_angle_setting
 
 
+func remove():
+	var level_mirrors : Array = level.mirrors
+	level_mirrors.erase(self)
+	level.mirror_count -= 1
+	queue_free()
+
+
 func build_mode_checks() -> void:
 	if level.is_build_mode and not locked:
 		rotate_button.show()
@@ -89,10 +96,7 @@ func _on_touch_area_input_event(viewport: Node, event: InputEvent, shape_idx: in
 
 
 func _on_minus_button_pressed() -> void:
-	var level_mirrors : Array = level.mirrors
-	level_mirrors.erase(self)
-	level.mirror_count -= 1
-	queue_free()
+	remove()
 
 
 func _on_rotate_button_button_down() -> void:

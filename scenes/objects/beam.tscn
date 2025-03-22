@@ -37,7 +37,6 @@ animations = [{
 radius = 1.0
 
 [node name="Beam" type="CharacterBody2D"]
-z_index = 5
 collision_layer = 2
 script = ExtResource("1_3lbs8")
 

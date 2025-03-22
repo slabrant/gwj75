@@ -20,4 +20,3 @@ position = Vector2(32, 32)
 [node name="MirrorNormal" parent="Mirrors" index="0" instance=ExtResource("5_rg1u4")]
 position = Vector2(-16, 0)
 rotation = -0.785397
-locked = false

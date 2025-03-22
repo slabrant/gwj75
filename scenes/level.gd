@@ -8,6 +8,7 @@ extends Node2D
 @onready var build_mode_button: TextureButton = $BuildModeButton
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var level_number: Label = $LevelNumber
+@onready var placeable_area: TileMapLayer = $PlaceableArea
 
 const HAMMER_SPRITE = preload("res://sprites/hammer.png")
 const HAMMER_PRESSED_SPRITE = preload("res://sprites/hammer_pressed.png")
@@ -65,7 +66,10 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_released("input_action"):
-		active_mirror = null
+		if active_mirror:
+			if !placeable_area.get_cell_tile_data(placeable_area.local_to_map(active_mirror.position)):
+				active_mirror.remove()
+			active_mirror = null
 	elif active_mirror:
 		if world.position_snapping_setting:
 			active_mirror.position = round(get_global_mouse_position() / 4) * 4

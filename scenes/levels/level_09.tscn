@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=4 uid="uid://bk386u0ectryh"]
+
+[ext_resource type="PackedScene" uid="uid://3sxqjs6qf5gq" path="res://scenes/level.tscn" id="1_33ykn"]
+[ext_resource type="PackedScene" uid="uid://d1v2let5i7lf1" path="res://scenes/objects/cannon.tscn" id="2_c73jh"]
+[ext_resource type="PackedScene" uid="uid://bp23a3x1ayyfm" path="res://scenes/objects/collision_blocks.tscn" id="3_q2hnt"]
+[ext_resource type="PackedScene" uid="uid://jjym2c7dwqvs" path="res://scenes/objects/goal.tscn" id="4_n27h5"]
+
+[node name="Level" instance=ExtResource("1_33ykn")]
+shot_par = 12
+mirror_par = 8
+
+[node name="Cannon" parent="." index="0" instance=ExtResource("2_c73jh")]
+z_index = 2
+position = Vector2(72, -64)
+
+[node name="Mirrors2" type="Node" parent="." index="1"]
+
+[node name="CollisionBlocks2" parent="." index="11" instance=ExtResource("3_q2hnt")]
+tile_map_data = PackedByteArray("AAD4/wAAAAAEAAEAAAD///v/AAAHAAEAAAD//wEAAAAHAAIAAAD//wMAAAAHAAAAAAAFAP7/AAAEAAEAAAD//wAAAAACAAUAAAD7/wAAAAAFAAEAAAADAAAAAAAFAAEAAAACAAAAAAAEAAEAAAABAAAAAAAEAAEAAAAAAAAAAAAEAAEAAAD/////AAAHAAEAAAD///7/AAACAAUAAAD///3/AAAHAAEAAAD///z/AAAHAAEAAAD6//7/AAADAAEAAAD7//7/AAAEAAEAAAD8//7/AAAEAAEAAAD9//7/AAAEAAEAAAD+//7/AAAEAAEAAAAAAP7/AAAFAAEAAAADAP7/AAADAAEAAAAEAP7/AAAEAAEAAAD+/wAAAAADAAEAAAD6/wAAAAAEAAEAAAD5/wAAAAAEAAEAAAA=")
+
+[node name="Goal" parent="Goals" index="0" instance=ExtResource("4_n27h5")]
+position = Vector2(-32, -48)

@@ -20,15 +20,15 @@ position = Vector2(-72, -8)
 tile_map_data = PackedByteArray("AAABAAEAAAAFAAEAAAD//wEAAAAEAAEAAAD+/wEAAAAEAAEAAAD9/wEAAAAEAAEAAAD8/wEAAAAEAAEAAAD7/wEAAAAEAAEAAAD6/wEAAAAEAAEAAAD5/wEAAAAEAAEAAAD4/wEAAAAEAAEAAAAAAAEAAAAEAAEAAAA=")
 
 [node name="Goal" parent="Goals" index="0" instance=ExtResource("5_uu4u2")]
-position = Vector2(-104, 47)
+position = Vector2(-72, 47)
 color = [255, 0, 0]
 
 [node name="Goal2" parent="Goals" index="1" instance=ExtResource("5_uu4u2")]
-position = Vector2(-104, -60)
+position = Vector2(-72, -60)
 color = [0, 255, 0]
 
 [node name="Goal3" parent="Goals" index="2" instance=ExtResource("5_uu4u2")]
-position = Vector2(69, -52)
+position = Vector2(0, -60)
 color = [0, 0, 255]
 
 [node name="MirrorRefractive" parent="Mirrors" index="0" instance=ExtResource("6_6l8x2")]
