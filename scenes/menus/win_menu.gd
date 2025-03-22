@@ -6,7 +6,9 @@ extends "res://scenes/menus/menu_overlay.gd"
 
 func _ready() -> void:
 	super()
-	win_label.text = "Good job! You did it with " + str(level.mirror_count) + " mirrors and " + str(level.shot_count) + " shots."
+	var mirror_verbiage = str(level.mirror_count) + " mirror" + ("" if 1 == level.mirror_count else "s")
+	var shot_verbiage = str(level.shot_count) + " shot" + ("" if 1 == level.shot_count else "s")
+	win_label.text = "Good job! You did it with " + mirror_verbiage + " and " + shot_verbiage + "."
 	score.frame = world.level_score
 
 
