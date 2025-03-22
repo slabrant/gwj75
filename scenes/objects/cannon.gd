@@ -10,10 +10,11 @@ const BEAM = preload("res://scenes/objects/beam.tscn")
 func _unhandled_input(event: InputEvent) -> void:
 	if level.is_build_mode or level.open_menu:
 		return
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and !event.pressed:
 		var beam : CharacterBody2D = BEAM.instantiate()
-		beam.position = position
-		beam.rotation = ((get_global_mouse_position() - position).normalized()).angle()
+		var spr_ang = sprite.rotation
+		beam.position = position + 16 * Vector2(cos(spr_ang), sin(spr_ang))
+		beam.rotation = spr_ang
 		add_sibling(beam)
 		level.shot_count += 1
 

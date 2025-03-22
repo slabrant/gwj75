@@ -28,8 +28,8 @@ var level_paths = []
 		elif value < 10:
 			value = 10
 		bullet_speed_setting = value 
-@export var position_snapping_setting : bool = false
-@export var rotation_snap_angle_setting : float = 15
+@export var position_snapping_setting : bool = true
+@export var rotation_snap_angle_setting : float = 10
 @export var slow_rotation_setting : bool = false
 @export var level_resources = LevelListResource.new()
 @export var beams : Array = []
