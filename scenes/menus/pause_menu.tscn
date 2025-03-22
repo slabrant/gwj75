@@ -1,41 +1,85 @@
-[gd_scene load_steps=3 format=3 uid="uid://cah2quy5yt64s"]
+[gd_scene load_steps=13 format=3 uid="uid://cah2quy5yt64s"]
 
 [ext_resource type="PackedScene" uid="uid://fpy0fgxfs1wc" path="res://scenes/menus/menu_overlay.tscn" id="1_4siqv"]
 [ext_resource type="Script" uid="uid://d1r206gjf575p" path="res://scenes/menus/pause_menu.gd" id="1_066qn"]
+[ext_resource type="Texture2D" uid="uid://c4vglbfl7ek6k" path="res://sprites/home.svg" id="3_2wrho"]
+[ext_resource type="Shader" uid="uid://bmp0ceg2udti2" path="res://sprites/highlight.gdshader" id="3_gh0u6"]
+[ext_resource type="Script" uid="uid://c361d0sbdod7f" path="res://scenes/menus/main_menu_button.gd" id="4_gh0u6"]
+[ext_resource type="Texture2D" uid="uid://dpb48n16yd64i" path="res://sprites/play.svg" id="6_xiui8"]
+[ext_resource type="Script" uid="uid://m5fkibf38o88" path="res://scenes/menus/close_button.gd" id="7_dgi6y"]
+[ext_resource type="Texture2D" uid="uid://dfwf0dd62okaw" path="res://sprites/gear.svg" id="7_gqhbq"]
+[ext_resource type="Script" uid="uid://dlyy5jfyvlhrw" path="res://scenes/menus/settings_button.gd" id="9_dqjbd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eyfc8"]
+shader = ExtResource("3_gh0u6")
+shader_parameter/percent = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_opdvj"]
+shader = ExtResource("3_gh0u6")
+shader_parameter/percent = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pf6lc"]
+shader = ExtResource("3_gh0u6")
+shader_parameter/percent = 1.0
 
 [node name="PauseMenu" instance=ExtResource("1_4siqv")]
 script = ExtResource("1_066qn")
 
-[node name="MainMenuButton" type="Button" parent="." index="1"]
-z_index = 15
-layout_mode = 0
-offset_left = 224.0
-offset_top = 244.0
-offset_right = 416.0
-offset_bottom = 293.0
-theme_override_font_sizes/font_size = 48
-text = "Menu"
+[node name="ColorRect" parent="." index="0"]
+offset_top = -4.0
+offset_bottom = 356.0
 
-[node name="CloseButton" type="Button" parent="." index="2"]
+[node name="MainMenuButton" type="TextureButton" parent="." index="1"]
 z_index = 15
+material = SubResource("ShaderMaterial_eyfc8")
 layout_mode = 0
-offset_left = 224.0
-offset_top = 100.0
-offset_right = 416.0
-offset_bottom = 164.0
-theme_override_font_sizes/font_size = 64
-text = "Resume"
+offset_left = 80.0
+offset_top = 132.0
+offset_right = 176.0
+offset_bottom = 228.0
+texture_normal = ExtResource("3_2wrho")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("4_gh0u6")
 
-[node name="SettingsButton" type="Button" parent="." index="3"]
+[node name="CloseButton" type="TextureButton" parent="." index="2"]
 z_index = 15
+material = SubResource("ShaderMaterial_opdvj")
 layout_mode = 0
-offset_left = 224.0
-offset_top = 180.0
-offset_right = 416.0
-offset_bottom = 229.0
-theme_override_font_sizes/font_size = 48
-text = "Settings"
+offset_left = 464.0
+offset_top = 132.0
+offset_right = 560.0
+offset_bottom = 228.0
+texture_normal = ExtResource("6_xiui8")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("7_dgi6y")
 
+[node name="SettingsButton" type="TextureButton" parent="." index="3"]
+z_index = 15
+material = SubResource("ShaderMaterial_pf6lc")
+layout_mode = 0
+offset_left = 272.0
+offset_top = 132.0
+offset_right = 368.0
+offset_bottom = 228.0
+texture_normal = ExtResource("7_gqhbq")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("9_dqjbd")
+
+[connection signal="button_down" from="MainMenuButton" to="MainMenuButton" method="_on_button_down"]
+[connection signal="button_up" from="MainMenuButton" to="MainMenuButton" method="_on_button_up"]
+[connection signal="mouse_entered" from="MainMenuButton" to="MainMenuButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MainMenuButton" to="MainMenuButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="button_down" from="CloseButton" to="CloseButton" method="_on_button_down"]
+[connection signal="button_up" from="CloseButton" to="CloseButton" method="_on_button_up"]
+[connection signal="mouse_entered" from="CloseButton" to="CloseButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CloseButton" to="CloseButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="button_down" from="SettingsButton" to="SettingsButton" method="_on_button_down"]
+[connection signal="button_up" from="SettingsButton" to="SettingsButton" method="_on_button_up"]
+[connection signal="mouse_entered" from="SettingsButton" to="SettingsButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="SettingsButton" to="SettingsButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]

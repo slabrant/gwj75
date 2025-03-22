@@ -1,8 +1,23 @@
-[gd_scene load_steps=9 format=3 uid="uid://dot7kfcnwtv41"]
+[gd_scene load_steps=19 format=3 uid="uid://dot7kfcnwtv41"]
 
 [ext_resource type="PackedScene" uid="uid://fpy0fgxfs1wc" path="res://scenes/menus/menu_overlay.tscn" id="1_4siqv"]
 [ext_resource type="Script" uid="uid://631k20me3gkk" path="res://scenes/menus/win_menu.gd" id="1_hwblf"]
 [ext_resource type="Texture2D" uid="uid://cospdmt0e1gh1" path="res://sprites/score-sheet.png" id="2_10fnf"]
+[ext_resource type="Texture2D" uid="uid://dgevyim1ve1hf" path="res://sprites/next.svg" id="3_npby5"]
+[ext_resource type="Script" uid="uid://c0gju8cnaecjw" path="res://scenes/menus/next_level_button.gd" id="4_efmxl"]
+[ext_resource type="Texture2D" uid="uid://c4vglbfl7ek6k" path="res://sprites/home.svg" id="4_iexr3"]
+[ext_resource type="Script" uid="uid://c361d0sbdod7f" path="res://scenes/menus/main_menu_button.gd" id="7_thg22"]
+[ext_resource type="Shader" uid="uid://bmp0ceg2udti2" path="res://sprites/highlight.gdshader" id="7_vlbf1"]
+[ext_resource type="Texture2D" uid="uid://dg7ups3csmb74" path="res://sprites/retry.svg" id="8_efmxl"]
+[ext_resource type="Script" uid="uid://dhy11yic6l3kb" path="res://scenes/menus/retry_button.gd" id="8_vlbf1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_efmxl"]
+shader = ExtResource("7_vlbf1")
+shader_parameter/percent = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5q30u"]
+shader = ExtResource("7_vlbf1")
+shader_parameter/percent = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cuqdk"]
 atlas = ExtResource("2_10fnf")
@@ -40,36 +55,46 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_thg22"]
+shader = ExtResource("7_vlbf1")
+shader_parameter/percent = 0.0
+
 [node name="WinMenu" instance=ExtResource("1_4siqv")]
 script = ExtResource("1_hwblf")
 
-[node name="NextLevelButton" type="Button" parent="." index="1"]
+[node name="NextLevelButton" type="TextureButton" parent="." index="1"]
 z_index = 15
+material = SubResource("ShaderMaterial_efmxl")
 layout_mode = 0
-offset_left = 336.0
-offset_top = 236.0
-offset_right = 528.0
-offset_bottom = 292.0
-theme_override_font_sizes/font_size = 48
-text = "Next Level"
+offset_left = 464.0
+offset_top = 228.0
+offset_right = 560.0
+offset_bottom = 324.0
+texture_normal = ExtResource("3_npby5")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("4_efmxl")
 
-[node name="MainMenuButton" type="Button" parent="." index="2"]
+[node name="MainMenuButton" type="TextureButton" parent="." index="2"]
 z_index = 15
+material = SubResource("ShaderMaterial_5q30u")
 layout_mode = 0
-offset_left = 112.0
-offset_top = 236.0
-offset_right = 304.0
-offset_bottom = 292.0
-theme_override_font_sizes/font_size = 48
-text = "Main Menu"
+offset_left = 80.0
+offset_top = 228.0
+offset_right = 176.0
+offset_bottom = 324.0
+texture_normal = ExtResource("4_iexr3")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("7_thg22")
 
 [node name="WinLabel" type="Label" parent="." index="3"]
 z_index = 15
 layout_mode = 0
 offset_left = 64.0
-offset_top = 68.0
+offset_top = 52.0
 offset_right = 576.0
-offset_bottom = 164.0
+offset_bottom = 148.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 48
 text = "Good Job! You did it with X shots and Y mirrors!"
@@ -78,9 +103,34 @@ autowrap_mode = 3
 
 [node name="Score" type="AnimatedSprite2D" parent="." index="4"]
 z_index = 15
-position = Vector2(320, 188)
+position = Vector2(320, 172)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_llvfs")
 
+[node name="RetryButton" type="TextureButton" parent="." index="5"]
+material = SubResource("ShaderMaterial_thg22")
+layout_mode = 0
+offset_left = 272.0
+offset_top = 228.0
+offset_right = 368.0
+offset_bottom = 316.0
+texture_normal = ExtResource("8_efmxl")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("8_vlbf1")
+
+[connection signal="button_down" from="NextLevelButton" to="NextLevelButton" method="_on_button_down"]
+[connection signal="button_up" from="NextLevelButton" to="NextLevelButton" method="_on_button_up"]
+[connection signal="mouse_entered" from="NextLevelButton" to="NextLevelButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="NextLevelButton" to="NextLevelButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="NextLevelButton" to="." method="_on_next_level_button_pressed"]
+[connection signal="button_down" from="MainMenuButton" to="MainMenuButton" method="_on_button_down"]
+[connection signal="button_up" from="MainMenuButton" to="MainMenuButton" method="_on_button_up"]
+[connection signal="mouse_entered" from="MainMenuButton" to="MainMenuButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MainMenuButton" to="MainMenuButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="button_down" from="RetryButton" to="RetryButton" method="_on_button_down"]
+[connection signal="button_up" from="RetryButton" to="RetryButton" method="_on_button_up"]
+[connection signal="mouse_entered" from="RetryButton" to="RetryButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="RetryButton" to="RetryButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
