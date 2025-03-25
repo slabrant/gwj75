@@ -21,27 +21,35 @@ script = ExtResource("1_5xwsu")
 stream = ExtResource("3_q582x")
 volume_db = -30.0
 
-[node name="RotateButton" type="TextureButton" parent="."]
-visible = false
-offset_left = 8.0
+[node name="TouchArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TouchArea"]
+shape = SubResource("CircleShape2D_1uv0u")
+
+[node name="Buttons" type="Node2D" parent="."]
+position = Vector2(16, 0)
+
+[node name="RotateButton" type="TextureButton" parent="Buttons"]
+offset_left = -8.0
 offset_top = -8.0
-offset_right = 24.0
+offset_right = 8.0
 offset_bottom = 8.0
 texture_normal = ExtResource("3_k064b")
 texture_pressed = ExtResource("4_l17x6")
-stretch_mode = 5
+stretch_mode = 0
 
-[node name="MinusButton" type="TextureButton" parent="."]
+[node name="MinusButton" type="TextureButton" parent="Buttons"]
 visible = false
-offset_left = 24.0
+offset_left = 3.0
 offset_top = -8.0
-offset_right = 40.0
+offset_right = 19.0
 offset_bottom = 8.0
 texture_normal = ExtResource("5_2ej6g")
 texture_pressed = ExtResource("6_hjw78")
 stretch_mode = 5
 
 [node name="LockButton" type="TextureButton" parent="."]
+visible = false
 offset_left = 8.0
 offset_top = -8.0
 offset_right = 24.0
@@ -50,11 +58,6 @@ texture_normal = ExtResource("7_h0g1v")
 texture_pressed = ExtResource("8_g8kev")
 stretch_mode = 5
 
-[node name="TouchArea" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TouchArea"]
-shape = SubResource("CircleShape2D_1uv0u")
-
-[connection signal="button_down" from="RotateButton" to="." method="_on_rotate_button_button_down"]
-[connection signal="pressed" from="MinusButton" to="." method="_on_minus_button_pressed"]
 [connection signal="input_event" from="TouchArea" to="." method="_on_touch_area_input_event"]
+[connection signal="button_down" from="Buttons/RotateButton" to="." method="_on_rotate_button_button_down"]
+[connection signal="pressed" from="Buttons/MinusButton" to="." method="_on_minus_button_pressed"]

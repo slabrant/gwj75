@@ -2,13 +2,18 @@ extends StaticBody2D
 
 @onready var world: Node = get_tree().root.get_child(0)
 @onready var level: Node = world.scene
+@onready var placeable_area = level.placeable_area
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var collision: CollisionPolygon2D = $CollisionPolygon2D
-@onready var rotate_button: TextureButton = $RotateButton
-@onready var minus_button: TextureButton = $MinusButton
-@onready var lock_button: TextureButton = $LockButton
 @onready var reflect_sound: AudioStreamPlayer = $Reflect
+
+@onready var rotate_button: TextureButton = $Buttons/RotateButton
+@onready var minus_button: TextureButton = $Buttons/MinusButton
+@onready var lock_button: TextureButton = $LockButton
+@onready var buttons: Node2D = $Buttons
+
+
 const ROTATE_SPRITE = preload("res://sprites/rotate.png")
 const ROTATE_PRESSED_SPRITE = preload("res://sprites/rotate_pressed.png")
 
@@ -68,7 +73,7 @@ func remove():
 func build_mode_checks() -> void:
 	if level.is_build_mode and not locked:
 		rotate_button.show()
-		minus_button.show()
+		#minus_button.show()
 		lock_button.hide()
 	elif level.is_build_mode and locked:
 		lock_button.show()

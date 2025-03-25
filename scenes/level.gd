@@ -69,6 +69,9 @@ func _process(delta: float) -> void:
 		if active_mirror:
 			if !placeable_area.get_cell_tile_data(placeable_area.local_to_map(active_mirror.position)):
 				active_mirror.remove()
+			var buttons_extreme = active_mirror.buttons.global_position + active_mirror.buttons.position.normalized() * Vector2(6,0)
+			if !placeable_area.get_cell_tile_data(placeable_area.local_to_map(buttons_extreme)):
+				active_mirror.buttons.position.x *= -1
 			active_mirror = null
 	elif active_mirror:
 		if world.position_snapping_setting:
