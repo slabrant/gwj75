@@ -23,8 +23,3 @@ shape = SubResource("CircleShape2D_wt2fm")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_d7h3i")
 texture = ExtResource("1_jekoq")
-
-[node name="UnwinTimer" type="Timer" parent="."]
-wait_time = 8.0
-
-[connection signal="timeout" from="UnwinTimer" to="." method="_on_unwin_timer_timeout"]

@@ -37,6 +37,7 @@ const PAUSE_MENU = preload("res://scenes/menus/pause_menu.tscn")
 		if 0 < len(goals) and len(value) < 1:
 			win()
 		goals = value
+@export var cleared_goals : Array = []
 @export var active_mirror : StaticBody2D
 @export var selected_mirror : StaticBody2D
 @export var open_menu : Control:
@@ -97,6 +98,13 @@ func win() -> void:
 	get_tree().root.add_child(menu)
 
 
+func remove_goal(goal):
+	var level_goals : Array = goals.duplicate()
+	level_goals.erase(goal)
+	goals = level_goals
+	cleared_goals.append(goal)
+
+
 func _on_menu_button_pressed() -> void:
 	if open_menu:
 		open_menu.close()
@@ -109,3 +117,6 @@ func _on_build_mode_button_pressed() -> void:
 	is_build_mode = !is_build_mode
 	for mirror in mirrors:
 		mirror.build_mode_checks()
+	for goal in cleared_goals:
+		goal.unwin()
+	cleared_goals = []
