@@ -36,6 +36,12 @@ const ROTATE_PRESSED_SPRITE = preload("res://sprites/rotate_pressed.png")
 		else:
 			rotate_button.texture_normal = ROTATE_SPRITE
 			rotate_button.texture_pressed = ROTATE_PRESSED_SPRITE
+@export var is_selected: bool = false:
+	set(value):
+		if rotate_button:
+			rotate_button.show() if value else rotate_button.hide()
+		is_selected = value
+		
 var last_mirror_rotation : float = 0
 var last_mouse_position : Vector2
 
@@ -46,6 +52,8 @@ func _ready() -> void:
 	minus_button.hide()
 	lock_button.hide()
 	level.mirror_count += 1
+	if level.selected_mirror and 'is_selected' in level.selected_mirror:
+			level.selected_mirror.is_selected = false
 
 
 func _process(delta: float) -> void:
@@ -72,14 +80,11 @@ func remove():
 
 func build_mode_checks() -> void:
 	if level.is_build_mode and not locked:
-		rotate_button.show()
-		#minus_button.show()
 		lock_button.hide()
 	elif level.is_build_mode and locked:
 		lock_button.show()
 	else:
 		rotate_button.hide()
-		minus_button.hide()
 		lock_button.hide()
 
 
@@ -97,8 +102,10 @@ func reflect(body: Node2D) -> void:
 
 func _on_touch_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if level.is_build_mode and not locked and event.has_method("is_action_pressed") and event.is_action_pressed("input_action"):
+		if level.selected_mirror and 'is_selected' in level.selected_mirror:
+			level.selected_mirror.is_selected = false
 		level.active_mirror = self
-
+		is_selected = true
 
 func _on_minus_button_pressed() -> void:
 	remove()

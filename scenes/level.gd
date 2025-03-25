@@ -38,6 +38,7 @@ const PAUSE_MENU = preload("res://scenes/menus/pause_menu.tscn")
 			win()
 		goals = value
 @export var active_mirror : StaticBody2D
+@export var selected_mirror : StaticBody2D
 @export var open_menu : Control:
 	set(value):
 		if !world:
@@ -72,6 +73,8 @@ func _process(delta: float) -> void:
 			var buttons_extreme = active_mirror.buttons.global_position + active_mirror.buttons.position.normalized() * Vector2(6,0)
 			if !placeable_area.get_cell_tile_data(placeable_area.local_to_map(buttons_extreme)):
 				active_mirror.buttons.position.x *= -1
+			selected_mirror = active_mirror
+			selected_mirror.is_selected = true
 			active_mirror = null
 	elif active_mirror:
 		if world.position_snapping_setting:
