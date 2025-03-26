@@ -103,81 +103,89 @@ script = ExtResource("8_fnyec")
 
 [node name="Derorrim" type="Node" parent="." index="5"]
 
-[node name="D" type="Label" parent="Derorrim" index="0"]
-offset_left = -224.0
-offset_top = -176.0
-offset_right = -158.0
-offset_bottom = -25.0
-text = "D"
+[node name="d" type="Label" parent="Derorrim" index="0"]
+offset_left = -168.0
+offset_top = -180.0
+offset_right = -102.0
+offset_bottom = -29.0
+scale = Vector2(-1, 1)
+text = "d"
 label_settings = SubResource("LabelSettings_i02yc")
 horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="e" type="Label" parent="Derorrim" index="1"]
-offset_left = -160.0
-offset_top = -176.0
-offset_right = -94.0
-offset_bottom = -25.0
+offset_left = -102.0
+offset_top = -180.0
+offset_right = -36.0
+offset_bottom = -29.0
+scale = Vector2(-1, 1)
 text = "e"
 label_settings = SubResource("LabelSettings_6pful")
 horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="r" type="Label" parent="Derorrim" index="2"]
-offset_left = -96.0
-offset_top = -176.0
-offset_right = -41.0
-offset_bottom = -25.0
+offset_left = -46.0
+offset_top = -180.0
+offset_right = 9.0
+offset_bottom = -29.0
+scale = Vector2(-1, 1)
 text = "r"
 label_settings = SubResource("LabelSettings_qi8ls")
 horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="r2" type="Label" parent="Derorrim" index="3"]
-offset_left = -40.0
-offset_top = -176.0
-offset_right = 15.0
-offset_bottom = -25.0
+offset_left = 10.0
+offset_top = -180.0
+offset_right = 65.0
+offset_bottom = -29.0
+scale = Vector2(-1, 1)
 text = "r"
 label_settings = SubResource("LabelSettings_ottx0")
 horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="o" type="Label" parent="Derorrim" index="4"]
-offset_left = 16.0
-offset_top = -176.0
-offset_right = 82.0
-offset_bottom = -25.0
+offset_left = 74.0
+offset_top = -180.0
+offset_right = 140.0
+offset_bottom = -29.0
+scale = Vector2(-1, 1)
 text = "o"
 label_settings = SubResource("LabelSettings_t716s")
 horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="r3" type="Label" parent="Derorrim" index="5"]
-offset_left = 80.0
-offset_top = -176.0
-offset_right = 135.0
-offset_bottom = -25.0
+offset_left = 130.0
+offset_top = -180.0
+offset_right = 185.0
+offset_bottom = -29.0
+scale = Vector2(-1, 1)
 text = "r"
 label_settings = SubResource("LabelSettings_atl8f")
 horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="i" type="Label" parent="Derorrim" index="6"]
-offset_left = 136.0
-offset_top = -176.0
-offset_right = 169.0
-offset_bottom = -25.0
+offset_left = 170.0
+offset_top = -180.0
+offset_right = 203.0
+offset_bottom = -29.0
+scale = Vector2(-1, 1)
 text = "i"
 label_settings = SubResource("LabelSettings_7stx8")
 horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="m" type="Label" parent="Derorrim" index="7"]
-offset_left = 168.0
-offset_top = -176.0
-offset_right = 234.0
-offset_bottom = -25.0
+offset_left = 242.0
+offset_top = -180.0
+offset_right = 308.0
+offset_bottom = -29.0
+scale = Vector2(-1, 1)
 text = "m"
 label_settings = SubResource("LabelSettings_ka823")
 horizontal_alignment = 1
