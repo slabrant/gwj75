@@ -1,7 +1,26 @@
-[gd_scene load_steps=11 format=3 uid="uid://dse1dw7ak7fh5"]
+[gd_scene load_steps=21 format=3 uid="uid://dse1dw7ak7fh5"]
 
 [ext_resource type="PackedScene" uid="uid://dpcsxylaa6fom" path="res://scenes/menus/menu_page.tscn" id="1_1jg08"]
 [ext_resource type="Script" uid="uid://7jyp6dr2m1vu" path="res://scenes/menus/start_menu.gd" id="1_1otxa"]
+[ext_resource type="Shader" uid="uid://bmp0ceg2udti2" path="res://sprites/highlight.gdshader" id="3_kkacw"]
+[ext_resource type="Texture2D" uid="uid://dpb48n16yd64i" path="res://sprites/play.svg" id="3_wc57o"]
+[ext_resource type="Texture2D" uid="uid://bqy021yvedy3b" path="res://sprites/level_select.svg" id="4_ckod1"]
+[ext_resource type="Script" uid="uid://c0knus5vmwud5" path="res://scenes/menus/play_button.gd" id="4_eba3y"]
+[ext_resource type="Texture2D" uid="uid://dcg2g3mca07an" path="res://sprites/controls.svg" id="5_pihdo"]
+[ext_resource type="Script" uid="uid://5psoxebdmmcb" path="res://scenes/menus/level_select_menu_button.gd" id="6_kkacw"]
+[ext_resource type="Script" uid="uid://cb0qnsidhafrl" path="res://scenes/menus/controls_button.gd" id="8_fnyec"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fnyec"]
+shader = ExtResource("3_kkacw")
+shader_parameter/percent = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kkacw"]
+shader = ExtResource("3_kkacw")
+shader_parameter/percent = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gmtu0"]
+shader = ExtResource("3_kkacw")
+shader_parameter/percent = 1.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_i02yc"]
 font_size = 176
@@ -46,32 +65,41 @@ shadow_color = Color(0.329412, 0.329412, 0.329412, 1)
 [node name="StartMenu" instance=ExtResource("1_1jg08")]
 script = ExtResource("1_1otxa")
 
-[node name="PlayButton" type="Button" parent="." index="2"]
+[node name="PlayButton" type="TextureButton" parent="." index="2"]
+material = SubResource("ShaderMaterial_fnyec")
 layout_mode = 0
-offset_left = 208.0
-offset_top = 155.0
-offset_right = 432.0
-offset_bottom = 220.0
-theme_override_font_sizes/font_size = 64
-text = "Play"
+offset_left = 320.0
+offset_top = 156.0
+offset_right = 465.0
+offset_bottom = 300.0
+texture_normal = ExtResource("3_wc57o")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("4_eba3y")
 
-[node name="LevelSelectButton" type="Button" parent="." index="3"]
+[node name="LevelSelectButton" type="TextureButton" parent="." index="3"]
+material = SubResource("ShaderMaterial_kkacw")
 layout_mode = 0
-offset_left = 232.0
-offset_top = 236.0
-offset_right = 408.0
-offset_bottom = 284.0
-theme_override_font_sizes/font_size = 32
-text = "Level Select"
+offset_left = 152.0
+offset_top = 172.0
+offset_right = 232.0
+offset_bottom = 244.0
+texture_normal = ExtResource("4_ckod1")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("6_kkacw")
 
-[node name="ControlsButton" type="Button" parent="." index="4"]
+[node name="ControlsButton" type="TextureButton" parent="." index="4"]
+material = SubResource("ShaderMaterial_gmtu0")
 layout_mode = 0
-offset_left = 232.0
-offset_top = 292.0
-offset_right = 408.0
+offset_left = 144.0
+offset_top = 252.0
+offset_right = 240.0
 offset_bottom = 340.0
-theme_override_font_sizes/font_size = 32
-text = "Controls"
+texture_normal = ExtResource("5_pihdo")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("8_fnyec")
 
 [node name="Derorrim" type="Node" parent="." index="5"]
 
@@ -155,6 +183,18 @@ label_settings = SubResource("LabelSettings_ka823")
 horizontal_alignment = 1
 vertical_alignment = 2
 
+[connection signal="button_down" from="PlayButton" to="PlayButton" method="_on_button_down"]
+[connection signal="button_up" from="PlayButton" to="PlayButton" method="_on_button_up"]
+[connection signal="mouse_entered" from="PlayButton" to="PlayButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PlayButton" to="PlayButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="button_down" from="LevelSelectButton" to="LevelSelectButton" method="_on_button_down"]
+[connection signal="button_up" from="LevelSelectButton" to="LevelSelectButton" method="_on_button_up"]
+[connection signal="mouse_entered" from="LevelSelectButton" to="LevelSelectButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="LevelSelectButton" to="LevelSelectButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="LevelSelectButton" to="." method="_on_level_select_button_pressed"]
+[connection signal="button_down" from="ControlsButton" to="ControlsButton" method="_on_button_down"]
+[connection signal="button_up" from="ControlsButton" to="ControlsButton" method="_on_button_up"]
+[connection signal="mouse_entered" from="ControlsButton" to="ControlsButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ControlsButton" to="ControlsButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="ControlsButton" to="." method="_on_controls_button_pressed"]
