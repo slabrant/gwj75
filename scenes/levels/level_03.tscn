@@ -17,4 +17,4 @@ tile_map_data = PackedByteArray("AAD+/wEAAAAEAAEAAAD9/wEAAAAEAAEAAAD8/wEAAAAEAAY
 
 [node name="Cannon" parent="." index="11" instance=ExtResource("4_ybpnd")]
 z_index = 2
-position = Vector2(-67, 35)
+position = Vector2(-64, 32)

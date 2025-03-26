@@ -10,7 +10,7 @@ shot_par = 2
 
 [node name="Cannon" parent="." index="0" instance=ExtResource("4_hv0xc")]
 z_index = 10
-position = Vector2(-64, -32)
+position = Vector2(-56, -24)
 
 [node name="Goal" parent="Goals" index="0" instance=ExtResource("5_ienjg")]
 z_index = 10

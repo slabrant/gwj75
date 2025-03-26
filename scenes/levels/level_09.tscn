@@ -11,7 +11,7 @@ mirror_par = 8
 
 [node name="Cannon" parent="." index="0" instance=ExtResource("2_c73jh")]
 z_index = 2
-position = Vector2(72, -64)
+position = Vector2(72, -56)
 
 [node name="Mirrors2" type="Node" parent="." index="1"]
 
