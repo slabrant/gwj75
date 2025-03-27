@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://5p05sivgsauk"]
+[gd_scene load_steps=12 format=3 uid="uid://5p05sivgsauk"]
 
 [ext_resource type="Script" uid="uid://6ckxvatxawd" path="res://scenes/objects/beam.gd" id="1_3lbs8"]
 [ext_resource type="Shader" uid="uid://c15t4tee30062" path="res://scenes/objects/beam_color.gdshader" id="2_1lcdn"]
 [ext_resource type="Texture2D" uid="uid://dcg7r2a0r8uym" path="res://sprites/beam-sheet.png" id="3_bhnfr"]
 [ext_resource type="AudioStream" uid="uid://bgxwniwhfnlwt" path="res://sounds/laserShoot.wav" id="3_sogmm"]
+[ext_resource type="Texture2D" uid="uid://cbk7dqmf81co3" path="res://sprites/blur.svg" id="5_kmqw2"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ibsi3"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6llgt"]
 shader = ExtResource("2_1lcdn")
 shader_parameter/red = 0.0
 shader_parameter/green = 0.0
@@ -36,12 +37,19 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_u5sx4"]
 radius = 1.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_18u6d"]
+shader = ExtResource("2_1lcdn")
+shader_parameter/red = 0.0
+shader_parameter/green = 0.0
+shader_parameter/blue = 0.0
+
 [node name="Beam" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_3lbs8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-material = SubResource("ShaderMaterial_ibsi3")
+self_modulate = Color(1, 1, 1, 0.784314)
+material = SubResource("ShaderMaterial_6llgt")
 sprite_frames = SubResource("SpriteFrames_u2afw")
 
 [node name="LaserShoot" type="AudioStreamPlayer" parent="."]
@@ -56,6 +64,12 @@ collision_mask = 4
 shape = SubResource("CircleShape2D_u5sx4")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(3, 0)
+target_position = Vector2(4, 0)
+
+[node name="Blur" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_18u6d")
+position = Vector2(9.53674e-07, 4.17233e-07)
+scale = Vector2(0.08, 0.054)
+texture = ExtResource("5_kmqw2")
 
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]

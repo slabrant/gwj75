@@ -21,7 +21,7 @@ var level_paths = []
 	set(value):
 		scores[level_id] = value
 		level_score = value
-@export var bullet_speed_setting : int = 30:
+@export var bullet_speed_setting : int = 50:
 	set(value):
 		if 100 < value:
 			value = 100
