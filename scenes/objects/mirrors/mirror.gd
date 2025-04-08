@@ -12,6 +12,7 @@ extends StaticBody2D
 @onready var minus_button: TextureButton = $Buttons/MinusButton
 @onready var lock_button: TextureButton = $LockButton
 @onready var buttons: Node2D = $Buttons
+@onready var touch_circle: Sprite2D = $TouchCircle
 
 
 const ROTATE_SPRITE = preload("res://sprites/rotate.png")
@@ -40,10 +41,13 @@ const ROTATE_PRESSED_SPRITE = preload("res://sprites/rotate_pressed.png")
 	set(value):
 		if rotate_button:
 			rotate_button.show() if value else rotate_button.hide()
-		is_selected = value
+		if touch_circle:
+			touch_circle.show() if value else touch_circle.hide()
 		
+		is_selected = value
+@export var click_offset: Vector2
+
 var last_mirror_rotation : float = 0
-var last_mouse_position : Vector2
 
 
 func _ready() -> void:
@@ -61,7 +65,7 @@ func _process(delta: float) -> void:
 		is_rotating = false
 		last_mirror_rotation = mirror_rotation
 	elif is_rotating:
-		var mouse_position = get_local_mouse_position() - last_mouse_position
+		var mouse_position = get_local_mouse_position() - click_offset
 		var rotation_snap_angle_setting = deg_to_rad(world.rotation_snap_angle_setting) if world.rotation_snap_angle_setting != 0 else deg_to_rad(1)
 		
 		var mouse_angle = mouse_position.angle()
@@ -84,7 +88,7 @@ func build_mode_checks() -> void:
 	elif level.is_build_mode and locked:
 		lock_button.show()
 	else:
-		rotate_button.hide()
+		is_selected = false
 		lock_button.hide()
 
 
@@ -106,6 +110,7 @@ func _on_touch_area_input_event(viewport: Node, event: InputEvent, shape_idx: in
 			level.selected_mirror.is_selected = false
 		level.active_mirror = self
 		is_selected = true
+		click_offset = global_position - get_global_mouse_position()
 
 func _on_minus_button_pressed() -> void:
 	remove()
@@ -113,5 +118,5 @@ func _on_minus_button_pressed() -> void:
 
 func _on_rotate_button_button_down() -> void:
 	var center = Vector2(rotate_button.size.x/2, rotate_button.size.y/2)
-	last_mouse_position = rotate_button.get_local_mouse_position() - center
+	click_offset = rotate_button.get_local_mouse_position() - center
 	is_rotating = true

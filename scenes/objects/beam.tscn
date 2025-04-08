@@ -38,10 +38,6 @@ animations = [{
 radius = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_18u6d"]
-shader = ExtResource("2_1lcdn")
-shader_parameter/red = 0.0
-shader_parameter/green = 0.0
-shader_parameter/blue = 0.0
 
 [node name="Beam" type="CharacterBody2D"]
 collision_layer = 2
@@ -54,7 +50,7 @@ sprite_frames = SubResource("SpriteFrames_u2afw")
 
 [node name="LaserShoot" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_sogmm")
-volume_db = -25.0
+volume_db = -20.0
 
 [node name="HitBox" type="Area2D" parent="."]
 collision_layer = 0
@@ -71,5 +67,7 @@ material = SubResource("ShaderMaterial_18u6d")
 position = Vector2(9.53674e-07, 4.17233e-07)
 scale = Vector2(0.08, 0.054)
 texture = ExtResource("5_kmqw2")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
 
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
