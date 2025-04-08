@@ -39,6 +39,7 @@ func _ready() -> void:
 	scene_path = "res://scenes/menus/start_menu.tscn"
 	if dir:
 		populate_level_paths(level_paths)
+		label.text = "v" + Time.get_datetime_string_from_system()
 	level_resources = load("res://scenes/level_list.tres")
 
 

@@ -69,6 +69,4 @@ position = Vector2(9.53674e-07, 4.17233e-07)
 scale = Vector2(0.08, 0.054)
 texture = ExtResource("5_kmqw2")
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]

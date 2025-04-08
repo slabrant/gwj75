@@ -8,6 +8,9 @@ script = ExtResource("1_6gx7s")
 [node name="Label" type="Label" parent="."]
 z_index = 100
 z_as_relative = false
-offset_left = -176.0
-offset_top = -32.0
-theme_override_font_sizes/font_size = 32
+offset_left = 136.0
+offset_top = 152.0
+offset_right = 312.0
+offset_bottom = 184.0
+theme_override_colors/font_color = Color(0.442911, 0.442911, 0.442911, 1)
+theme_override_font_sizes/font_size = 24
