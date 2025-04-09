@@ -31,6 +31,8 @@ const PAUSE_MENU = preload("res://scenes/menus/pause_menu.tscn")
 			build_mode_button.texture_pressed = HAMMER_PRESSED_SPRITE
 		
 		is_build_mode = value
+
+@export var flying_beams: Array = []
 @export var mirrors : Array = []
 @export var goals : Array = []:
 	set(value):
@@ -119,4 +121,7 @@ func _on_build_mode_button_pressed() -> void:
 		mirror.build_mode_checks()
 	for goal in cleared_goals:
 		goal.unwin()
+	for beam in flying_beams:
+		beam.queue_free()
+	flying_beams = []
 	cleared_goals = []

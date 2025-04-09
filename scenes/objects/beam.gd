@@ -25,6 +25,7 @@ func _ready() -> void:
 	laser_shoot.play()
 	SPEED = 125 * world.bullet_speed_setting
 	blur.scale.x *= float(world.bullet_speed_setting) / 45 + 0.45
+	level.flying_beams.append(self)
 
 
 func _physics_process(delta: float) -> void:
@@ -51,3 +52,4 @@ func _on_hit_box_body_entered(body: TileMapLayer) -> void:
 	z_index = 1
 	hit_box.queue_free()
 	ray_cast.queue_free()
+	level.flying_beams.erase(self)
