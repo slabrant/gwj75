@@ -104,11 +104,10 @@ script = ExtResource("8_fnyec")
 [node name="Derorrim" type="Node" parent="." index="5"]
 
 [node name="d" type="Label" parent="Derorrim" index="0"]
-offset_left = -168.0
+offset_left = -224.0
 offset_top = -180.0
-offset_right = -102.0
+offset_right = -158.0
 offset_bottom = -29.0
-scale = Vector2(-1, 1)
 text = "d"
 label_settings = SubResource("LabelSettings_i02yc")
 horizontal_alignment = 1

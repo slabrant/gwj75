@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="WorldData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="WorldData" load_steps=2 format=3 uid="uid://v6tbyu7byyhq"]
 
-[ext_resource type="Script" path="res://scenes/world_data.gd" id="1_lif41"]
+[ext_resource type="Script" uid="uid://cf8svj1ohcq7h" path="res://scenes/world_data.gd" id="1_lif41"]
 
 [resource]
 script = ExtResource("1_lif41")
