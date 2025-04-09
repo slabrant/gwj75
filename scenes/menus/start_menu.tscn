@@ -191,6 +191,16 @@ label_settings = SubResource("LabelSettings_ka823")
 horizontal_alignment = 1
 vertical_alignment = 2
 
+[node name="LinkButton" type="LinkButton" parent="." index="6"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 324.0
+offset_right = 104.0
+offset_bottom = 356.0
+theme_override_font_sizes/font_size = 32
+text = "Feedback"
+uri = "https://docs.google.com/forms/d/e/1FAIpQLSc69kFt8omp5kJt0rlxKkHNC890qdK7yCdG2hQIb7zA7Ugi_g/viewform"
+
 [connection signal="button_down" from="PlayButton" to="PlayButton" method="_on_button_down"]
 [connection signal="button_up" from="PlayButton" to="PlayButton" method="_on_button_up"]
 [connection signal="mouse_entered" from="PlayButton" to="PlayButton" method="_on_mouse_entered"]
