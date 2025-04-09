@@ -35,7 +35,11 @@ var level_dir = DirAccess.open("res://scenes/levels")
 		label.text = value
 		build_time = value
 @export var level_paths: Array = []
-var world_data = WorldData.new()
+var world_data = WorldData.new():
+	set(value):
+		level_paths = value.level_paths
+		build_time = value.build_time
+		world_data = value
 @export var beams : Array = []
 
 
@@ -57,7 +61,7 @@ func disable_input_recursive(node: Node, enable):
 
 func load_world_data():
 	world_data = load("res://scenes/world_data.tres")
-	if !OS.has_feature("standalone"):
+	if OS.has_feature("editor"):
 		populate_level_paths()
 		populate_build_time()
 		ResourceSaver.save(world_data, "res://scenes/world_data.tres")
