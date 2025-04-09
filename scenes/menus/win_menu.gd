@@ -20,8 +20,8 @@ func close() -> void:
 func _on_next_level_button_pressed() -> void:
 	close()
 	world.level_id += 1
-	if world.level_id < len(world.level_resources.level_paths):
-		world.scene_path = world.level_resources.level_paths[world.level_id]
+	if world.level_id < len(world.level_paths):
+		world.scene_path = world.level_paths[world.level_id]
 	else:
 		world.scene_path = "res://scenes/menus/credit_menu.tscn"
 
@@ -33,4 +33,4 @@ func _on_main_menu_button_pressed() -> void:
 
 func _on_retry_button_pressed() -> void:
 	close()
-	world.scene_path = world.level_resources.level_paths[world.level_id]
+	world.scene_path = world.level_paths[world.level_id]

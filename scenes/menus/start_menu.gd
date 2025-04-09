@@ -2,7 +2,7 @@ extends "res://scenes/menus/menu_page.gd"
 
 
 func _on_play_button_pressed() -> void:
-	world.scene_path = world.level_resources.level_paths[world.level_id]
+	world.scene_path = world.level_paths[world.level_id]
 
 
 func _on_level_select_button_pressed() -> void:

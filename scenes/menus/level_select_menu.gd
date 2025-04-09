@@ -5,7 +5,7 @@ const LEVEL_BUTTON = preload("res://scenes/menus/level_select_button.tscn")
 
 
 func _ready() -> void:
-	load_level_buttons(world.level_resources.level_paths)
+	load_level_buttons(world.level_paths)
 
 
 func load_level_buttons(levels):

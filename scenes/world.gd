@@ -1,8 +1,7 @@
 extends Node
 
-const LevelListResource = preload("res://scenes/level_list_resource.gd")
-var dir = DirAccess.open("res://scenes/levels")
-var level_paths = []
+const WorldData = preload("res://scenes/world_data.gd")
+var level_dir = DirAccess.open("res://scenes/levels")
 @onready var label: Label = $Label
 
 @export var scene_path : String:
@@ -31,16 +30,18 @@ var level_paths = []
 @export var position_snapping_setting : bool = true
 @export var rotation_snap_angle_setting : float = 15
 @export var slow_rotation_setting : bool = false
-@export var level_resources = LevelListResource.new()
+@export var build_time: String = "":
+	set(value):
+		label.text = value
+		build_time = value
+@export var level_paths: Array = []
+var world_data = WorldData.new()
 @export var beams : Array = []
 
 
 func _ready() -> void:
 	scene_path = "res://scenes/menus/start_menu.tscn"
-	if dir:
-		populate_level_paths(level_paths)
-		label.text = "v" + Time.get_datetime_string_from_system()
-	level_resources = load("res://scenes/level_list.tres")
+	load_world_data()
 
 
 func toggle_input(enable: bool):
@@ -54,13 +55,27 @@ func disable_input_recursive(node: Node, enable):
 		disable_input_recursive(child, enable)
 
 
-func populate_level_paths(popultate_level_paths):
-	for file in dir.get_files():
+func load_world_data():
+	world_data = load("res://scenes/world_data.tres")
+	if !OS.has_feature("standalone"):
+		populate_level_paths()
+		populate_build_time()
+		ResourceSaver.save(world_data, "res://scenes/world_data.tres")
+
+
+func populate_level_paths():
+	if !level_dir:
+		return
+	var popultate_level_paths = []
+	for file in level_dir.get_files():
 		if file.get_extension() != "tscn" and file.get_extension() != "gd":
 			return false
-		
 		popultate_level_paths.append("res://scenes/levels/" + file.get_file())
 	
-	var new_level_resources = LevelListResource.new()
-	new_level_resources.level_paths = popultate_level_paths
-	ResourceSaver.save(new_level_resources, "res://scenes/level_list.tres")
+	level_paths = popultate_level_paths
+	world_data.level_paths = level_paths
+
+
+func populate_build_time():
+	build_time = "v" + Time.get_datetime_string_from_system()
+	world_data.build_time = build_time
