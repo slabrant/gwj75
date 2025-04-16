@@ -21,8 +21,7 @@ func set_color(red: float = 0.0, green: float = 0.0, blue: float = 0.0):
 
 
 func reflect(body: Node2D) -> void:
-	body.queue_free()
-	
+	body.die()
 	if color == body.color:
 		win()
 

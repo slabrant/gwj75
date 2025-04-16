@@ -36,7 +36,7 @@ const PAUSE_MENU = preload("res://scenes/menus/pause_menu.tscn")
 @export var mirrors : Array = []
 @export var goals : Array = []:
 	set(value):
-		if 0 < len(goals) and len(value) < 1:
+		if len(value) < 1:
 			win()
 		goals = value
 @export var cleared_goals : Array = []

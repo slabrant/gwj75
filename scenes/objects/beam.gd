@@ -28,6 +28,19 @@ func _ready() -> void:
 	level.flying_beams.append(self)
 
 
+func die(pretend = false):
+	level.flying_beams.erase(self)
+	if pretend:
+		SPEED = 0
+		sprite.frame = 1
+		blur.queue_free()
+		z_index = 1
+		hit_box.queue_free()
+		ray_cast.queue_free()
+	else:
+		queue_free()
+
+
 func _physics_process(delta: float) -> void:
 	velocity = SPEED * delta * Vector2(cos(rotation), sin(rotation))
 	if (!!ray_cast and ray_cast.is_colliding()):
@@ -46,10 +59,4 @@ func set_color(red: int = 0, green: int = 0, blue: int = 0):
 
 
 func _on_hit_box_body_entered(body: TileMapLayer) -> void:
-	SPEED = 0
-	sprite.frame = 1
-	blur.queue_free()
-	z_index = 1
-	hit_box.queue_free()
-	ray_cast.queue_free()
-	level.flying_beams.erase(self)
+	die(true)
