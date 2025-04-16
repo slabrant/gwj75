@@ -98,9 +98,11 @@ metadata/_edit_use_anchors_ = true
 [node name="MirrorGenerator" parent="." instance=ExtResource("6_fda2l")]
 z_index = -2
 position = Vector2(112, -6)
+metadata/_edit_lock_ = true
 
 [node name="PrismGenerator" parent="." instance=ExtResource("12_fvep6")]
 position = Vector2(112, 18)
+metadata/_edit_lock_ = true
 
 [node name="MirrorBlock" type="ColorRect" parent="."]
 offset_left = 96.0
@@ -109,6 +111,7 @@ offset_right = 126.0
 offset_bottom = 62.0
 color = Color(0.498039, 0.498039, 0.498039, 1)
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="Goals" type="Node" parent="."]
 
