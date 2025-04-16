@@ -13,7 +13,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and !event.pressed:
 		var beam : CharacterBody2D = BEAM.instantiate()
 		var spr_ang = sprite.rotation
-		beam.position = position + 16 * Vector2(cos(spr_ang), sin(spr_ang))
+		beam.position = position + 14 * Vector2(cos(spr_ang), sin(spr_ang))
 		beam.rotation = spr_ang
 		add_sibling(beam)
 		level.shot_count += 1
