@@ -13,6 +13,7 @@ func shoot(shoot_rotation) -> CharacterBody2D:
 
 func reflect(body: Node2D) -> void:
 	body.die()
+	reflect_sound.play()
 	if body.color != [255, 255, 255]:
 		return
 	var combined_rotation = mirror_rotation + rotation
